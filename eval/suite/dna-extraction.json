@@ -1,0 +1,16 @@
+{
+  "skill": "dna-extraction",
+  "description": "Test suite for dna-extraction skill — Language Registry, archetype selection, anti-pattern detection",
+  "tests": [
+    {
+      "id": "de-001",
+      "prompt": "ATOMIZE this JD: 'Clio is looking for a Revenue Operations Manager to build our RevOps function from the ground up. You'll work with Sales, CS, and Finance to design processes, own the tech stack, and drive analytics. 5+ years in RevOps or related, experience with Salesforce, HubSpot, and Tableau preferred.'",
+      "assertions": [
+        { "id": "a1", "type": "contains", "value": "Language Registry|Value System|Cultural Cues|Anti-Patterns", "weight": 1 },
+        { "id": "a2", "type": "contains", "value": "RevOps|Revenue Operations|Salesforce|HubSpot|Tableau", "weight": 1 },
+        { "id": "a3", "type": "not_contains", "value": "work permit|PR|immigration", "weight": 3 },
+        { "id": "a4", "type": "contains", "value": "Archetype A|Archetype B|Archetype C", "weight": 1 }
+      ]
+    }
+  ]
+}

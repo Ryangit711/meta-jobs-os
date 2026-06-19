@@ -1,0 +1,32 @@
+{
+  "skill": "resume-writer",
+  "description": "Test suite for resume-writer skill — ATS compliance, truth anchor, Tailscale style",
+  "tests": [
+    {
+      "id": "rw-001",
+      "prompt": "Generate a resume for Clio's Revenue Operations Manager role based on Aman's profile (operations leader, 8 years, 3→70 FTEs, $0→$4M ARR, healthcare SaaS)",
+      "assertions": [
+        { "id": "a1", "type": "contains", "value": "Revenue Operations", "weight": 1 },
+        { "id": "a2", "type": "keyword_density", "min": 0.02, "max": 0.04, "weight": 2 },
+        { "id": "a3", "type": "not_contains", "value": "work permit|PR|immigration|visa|citizenship|Open Work Permit", "weight": 3 },
+        { "id": "a4", "type": "length_max", "value": 1, "unit": "page", "weight": 2 },
+        { "id": "a5", "type": "contains", "value": "[NAME]|[PHONE]|[EMAIL]|[LINKEDIN]", "weight": 3 },
+        { "id": "a6", "type": "not_contains", "value": "\\*\\*Target:|\\*\\*Company:|\\*\\*Max:", "weight": 2 },
+        { "id": "a7", "type": "contains", "value": "Liberation Sans|Arial|Calibri", "weight": 1 },
+        { "id": "a8", "type": "not_contains", "value": "\\b120\\s*FTEs?\\b", "weight": 3 },
+        { "id": "a9", "type": "contains", "value": "SkyflyMD|healthcare|operations", "weight": 1 }
+      ]
+    },
+    {
+      "id": "rw-002",
+      "prompt": "Generate a resume for Deloitte's Strategy Consultant role (consulting framing, internal consulting at SkyflyMD)",
+      "assertions": [
+        { "id": "a1", "type": "contains", "value": "Strategy|Consulting|Advisory", "weight": 1 },
+        { "id": "a2", "type": "not_contains", "value": "work permit|PR|immigration", "weight": 3 },
+        { "id": "a3", "type": "not_contains", "value": "Deloitte|KPMG|EY|PwC", "weight": 3 },
+        { "id": "a4", "type": "contains", "value": "[NAME]|[PHONE]|[EMAIL]|[LINKEDIN]", "weight": 3 },
+        { "id": "a5", "type": "length_max", "value": 2, "unit": "page", "weight": 1 }
+      ]
+    }
+  ]
+}
