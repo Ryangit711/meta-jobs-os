@@ -3,7 +3,6 @@ local_config.json
 secrets.json
 data/contacts.json
 data/networking_log.json
-data/thought_log/
 data/social_distill/
 
 # Document outputs — generated locally from placeholders
