@@ -1,6 +1,6 @@
 ---
 name: shoot-deployer
-description: "Triggered when user says SHOOT, SHOOT [company name], or pastes a JD for the 13-section master output. Generates the complete 13-section application package for proofreading. Every section shown in chat before any file touches disk. Never shortcut, never streamline — full depth every time."
+description: "Triggered when user says SHOOT, SHOOT [company name], or pastes a JD for the 15-section master output (upgraded from 13 — added Company Scout + Hiring Process Reveal). Generates the complete 15-section application package for proofreading. Every section shown in chat before any file touches disk. Never shortcut, never streamline — full depth every time."
 ---
 
 # SHOOT DEPLOYER — Full 13-Section Application Package
@@ -15,12 +15,28 @@ description: "Triggered when user says SHOOT, SHOOT [company name], or pastes a 
 - Networking: AGENTS.md networking section
 - Consulting: `CONSULTING_OS.md`
 
-## The 13 Sections (Every Job, Every Time)
+## The 15 Sections (Every Job, Every Time)
 
 ### 1. HEADER
 Company, Role, Team, Salary (range + midpoint), Location, Fit Score, Pipe, Wave, NOC, TEER, Archetype
 
-### 2. CORE Alignment Matrix
+### 2. COMPANY SCOUT (All Relevant Roles)
+**Permanent constitutional section — kills fear by showing the full landscape.**
+- Scout ALL roles at the target company relevant to Aman's profile
+- Show in table: Role, Level, Salary, Status (live/stale/shot/below floor)
+- Highlight Best 3 with 1-liner why
+- Even roles below salary floor are listed (so Aman knows what exists)
+
+### 3. HIRING PROCESS REVEAL (How This Company Hires)
+**Permanent constitutional section — kills fear by knowing the script.**
+- Stage-by-stage process: what happens, duration, who you meet
+- Experienced-hire specific rules (what they skip vs campus recruits)
+- Key tips per stage (case interview? behavioral? take-home?)
+- Timeline: how long from apply to offer
+- What NOT to worry about (psychometric tests? assessment centres?)
+- General company hiring philosophy (meritocratic? pedigree-focused? culture-first?)
+
+### 4. CORE Alignment Matrix
 One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's done)
 
 ### 3. DNA EXTRACTION
@@ -73,15 +89,16 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 - "One year from now" question
 - Rejection response script
 
-### 12. CHECKLIST (17+ Items)
+### 14. CHECKLIST (17+ Items)
 - DNA extracted? ATS keywords at 2-4%? Title aligned? No immigration language? DOCX ready? etc.
+- Company scout completed? Hiring process revealed? Provenance verified?
 
-### 13. FOLLOW-UP + FINOPS
+### 15. FOLLOW-UP + FINOPS
 - T+0 through T+28 cadence with conditional triggers
 - FinOps: negotiation targets, walk-away floor, benefits leverage
 
 ## Proofreading Protocol
-1. SHOW full 13-section in chat
+1. SHOW full 15-section in chat (upgraded from 13 — Company Scout + Hiring Process Reveal are new)
 2. User proofreads
 3. User says "looks good" / "proceed" / "save it" / "approved" → only THEN save files
 4. Write DOCX via document-engine

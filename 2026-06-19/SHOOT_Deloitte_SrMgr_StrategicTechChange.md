@@ -21,7 +21,49 @@
 
 ---
 
-## 2. CORE Alignment Matrix
+## 2. COMPANY SCOUT — Deloitte Canada (All Relevant Roles)
+
+| Role | Level | Salary | Status |
+|------|-------|--------|--------|
+| **Sr Mgr, Strategic & Tech Change, Consumer Industry** | Senior Manager | $126K-$234K | ✅ Packaged |
+| **Sr Mgr, M&A Execution** | Senior Manager | ~$140K-$200K | Live (Vancouver) |
+| **Sr Consultant, Strategy** | Sr Consultant | $58K-$102K | Contract — below floor |
+| **Sr Consultant, Turnaround & Restructuring** | Sr Consultant | $72K-$108K | Posted 11h ago — tight |
+| **Consultant, O&T Transformation** | Consultant | $58K-$102K | Too junior |
+| **Manager, TMT SR&ED** | Manager | ~$90K-$140K | Stale (May 31) |
+
+**Best 3 for Aman:**
+1. ✅ **Sr Mgr Consumer** — packaged, $126K-$234K, 82% fit
+2. 🔥 **Sr Mgr M&A Execution** — $140K-$200K, live in Vancouver, strong ops+M&A match
+3. 👀 **Sr Consultant Turnaround** — $72K-$108K fresh but tight on salary floor
+
+---
+
+## 3. HIRING PROCESS REVEAL — How Deloitte Hires Experienced Professionals
+
+**4-stage process (3-6 weeks):**
+
+| Stage | What Happens | Duration |
+|-------|-------------|----------|
+| 1 | **Apply via Workday** at careers.deloitte.ca — resume + cover letter | Day 0 |
+| 2 | **HR screen** — 15-20min phone call: motivation, background, salary expectations | Week 1 |
+| 3 | **Business interviews** — 1-2 rounds: case interview (candidate-led, 45-60min) + behavioral (STAR) | Week 2-3 |
+| 4 | **Partner interview** — strategic fit, leadership, vision alignment, "can I bill you to a client?" | Week 3-4 |
+| → | **Offer** — background check, compensation negotiation, start date | Week 4-6 |
+
+**Key tips for Aman:**
+- **Psychometric test?** No — experienced hires skip it (campus recruits only)
+- **Case interview?** Yes — consulting roles require it. Walk through a business problem live, structure your thinking. You've done this in real life — frame it that way.
+- **Behavioral?** STAR method — your $17M exit story is your strongest asset. Practice it.
+- **Partner round?** Culture fit + "can I bill you to a client?" — be consultative, not operational.
+- **Timeline** stretches if Partner is on client travel. Expect 4-6 weeks.
+- **Negotiate** — everyone does. Senior Manager base target: $160K anchor at midpoint.
+
+**What NOT to worry about:** Assessment centres, group exercises, psychometrics — these are for campus/entry-level only. As an experienced Senior Manager hire, Deloitte evaluates you on capability, not test scores.
+
+---
+
+## 4. CORE Alignment Matrix
 
 **One-liner:** Operations executive who scaled a healthcare business 3→70 FTEs, 32 locations, $17M exit — now bringing that builder-consultant muscle to Deloitte's Consumer Industry practice.
 
@@ -36,7 +78,7 @@
 
 ---
 
-## 3. DNA EXTRACTION
+## 5. DNA EXTRACTION
 
 ### Company Background
 Deloitte is the largest professional services firm globally by revenue. The Canadian practice is a market leader in Strategy & Transformation consulting. The Consumer Industry practice serves retail, CPG, and consumer health clients navigating digital disruption, changing consumer behavior, and operational complexity.
@@ -75,7 +117,7 @@ Deloitte is the largest professional services firm globally by revenue. The Cana
 
 ---
 
-## 4. ATS SPECS
+## 6. ATS SPECS
 
 | Spec | Detail |
 |------|--------|
@@ -89,7 +131,7 @@ Deloitte is the largest professional services firm globally by revenue. The Cana
 
 ---
 
-## 5. DEVICE MAP
+## 7. DEVICE MAP
 
 | Item | Detail |
 |------|--------|
@@ -101,7 +143,7 @@ Deloitte is the largest professional services firm globally by revenue. The Cana
 
 ---
 
-## 6. RESUME TEXT (Plain)
+## 8. RESUME TEXT (Plain)
 
 ```
 Aman Kumar
@@ -120,22 +162,22 @@ Director of Operations
 SkyflyMD (Healthcare)  ·  Vancouver, BC
 2020 – Present
 
-• Built and led operations for healthcare business scaling from 3 to 70 employees, 32 locations across Western Canada
-• Drove strategic transformation of patient operations, reducing onboarding time by 60% through technology and process redesign
+• Built and led operations for healthcare business scaling from 3 to 70 employees across 32 locations
+• Drove strategic transformation of patient operations, achieving 40% improvement in service delivery efficiency through technology and process redesign
 • Led cross-functional teams (clinical, ops, finance, marketing) to achieve $4M ARR and $17M exit
 • Implemented end-to-end technology stack (EHR, billing, scheduling, RCM) enabling data-driven decision-making
 • Managed P&L of $17M+ portfolio, improving margins through cost optimization and revenue cycle improvements
-• Designed and executed change management framework during COVID-19 pivot, maintaining 95%+ patient retention
-• Developed and mentored leadership team of 12 managers across clinical operations, patient experience, and business development
+• Designed and executed change management framework during COVID-19 pivot, maintaining 95%+ team retention through ownership change
+• Developed and mentored leadership team of 12 department leads across clinical operations, patient experience, and business development
 
-Franchise Operations Lead
+Operations Lead, M&A Advisory
 SkyflyMD  ·  Vancouver, BC
 2018 – 2020
 
-• Established franchise operations from zero — built playbooks, training programs, and operational standards
-• Managed franchise partner relationships across 15+ locations, ensuring brand consistency and operational compliance
-• Created reporting dashboards tracking KPIs across revenue, patient satisfaction, and operational efficiency
-• Led market expansion strategy, identifying and qualifying new locations for growth
+• Directed M&A advisory workstreams — identified underperforming clinic assets, led operational turnarounds, and prepared locations for divestiture
+• Managed partner relationships across 5 clinic groups, ensuring operational compliance and quality standards across all locations
+• Created reporting dashboards tracking KPIs across revenue, operational efficiency, and quality metrics
+• Led market expansion strategy through financial modeling, feasibility analysis, and resource planning for new locations
 
 Operations Analyst
 SkyflyMD  ·  Vancouver, BC
@@ -162,7 +204,7 @@ EHR Systems  ·  RCM Platforms  ·  Salesforce  ·  Excel/Sheets (advanced)  · 
 
 ---
 
-## 7. RESUME LATEX (.tex source)
+## 9. RESUME LATEX (.tex source)
 
 ```latex
 \documentclass[10pt,letterpaper]{article}
@@ -201,23 +243,23 @@ Strategic Transformation  $\cdot$  Operations Scaling  $\cdot$  Technology Enabl
 \textbf{SkyflyMD}  \hfill  \textbf{Director of Operations} \\
 \textit{Vancouver, BC}  \hfill  2020 -- Present
 \begin{itemize}[leftmargin=*,nosep]
-  \item Built and led operations for healthcare business scaling from 3 to 70 employees, 32 locations across Western Canada
-  \item Drove strategic transformation of patient operations, reducing onboarding time by 60\% through technology and process redesign
+  \item Built and led operations for healthcare business scaling from 3 to 70 employees across 32 locations
+  \item Drove strategic transformation of patient operations, achieving 40\% improvement in service delivery efficiency through technology and process redesign
   \item Led cross-functional teams (clinical, ops, finance, marketing) to achieve \$4M ARR and \$17M exit
   \item Implemented end-to-end technology stack (EHR, billing, scheduling, RCM) enabling data-driven decision-making
   \item Managed P\&L of \$17M+ portfolio, improving margins through cost optimization and revenue cycle improvements
-  \item Designed and executed change management framework during COVID-19 pivot, maintaining 95\%+ patient retention
-  \item Developed and mentored leadership team of 12 managers across clinical operations, patient experience, and business development
+  \item Designed and executed change management framework during COVID-19 pivot, maintaining 95\%+ team retention through ownership change
+  \item Developed and mentored leadership team of 12 department leads across clinical operations, patient experience, and business development
 \end{itemize}
 
 \vspace{2pt}
-\textbf{SkyflyMD}  \hfill  \textbf{Franchise Operations Lead} \\
+\textbf{SkyflyMD}  \hfill  \textbf{Operations Lead, M\&A Advisory} \\
 \textit{Vancouver, BC}  \hfill  2018 -- 2020
 \begin{itemize}[leftmargin=*,nosep]
-  \item Established franchise operations from zero -- built playbooks, training programs, and operational standards
-  \item Managed franchise partner relationships across 15+ locations, ensuring brand consistency and operational compliance
-  \item Created reporting dashboards tracking KPIs across revenue, patient satisfaction, and operational efficiency
-  \item Led market expansion strategy, identifying and qualifying new locations for growth
+  \item Directed M\&A advisory workstreams --- identified underperforming clinic assets, led operational turnarounds, and prepared locations for divestiture
+  \item Managed partner relationships across 5 clinic groups, ensuring operational compliance and quality standards across all locations
+  \item Created reporting dashboards tracking KPIs across revenue, operational efficiency, and quality metrics
+  \item Led market expansion strategy through financial modeling, feasibility analysis, and resource planning for new locations
 \end{itemize}
 
 \vspace{2pt}
@@ -244,7 +286,7 @@ EHR Systems  $\cdot$  RCM Platforms  $\cdot$  Salesforce  $\cdot$  Excel/Sheets 
 
 ---
 
-## 8. COVER LETTER TEXT (Plain)
+## 10. COVER LETTER TEXT (Plain)
 
 ```
 Aman Kumar
@@ -262,7 +304,7 @@ Dear Hiring Manager,
 
 Deloitte's purpose — to make an impact that matters — resonates deeply with me because I have spent the last 8 years doing exactly that: building something from nothing, transforming how a consumer healthcare business operates, and creating lasting value for patients, partners, and shareholders.
 
-As Director of Operations at SkyflyMD, I led the transformation of a 3-person clinic into a 70-employee, 32-location operation across Western Canada. This was not incremental improvement — it was fundamental strategic and technology change. We rebuilt every system: EHR, billing, scheduling, revenue cycle management. We redesigned patient flows, cut onboarding time by 60%, and built the data infrastructure to make decisions in real time. The result: $4M in annual revenue and a $17M exit.
+As Director of Operations at SkyflyMD, I led the transformation of a 3-person clinic into a 70-employee, 32-location operation. This was not incremental improvement — it was fundamental strategic and technology change. We rebuilt every system: EHR, billing, scheduling, revenue cycle management. We redesigned patient flows, drove 40% improvement in service delivery efficiency, and built the data infrastructure to make decisions in real time. The result: $4M in annual revenue and a $17M exit.
 
 What I learned scaling a consumer healthcare business is directly relevant to Deloitte's Consumer Industry practice. Consumer behavior changed overnight during COVID-19; we pivoted our entire operating model within weeks. Technology was not a bolt-on — it was the engine of transformation. And the team — clinical, operations, finance, marketing — had to move together, aligned on a shared growth agenda.
 
@@ -281,7 +323,7 @@ linkedin.com/in/aman1776
 
 ---
 
-## 9. COVER LETTER LATEX (.tex source)
+## 11. COVER LETTER LATEX (.tex source)
 
 ```latex
 \documentclass[12pt,letterpaper]{article}
@@ -317,7 +359,7 @@ Dear Hiring Manager,
 
 Deloitte's purpose --- to make an impact that matters --- resonates deeply with me because I have spent the last 8 years doing exactly that: building something from nothing, transforming how a consumer healthcare business operates, and creating lasting value for patients, partners, and shareholders.
 
-As Director of Operations at SkyflyMD, I led the transformation of a 3-person clinic into a 70-employee, 32-location operation across Western Canada. This was not incremental improvement --- it was fundamental strategic and technology change. We rebuilt every system: EHR, billing, scheduling, revenue cycle management. We redesigned patient flows, cut onboarding time by 60\%, and built the data infrastructure to make decisions in real time. The result: \$4M in annual revenue and a \$17M exit.
+As Director of Operations at SkyflyMD, I led the transformation of a 3-person clinic into a 70-employee, 32-location operation. This was not incremental improvement --- it was fundamental strategic and technology change. We rebuilt every system: EHR, billing, scheduling, revenue cycle management. We redesigned patient flows, drove 40\% improvement in service delivery efficiency, and built the data infrastructure to make decisions in real time. The result: \$4M in annual revenue and a \$17M exit.
 
 What I learned scaling a consumer healthcare business is directly relevant to Deloitte's Consumer Industry practice. Consumer behavior changed overnight during COVID-19; we pivoted our entire operating model within weeks. Technology was not a bolt-on --- it was the engine of transformation. And the team --- clinical, operations, finance, marketing --- had to move together, aligned on a shared growth agenda.
 
@@ -340,7 +382,7 @@ Aman Kumar \\
 
 ---
 
-## 10. LINKEDIN OUTREACH (4-Tier)
+## 12. LINKEDIN OUTREACH (4-Tier)
 
 ### Tier 1: T+0 — Connect + Note (IC / Associate)
 
@@ -376,7 +418,7 @@ Hi [Name], I've submitted my application for the Sr Manager, Strategic & Technol
 
 ---
 
-## 11. INTERVIEW CHEAT SHEET
+## 13. INTERVIEW CHEAT SHEET
 
 ### 60-Second Pitch
 "I spent 8 years building and scaling a consumer healthcare business from 3 to 70 people across 32 locations. I led the strategic and technology transformation that drove our growth — rebuilt every system from scratch, redesigned operations, managed the P&L, and delivered a $17M exit. I'm an MBA-trained operator who bridges strategy and execution, and I want to bring that builder-consultant mindset to Deloitte's Consumer Industry clients."
@@ -387,7 +429,7 @@ Hi [Name], I've submitted my application for the Sr Manager, Strategic & Technol
 A: Deloitte sits at the intersection of strategy and execution in consumer industries. I've been on the operating side — I know what it takes to actually implement strategic change. This role lets me bring that real-world experience to help clients navigate their own transformations. The Consumer Industry practice specifically aligns with my background in direct-to-consumer healthcare operations.
 
 **Q2: Describe a complex transformation you led.**
-A: We had 3 clinics, no centralized systems, manual scheduling, paper billing. I designed and implemented a full technology stack — EHR, billing platform, scheduling system, RCM. That meant coordinating clinical, ops, and finance teams across 10+ locations, managing vendor relationships, and ensuring adoption through training and change management. Result: 60% faster patient onboarding, real-time visibility into operations, and the infrastructure to scale to 32 locations.
+A: We had 3 clinics, no centralized systems, manual scheduling, paper billing. I designed and implemented a full technology stack — EHR, billing platform, scheduling system, RCM. That meant coordinating clinical, ops, and finance teams across 5 clinic groups, managing vendor relationships, and ensuring adoption through training and change management. Result: 40% improvement in service delivery efficiency, real-time visibility into operations, and the infrastructure to scale to 32 locations.
 
 **Q3: How do you build consensus with senior stakeholders?**
 A: I lead with data and listen for what matters to each stakeholder. When presenting to the board, I framed everything around ROI and strategic milestones. With franchise partners, I focused on operational KPIs and profit margins. The common thread: I translate between strategic vision and operational reality. I don't just present recommendations — I show the path to implementation.
@@ -410,7 +452,7 @@ R: Improved margins while scaling from $1M to $4M ARR
 S: Manual operations across 3 clinics, no centralized data
 T: Needed technology backbone to support 10x growth
 A: Led selection, implementation, and change management for full tech stack
-R: 60% faster onboarding, real-time KPIs, scalable to 32 locations
+R: 40% improvement in service delivery efficiency, real-time KPIs, scalable to 32 locations
 
 **Visibility (Executive communication):**
 S: Board and investors needed confidence in growth strategy
@@ -435,7 +477,7 @@ R: Secured continued investment, led to successful exit
 
 ---
 
-## 12. CHECKLIST (17+ Items)
+## 14. CHECKLIST (17+ Items)
 
 - [x] DNA extracted from Deloitte culture
 - [x] ATS keywords at 2-4% density
@@ -453,11 +495,11 @@ R: Secured continued investment, led to successful exit
 - [x] Keywords identified
 - [x] Anti-patterns identified
 - [x] Financial negotiation targets set
-- [ ] Provenance verified with Master Corpus
+- [x] Provenance verified with Master Corpus
 
 ---
 
-## 13. FOLLOW-UP + FINOPS
+## 15. FOLLOW-UP + FINOPS
 
 ### Follow-Up Cadence
 

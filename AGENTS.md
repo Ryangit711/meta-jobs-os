@@ -111,6 +111,9 @@ Step 10: git add -A && git commit -m "[action] — [description] — YYYY-MM-DD 
 | **Self-learning** | Every outcome feeds back. APPLY → RESULT → LEARN → UPDATE SYSTEM → APPLY AGAIN. |
 | **24h Fresh Window** | FETCH and REFRESH return ONLY jobs posted in the last 24 hours from the moment of command. No exceptions. Stale jobs are dead weight. |
 | **Continuous throughput** | FETCH runs as a continuous loop: check pipe → find 24h jobs → verify live → present → next pipe. If a checked job is already applied or expired, skip instantly and replace from the same source. Move like light. |
+| **Company Scout** | Before every SHOOT, scout ALL relevant roles at the target company. Show in table: Role, Level, Salary, Status (live/stale/shot). Best 3 highlighted. This kills fear — you see the full landscape before committing to one. |
+| **Hiring Process Reveal** | Before every SHOOT, explain how that company hires experienced professionals like Aman. Stage-by-stage: what happens, duration, tips, what to expect. Process knowledge kills fear — psychometric tests, case interviews, assessment centres — knowing the script removes the anxiety. This applies to EVERY company going forward, not only consulting. Omni, universal, constitutional. |
+| **Provenance** | Every claim in every output must be traceable to its source. In this system: `01_MASTER_CORPUS.md` is the truth anchor — every metric, title, achievement must have a line number. In general context: provenance is the chain of ownership/origin of something (like art tracking). Here it means "where does this fact come from?" Zero fabrication. Masquerade = reframing real facts, not inventing new ones. This aspect is permanent — always show provenance verification in every SHOOT. |
 
 ---
 
@@ -123,6 +126,7 @@ Ask the 5 questions from the ETERNAL NOW — not from fear or urgency:
 3. **Which archetype serves both Aman AND this firm?** — A: Builder-Consultant / B: Operator / C: Strategist.
 4. **What does the ATS need to parse?** — Font, margins, section headers, bullet style per platform.
 5. **What makes THIS application irresistible to THIS hiring manager?** — The semantic secret. Company-specific alchemy.
+6. **How does this company hire people like Aman?** — Before you apply, know the script. Stage-by-stage process, timeline, what they test, what they ignore. Process knowledge kills fear. Psychometric tests? Case interviews? Take-home assignments? Know it before you enter it.
 
 ---
 
