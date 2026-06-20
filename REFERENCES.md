@@ -1,4 +1,4 @@
-# REFERENCES.md — Skill-to-Source Mapping
+# REFERENCES.md — ABHIMANYU 2.0 Skill-to-Source Mapping
 
 Every skill in this system derives its content rules, alchemy, and depth from the original JOBS-OS repo. Nothing is invented here — only re-packaged into modular skills.
 
@@ -56,9 +56,9 @@ JOBS-OS-2026/
 └── data/                ← Persistent data
 ```
 
-### META-JOBS-OS (Modular Evolution)
+### ABHIMANYU 2.0 (Modular Evolution)
 ```
-meta-jobs-os/
+ABHIMANYU-2.0/
 ├── AGENTS.md            ← ~300 lines, just kernel + skill loader
 ├── skills/              ← 15 load-on-demand specialists
 ├── eval/                ← Quantitative test infrastructure
@@ -70,7 +70,7 @@ meta-jobs-os/
 
 ### To regenerate the full system from source:
 1. `git clone git@github.com:Ryangit711/JOBS-OS-2026.git` (truth anchor)
-2. `git clone git@github.com:Ryangit711/meta-jobs-os.git` (modular evolution)
-3. symlink or copy JOBS-OS content into meta-jobs-os `reference/` directory
+2. `git clone git@github.com:Ryangit711/ABHIMANYU-2.0.git` (modular evolution)
+3. symlink or copy JOBS-OS content into ABHIMANYU-2.0 `reference/` directory
 4. Run `python3 LOCAL_GENERATOR.py` to generate real-name files
 5. Start work via `AGENTS.md` bootstrap kernel

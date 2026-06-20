@@ -1,4 +1,4 @@
-# META-JOBS-OS: The Modular Evolution
+# ABHIMANYU 2.0: The Modular Evolution
 
 ## What This Is
 
@@ -6,14 +6,14 @@ This is the **skill-architecture upgrade** of the original JOBS-OS system.
 
 The original JOBS-OS is a monolithic operating system for job search — one AGENTS.md kernel, 40+ numbered modules, 15+ Python scripts. It works. It's powerful. But its power is locked inside a single massive prompt that an AI must load entirely for any single command.
 
-**Meta-JOBS-OS preserves every bit of that alchemy** — the DNA extraction, the 13-section format, the infiltration layer, the networking cadence, the interview scripts. Nothing is simplified. Nothing is flattened. The depth is untouched.
+**ABHIMANYU 2.0 preserves every bit of that alchemy** — the DNA extraction, the 13-section format, the infiltration layer, the networking cadence, the interview scripts. Nothing is simplified. Nothing is flattened. The depth is untouched.
 
 What changes is the **container**: from monolith to modular skill architecture.
 
 ## Architecture
 
 ```
-meta-jobs-os/
+ABHIMANYU-2.0/
 ├── AGENTS.md              ← Bootstrap kernel (~300 lines, not 2000+)
 │                              Loads only the skill needed for current command
 │
@@ -77,7 +77,7 @@ The AI loads **only** the skill(s) relevant to the current command. Not the enti
 ## The Deal
 
 - The original JOBS-OS repo is **untouched**. It's the permanent truth anchor.
-- This repo is the **evolution layer** — a modular skill system wrapped around that truth.
+- **ABHIMANYU 2.0** is the **evolution layer** — a modular skill system wrapped around that truth.
 - Every skill references its JOBS-OS source files explicitly (see `REFERENCES.md`).
 - Skills can be developed, tested, and improved independently.
 - The endgame is identical: payroll → paycheck → PR → freedom.
@@ -85,7 +85,7 @@ The AI loads **only** the skill(s) relevant to the current command. Not the enti
 ## Quick Start
 
 ```bash
-git clone git@github.com:Ryangit711/meta-jobs-os.git
+git clone git@github.com:Ryangit711/ABHIMANYU-2.0.git
 # Read AGENTS.md to begin
 # Skills load dynamically as you issue commands
 ```

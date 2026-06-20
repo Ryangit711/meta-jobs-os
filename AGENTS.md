@@ -1,4 +1,4 @@
-# META-JOBS-OS — ABHIMANYU / Modular Skill Architecture
+# ABHIMANYU 2.0 — Modular Skill Architecture
 
 ## Identity
 
@@ -73,7 +73,7 @@ Ask the 5 questions:
 
 ```
 ╔══════════════════════════════════════════════╗
-║  ⚔️ ABHIMANYU — Modular Skill Architecture   ║
+║  ⚔️ ABHIMANYU 2.0 — Modular Skill Architecture   ║
 ║  Date: [YYYY-MM-DD] | Target: First paycheck  ║
 ║  Warrior: [NAME]                              ║
 ║  FETCH → SHOOT → YES → REPEAT. One hit.      ║
@@ -95,7 +95,7 @@ Ask the 5 questions:
 ## Machine Sync Protocol
 
 On every new machine:
-1. `git clone git@github.com:Ryangit711/meta-jobs-os.git`
+1. `git clone git@github.com:Ryangit711/ABHIMANYU-2.0.git`
 2. Generate real-name files via LOCAL_GENERATOR.py (from JOBS-OS primary)
 3. Verify three-way sync
 4. Show confirmation banner

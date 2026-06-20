@@ -1,4 +1,4 @@
-# SKILL REGISTRY — meta-jobs-os
+# SKILL REGISTRY — ABHIMANYU 2.0
 
 | Skill | Description | Triggers | Source References |
 |-------|-------------|----------|-------------------|
