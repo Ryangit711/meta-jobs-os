@@ -16,4 +16,6 @@
 | `contact-engine` | Contact management + Apollo + multi-channel cadence | `CONTACT`, `CONTACT LIST`, `CONTACT [name] email` | JOBS-OS `CONTACT_ENGINE.py`, Constitutional Amendment #18 |
 | `document-engine` | DOCX/PDF/XLSX generation + validation | Any document generation need | anthropics/skills docx/pdf/xlsx skills |
 | `system-health` | DIAGNOSE, REFRESH, STATUS commands | `DIAGNOSE`, `REFRESH`, `STATUS`, `STATUS [company] [status]` | JOBS-OS DIAGNOSE PROTOCOL, REFRESH 6-PHASE PROTOCOL |
+| `browser-automation` | Auto-apply via browser-use — navigate, fill forms, submit applications | `AUTO-APPLY [company]`, `AUTO-APPLY --all`, `BROWSER [command]` | browser-use (github.com/browser-use/browser-use) |
+| `linkedin-automation` | LinkedIn automation via OpenCLI — connect, inbox, search, job-detail, safe-send | `LINKEDIN CONNECT`, `LINKEDIN INBOX`, `LINKEDIN SEARCH`, `LINKEDIN [command]` | OpenCLI (github.com/jackwener/OpenCLI) |
 | `skill-creator` | Create new skills, improve existing, run evals | "create a skill", "improve this skill", "test this" | anthropics/skills skill-creator |
