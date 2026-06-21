@@ -116,6 +116,13 @@ Step 10: git add -A && git commit -m "[action] — [description] — YYYY-MM-DD 
 | **Provenance** | Every claim in every output must be traceable to its source. In this system: `01_MASTER_CORPUS.md` is the truth anchor — every metric, title, achievement must have a line number. In general context: provenance is the chain of ownership/origin of something (like art tracking). Here it means "where does this fact come from?" Zero fabrication. Masquerade = reframing real facts, not inventing new ones. This aspect is permanent — always show provenance verification in every SHOOT. |
 | **Positioning by Pipe (Dynamic)** | Every SHOOT starts by selecting the optimal pipe positioning for Aman at THIS company. Dynamic means: read the company DNA FIRST, then select the pipe frame that fits best. The pipes are starting points, not formulas. C (Consulting) → frame as builder-consultant who has been in the arena. T (Tech/BigTech) → frame as systems builder who thinks in scale. I (Internal Strategy/Corporate) → frame as strategy-execution bridge. S (Startups) → frame as proven operator who built and exited. If a company straddles pipes (e.g., Deloitte is C but has tech-adjacent roles), blend the positioning. The one-sentence pitch always stays the same: "I built something from nothing, scaled it to 70 people and 32 locations, led the tech transformation, managed the P&L, and delivered a $17M exit. I don't need to learn how your business works — I need to make it work better." See POSITIONING BY PIPE FRAMEWORK below for full depth. |
 | **Multi-Role Strategy + Esoteric Knowledge (Omni)** | Insider knowledge only company insiders know. Turns "how many apps" from guesswork into strategy. **Count:** 2-3 optimal per company (Scale.jobs, Frontline Source, CNBC 2026, Indeed consensus). 4 absolute ceiling — never more. **Coherence:** same level + related function (Sr Mgr Strategy + Sr Mgr M&A = coherent. Mixing Manager + Analyst = career confusion). **Cadence:** space 1-2 weeks between apps, never same day. **ATS deep knowledge:** does this company's ATS flag multi-applicants positively (initiative) or negatively (spray-and-pray)? Does recruiter get notified? Does rejected candidate enter talent pool? **Back door:** optimal route per company — referral vs direct vs recruiter. Generalist pipeline exists? **Cooldown:** 6 months same role, no wait different role. **Transparency:** if asked in interview, frame as genuine company interest. Every app independently customized — ATS shows them side by side. Same template with swapped title = instant rejection. |
+| **Feedback Loop (Systemic Learning)** | The system learns from every outcome. Rejection → analyze why → update DNA/positioning/keywords/keyphrases. Callback → double down on what worked. Offer → record what won. Every company gets a `data/learned/[company].md` file that accumulates lessons. The system is not static — it evolves with every application. See FEEDBACK ENGINE skill. |
+| **Pipeline Tracking (Live Kanban)** | Every job tracked from FETCH to final outcome. `TRACK` shows live table with stage, T+ days, next action. No mental tracking. Auto-maintained. See PIPELINE TRACKER skill. |
+| **Trust Tier System** | Jobs auto-assigned to tiers: **Tier 1 (Trust)** — auto-approve after quick summary. **Tier 2 (Normal)** — standard 16-section review. **Tier 3 (Strategic)** — full review + strategy discussion. Speeds throughput by eliminating review bottleneck on known-safe targets. |
+| **Phone Fallback Protocol** | When browser automation is unavailable (Termux, phone, no Chrome), AUTO-APPLY auto-switches to manual-submit mode. Generates exact field-by-field submission blueprint. User fills from phone browser. System never stops for device constraints. See MANUAL SUBMIT skill. |
+| **Networking Auto-Cadence** | No more need to say `SUBMITTED`. After YES (approval), the system auto-starts a T+0→T+28 networking timer. Proactive prompts at T+0, T+3, T+7, T+14 without user command. The system tracks. The user acts. |
+| **Provenance Auto-Verify** | Before every SHOOT output, every claim cross-referenced against Master Corpus. No manual check needed. Any claim without a source line number is flagged before output. Zero fabrication enforced by system, not by discipline. |
+| **Negotiation Pre-Load** | Salary benchmarks, BATNA, anchoring strategy, walk-away floor, and comp deconstruction pre-loaded at SHOOT time — before any offer arrives. When the offer comes, the system is ready instantly. See NEGOTIATION PLAYBOOK skill. |
 
 ---
 
@@ -131,6 +138,8 @@ Ask the 5 questions from the ETERNAL NOW — not from fear or urgency:
 6. **How does this company hire people like Aman?** — Before you apply, know the script. Stage-by-stage process, timeline, what they test, what they ignore. Process knowledge kills fear. Psychometric tests? Case interviews? Take-home assignments? Know it before you enter it.
 7. **Which pipe positioning serves Aman best here?** — Dynamic selection. Read the company DNA, then choose the pipe frame. Not rigid — blend if the company straddles pipes. C frame (builder-consultant), T frame (systems builder), I frame (strategy-execution bridge), S frame (proven builder who exited). The same core story bends to fit each pipe. See POSITIONING BY PIPE FRAMEWORK below.
 8. **What is the optimal multi-role strategy for THIS company?** — How many roles to apply (1/2/3 ceiling-4), in what order/spacing, through what back door (referral/direct/recruiter), what esoteric ATS knowledge applies (flags multi-apps? talent pool?), what's the rejection cooldown. Every company's ATS and HR culture is different — solve for THIS one specifically.
+9. **What has the system learned from past outcomes with similar companies?** — Check `data/learned/` for any lessons from this company or its pipe peers. Did the last consulting rejection teach a keyword lesson? Did the last startup callback validate an archetype? Feed the past into the present.
+10. **What tier is this job and why?** — Trust (auto-approve), Normal (standard), or Strategic (deep). Based on: past success with this pipe, company familiarity, role clarity, salary transparency, fit score. Tier determines review depth.
 
 ---
 
@@ -308,13 +317,25 @@ All organs are installed and alive. When you command, the right part moves. You 
 | Rejection received | `skills/rejection-handler/SKILL.md` |
 | `SYNC` | Machine Sync Protocol (built into kernel) |
 | `WIDENET` | `skills/fetch-engine/SKILL.md` |
-| `AUTO-APPLY [company]` | `skills/browser-automation/SKILL.md` — Launch browser-use to auto-fill + submit application |
+| `AUTO-APPLY [company]` | `skills/browser-automation/SKILL.md` — Launch browser-use to auto-fill + submit application. Auto-detects phone/manual mode. |
 | `AUTO-APPLY --all` | Batch auto-apply to all SHOT jobs in current pipeline |
+| `AUTO-APPLY [company] --manual` | Force manual-submit mode (phone fallback) |
 | `BROWSER [command]` | `skills/browser-automation/SKILL.md` — Direct browser-use CLI commands |
 | `LINKEDIN [command]` | `skills/linkedin-automation/SKILL.md` — OpenCLI LinkedIn adapter (connect, inbox, search, job-detail) |
 | `LINKEDIN CONNECT [name]` | Send LinkedIn connection request via OpenCLI |
 | `LINKEDIN INBOX` | Read LinkedIn messages |
 | `LINKEDIN SEARCH [query]` | Search LinkedIn jobs |
+| `TRACK` | `skills/pipeline-tracker/SKILL.md` — Show full pipeline kanban |
+| `TRACK [company]` | Show that company's jobs in pipeline |
+| `TRACK --active` | Show only non-archived jobs |
+| `TRACK --offers` | Show offers only |
+| `TRACK --stats` | Pipeline metrics (apply/callback/offer rates) |
+| `LEARN [company] [outcome]` | `skills/feedback-engine/SKILL.md` — Feed outcome back into system |
+| `LEARN [company] --deep` | Full multi-source analysis (5-10 min) |
+| `NEGOTIATE [company] [offer]` | `skills/negotiation-playbook/SKILL.md` — Load negotiation strategy |
+| `MANUAL-SUBMIT [company]` | `skills/manual-submit/SKILL.md` — Generate phone submission blueprint |
+| `BATCH [companies...]` | Batch approve multiple SHOOTs at Trust tier |
+| `BATCH --all` | Batch approve all pending Trust-tier SHOOTs |
 | `SYNC` | Machine Sync Protocol (built into kernel) |
 
 ---
@@ -365,16 +386,215 @@ Step 4: PROCEED to generate response (never delayed)
 
 ---
 
-## Networking Footer (Every Response)
+## Trust Tier System — Auto-Speed Throughput
 
+**Purpose:** Eliminate the review bottleneck. Not every job needs the full 16-section proofread. The system auto-assigns a tier — you only deep-read what matters.
+
+### Tier Assignment Logic
+
+| Factor | Tier 1 (Trust) | Tier 2 (Normal) | Tier 3 (Strategic) |
+|--------|---------------|-----------------|-------------------|
+| Pipe familiarity | Known pipe (already won here) | Familiar pipe | New/unfamiliar pipe |
+| Company familiarity | Already SHOT a company in this pipe | Know the company name | Unknown company |
+| Role clarity | Title + scope are crystal clear | Some ambiguity | Confusing JD |
+| Salary transparency | Salary listed | Range available | No salary data |
+| Fit score (CURATED_30) | ≥ 85% | 70-84% | < 70% |
+| Past success | Offered in this pipe before | Applied but no offer | Never tried this pipe |
+| **Review depth** | **Quick summary only → auto-approve** | **Standard 16-section review** | **Full read + strategy discussion** |
+
+### How It Works
+
+```
+SHOOT [company]
+  → System auto-tiers the job
+  → Tier 1: Show 4-line summary → "Trust-tier, auto-approving?"
+  → Tier 2: Show full 16-section → standard review
+  → Tier 3: Show full 16-section + "Strategy: let's discuss X"
+  
+BATCH → batch-approve all pending Tier 1 jobs at once
+BATCH --all → approve all Tier 1 + Tier 2 (if already reviewed)
+```
+
+### Tier Override
+
+- User can always override: `TRUST [company]` (upgrade to Tier 1) or `STRATEGIC [company]` (upgrade to Tier 3)
+- System learns: if you override a tier, the logic adjusts for similar future jobs
+
+---
+
+## Pipeline Tracking Protocol — No Mental Tracking
+
+**Purpose:** Track every application without thinking about it. The system remembers. You just say `TRACK`.
+
+### Lifecycle (Auto-Maintained)
+
+```
+Every SHOOT        → auto-adds job as 🔵 SHOT
+Every YES          → auto-transitions to ✅ SUBMITTED, sets T+0 = today
+Every CALLBACK     → auto-transitions to 📞 (user reports)
+Every OFFER        → auto-transitions to 💰, triggers negotiation playbook
+Every REJECTION    → auto-transitions to ❌, triggers feedback engine
+Ghosted > 30 days  → auto-marks as ❌, triggers light analysis
+```
+
+### Display
+
+The `TRACK` command shows:
+```
+╔══════════════════════════════════════════════════════════════════════════╗
+║  📊 PIPELINE — 8 active · 3 offers · 5 submitted · 2 in progress     ║
+╠══════════════════════════════════════════════════════════════════════════╣
+║ 🔵 lululemon     Prog Mgr         T   $150K  SHOT    D3    APPROVE?   ║
+║ ✅ TELUS         Cat Mgr          I   $130K  SUBMIT  D7    Follow up  ║
+║ 📞 Clio          Rev Ops          T   $145K  CALLBK  D12   Prep       ║
+║ 💰 Hiive         Ops Lead         S   $140K  OFFER   D5    Negotiate  ║
+║ ❌ EvenUp        Strategy         T   $155K  REJ     D8    Learn      ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+
+Data stored in `data/pipeline/PIPELINE.md` — auto-maintained, never manually edited.
+
+---
+
+## Feedback Loop Protocol — Systemic Learning
+
+**Purpose:** Every outcome makes the system smarter. Rejections sharpen. Offers validate. Nothing is wasted.
+
+### The Loop
+
+```
+OUTCOME (rejection/callback/offer)
+  → LEARN captures what happened
+  → Analyzes why (positioning? keywords? ATS? fit?)
+  → Updates system (DNA, keywords, archetypes, pipe config)
+  → Stores lesson in data/learned/[company].md
+  → Next SHOOT for similar company uses the lesson
+```
+
+### What Changes Based on Outcome
+
+| Outcome | System Impact |
+|---------|--------------|
+| Offer received | Record winning keywords, pipe, archetype → use as template for similar companies |
+| Callback received | Validate positioning → confidence up for this pipe |
+| Rejection at screening | Likely ATS/keyword issue → check keywords + format |
+| Rejection after interview | Likely positioning/fit → adjust archetype or narrative |
+| Ghosted | Auto-retry after 14 days or move on |
+| "Overqualified" | Adjust level targeting (aim higher, not lower) |
+| "Underqualified" | Check skill gaps → train or reframe |
+
+### Data Files
+- `data/learned/[company].md` — per-company lessons
+- `data/learned/keywords.md` — keywords that won/lost interviews
+- `data/learned/skill_gaps.md` — skills flagged by rejections
+- `data/learned/pipes.md` — pipe positioning success/fail log
+
+### Auto-Trigger
+- ❌ REJECTED → auto-runs light LEARN
+- 💰 OFFER → auto-runs full LEARN (capture what worked)
+- 📞 CALLBACK → logs pending final outcome
+
+---
+
+## Networking Auto-Cadence — Proactive, Not Passive
+
+**Purpose:** Follow-up cadence starts automatically after every YES. No command needed. No forgetting.
+
+### The Auto-Timer
+
+```
+YES (approval) → T+0 = today → auto-timer starts
+
+T+0:  "Just approved [company]. Ready to submit?"
+T+0:  After submit → "Networking cadence started for [company]."
+T+3:  "Day 3 for [company]: Send follow-up to recruiter?"
+T+7:  "Day 7 for [company]: Connect with team members on LinkedIn?"
+T+14: "Day 14 for [company]: Final value-add touchpoint?"
+T+28: "Day 28 for [company]: Re-evaluate — still interested?"
+```
+
+### How It's Shown
+
+The networking footer auto-updates without requiring `SUBMITTED`:
 ```
 ╔═══════════════════════════════════════════════════════╗
 ║  📡 NETWORKING COUNTDOWN                              ║
-║  🎯 DUE TODAY: [action] for [company]                 ║
-║  ⏳ [N] DAYS: [action] for [company]                  ║
-║  Ready to send? Reply YES when done.                  ║
+║  🎯 DUE TODAY: Follow up with [company] recruiter     ║
+║  ⏳ 3 DAYS: Connect with [company] IC                 ║
+║  ⏳ 7 DAYS: Value-add note to [company] hiring mgr    ║
+║  Say LINKEDIN CONNECT [name] to send, or SKIP.        ║
 ╚═══════════════════════════════════════════════════════╝
 ```
+
+If a company is at T+0 and you haven't submitted yet, the footer says "Submit [company] first." No spam.
+
+---
+
+## Phone Fallback Protocol — Device Agnostic
+
+**Purpose:** The system runs everywhere — PC, phone, Termux, anywhere. No device is a blocker.
+
+### Auto-Detection
+
+On every startup, the system checks:
+- Is this Termux/Android? → set `PHONE_MODE=true`
+- Is `google-chrome` available? → if no, set `PHONE_MODE=true`
+- Is Playwright available? → if no, set `PHONE_MODE=true`
+
+### Behavior in Phone Mode
+
+| Command | PC Behavior | Phone Behavior |
+|---------|------------|----------------|
+| `AUTO-APPLY [company]` | browser-use fills + submits | MANUAL SUBMIT blueprint generated |
+| `BROWSER [command]` | Runs browser-use | Error: "Phone mode — use MANUAL-SUBMIT" |
+| `LINKEDIN [command]` | OpenCLI via Chrome extension | Full functionality (Chrome on phone) |
+| `FETCH` | Full pipeline | Full pipeline (no browser needed) |
+| `SHOOT [company]` | Full 16-section | Full 16-section (no browser needed) |
+
+### Manual Submit Blueprint
+
+When triggered, the system generates a complete field-by-field guide:
+```
+AUTO-APPLY Deloitte --manual
+→ Generates: 03_Submission_Blueprint_Deloitte.md
+→ Contains: exact field mapping for every ATS page
+→ Paste-ready values for every input
+→ Files to upload with exact filenames
+→ Step-by-step phone workflow
+```
+
+User opens the URL on phone, follows the guide, submits manually. Results reported back with `SUBMITTED`.
+
+---
+
+## Provenance Auto-Verify Protocol — Zero Fabrication Enforced
+
+**Purpose:** Every claim verified before output. No manual checking. System catches all unverified claims.
+
+### Verification Flow
+
+```
+During SHOOT generation:
+  For every claim in sections 1-16:
+    → Check if it exists in 01_MASTER_CORPUS.md (JOBS-OS)
+    → If found: note the line number → PASS
+    → If NOT found: FLAG in output with ⚠️
+    → If claim is masquerade (reframed): verify the underlying fact has a source line
+
+Before output:
+  → Run full verification pass
+  → Any unverified claim = ⚠️ in output
+  → User sees: "Provenance check: 14/15 verified. 1 ⚠️ — [claim]"
+  → User decides: remove, source, or proceed anyway
+```
+
+### Masquerade Rules
+- Masquerade = reframing a real fact (e.g., "Director of Operations" is the real title, "Operations Lead, M&A Advisory" is the masquerade)
+- The UNDERLYING FACT must be in Master Corpus
+- The masquerade itself does not need a source — the fact underneath does
+- If the underlying fact is not in Master Corpus, it's fabrication → ⚠️
+
+---
 
 ---
 
@@ -403,12 +623,18 @@ This is all you need to remember:
 | `SHOOT [company]` | 🧠 Mind decides → I write the full application package → show you |
 | `REFRESH` | 👁️ Eyes re-scan all pipes — replace any stale jobs from 24h window |
 | You review → say `YES` | 📝 Package approved → 🤲 Hands stand by |
-| `AUTO-APPLY [company]` | 🤲 Hands fill forms, upload, submit. 🗣️ Voice connects on LinkedIn. |
+| `AUTO-APPLY [company]` | 🤲 Hands fill forms, upload, submit. 🗣️ Voice connects. 📊 Pipeline auto-updates. |
+| `AUTO-APPLY --manual` | 🤲 I can't use browser here → 📝 blueprint generated for you to submit from phone |
+| `TRACK` | 📊 Show live pipeline — every job, stage, T+ days, next action |
+| `TRACK --stats` | 📊 Pipeline metrics — apply rate, callback rate, offer rate |
+| `LEARN [company] [outcome]` | ❓ Outcome captured → system learns → future SHOOTs get smarter |
+| `NEGOTIATE [company] [offer]` | 💰 Load negotiation playbook for this offer |
+| `BATCH [companies]` | 🚀 Batch-approve multiple Tier 1 SHOOTs at once |
 | `LINKEDIN CONNECT [name]` | 🗣️ Voice sends connection request |
 | `STATUS` | See where every organ stands |
 | `THOUGHT` | 📝 Search Memory — what were we thinking on any day? |
 
-**Your only job:** Say `SHOOT [company]` → read what I write → say `YES` or tell me what to change. That's it.
+**Your only job:** Say `SHOOT [company]` → read what I write → say `YES` → system handles the rest (submit, track, learn, negotiate, follow up). That's it.
 
 ## Personal Data Policy (Immutable)
 

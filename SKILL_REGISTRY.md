@@ -16,6 +16,10 @@
 | `contact-engine` | Contact management + Apollo + multi-channel cadence | `CONTACT`, `CONTACT LIST`, `CONTACT [name] email` | JOBS-OS `CONTACT_ENGINE.py`, Constitutional Amendment #18 |
 | `document-engine` | DOCX/PDF/XLSX generation + validation | Any document generation need | anthropics/skills docx/pdf/xlsx skills |
 | `system-health` | DIAGNOSE, REFRESH, STATUS commands | `DIAGNOSE`, `REFRESH`, `STATUS`, `STATUS [company] [status]` | JOBS-OS DIAGNOSE PROTOCOL, REFRESH 6-PHASE PROTOCOL |
-| `browser-automation` | Auto-apply via browser-use — navigate, fill forms, submit applications | `AUTO-APPLY [company]`, `AUTO-APPLY --all`, `BROWSER [command]` | browser-use (github.com/browser-use/browser-use) |
+| `browser-automation` | Auto-apply via browser-use. Auto-detects phone mode → falls back to manual-submit | `AUTO-APPLY [company]`, `AUTO-APPLY --all`, `AUTO-APPLY --manual`, `BROWSER [command]` | browser-use (github.com/browser-use/browser-use) |
 | `linkedin-automation` | LinkedIn automation via OpenCLI — connect, inbox, search, job-detail, safe-send | `LINKEDIN CONNECT`, `LINKEDIN INBOX`, `LINKEDIN SEARCH`, `LINKEDIN [command]` | OpenCLI (github.com/jackwener/OpenCLI) |
+| `pipeline-tracker` | Live kanban — every job tracked from FETCH to final outcome | `TRACK`, `TRACK [company]`, `TRACK --active`, `TRACK --stats` | AGENTS.md — Pipeline Tracking Protocol |
+| `feedback-engine` | Systemic learning loop — every outcome makes the system smarter | `LEARN [company] [outcome]`, `LEARN [company] --deep` | AGENTS.md — Feedback Loop Protocol |
+| `manual-submit` | Phone/device fallback — exact field-by-field submission blueprint when browser automation unavailable | `AUTO-APPLY --manual`, `MANUAL-SUBMIT [company]`, or auto-triggered in phone mode | AGENTS.md — Phone Fallback Protocol |
+| `negotiation-playbook` | Pre-loaded negotiation strategy — benchmarks, BATNA, anchoring, walk-away floor | `NEGOTIATE [company] [offer]`, or auto-triggered on 💰 OFFER | JOBS-OS `06_NEGOTIATION_PLAYBOOK.md`, `16_COMPENSATION_DB.md` |
 | `skill-creator` | Create new skills, improve existing, run evals | "create a skill", "improve this skill", "test this" | anthropics/skills skill-creator |

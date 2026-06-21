@@ -1,6 +1,6 @@
 ---
 name: networking-cadence
-description: "Triggered by SUBMITTED [company], YES, LOGNET, NETSTAT, or networking countdown checks. Manages the multi-channel outreach tracking system. Handles auto-seeding cadences, sending confirmations, status updates, and countdown display. Zero manual touch — fully automated networking tracker."
+description: "Triggered by SUBMITTED [company], YES, or auto-triggered after every YES (no SUBMITTED needed). Networking timer auto-starts when user approves a SHOOT. Proactive prompts at T+0, T+3, T+7, T+14 without user command. Zero manual touch — fully automated networking tracker."
 ---
 
 # NETWORKING CADENCE — Automated Outreach Tracker
@@ -14,8 +14,20 @@ description: "Triggered by SUBMITTED [company], YES, LOGNET, NETSTAT, or network
 
 ### Data Store
 - `data/networking_log.json` — NEVER deleted, reset, or archived. Permanent system memory.
+- Pipeline data at `data/pipeline/PIPELINE.md` — auto-synced.
 
-### Seed Flow (On SUBMITTED [company])
+### Seed Flow (On YES — Auto-Triggered, No SUBMITTED Command Needed)
+
+Every YES auto-starts the networking timer. The system tracks T+0 from the approval date. No SUBMITTED command needed.
+
+When YES is given:
+1. Auto-set T+0 = today
+2. Read company's SHOOT package → extract personas + message templates
+3. Calculate all T+0 through T+14 dates from approval date
+4. Write to `data/networking_log.json`
+5. Show auto-cadence in footer
+
+If submission hasn't happened yet (T+0), the system reminds: "Submit [company] first."
 1. Read company's SHOOT package → extract personas + message templates
 2. Calculate all T+0 through T+14 dates from submission date
 3. Write to `data/networking_log.json` with `today` as `last_checked`
@@ -24,14 +36,15 @@ description: "Triggered by SUBMITTED [company], YES, LOGNET, NETSTAT, or network
 ### Response Flow (Every Output)
 1. Read `data/networking_log.json`
 2. Compute countdown for ALL pending actions
-3. Append NETWORKING COUNTDOWN footer at end:
+3. Append AUTO-NETWORKING footer at end:
 
 ```
 ╔═══════════════════════════════════════════════════════╗
-║  📡 NETWORKING COUNTDOWN                              ║
-║  🎯 DUE TODAY: [action] for [company]                 ║
-║  ⏳ [N] DAYS: [action] for [company]                  ║
-║  Ready to send? Reply YES when done.                  ║
+║  📡 AUTO-NETWORKING                                    ║
+║  🎯 T+[N]: [action] for [company] — due today         ║
+║  ⏳ T+[N]: [action] for [company]                      ║
+║  ⏳ T+[N]: [action] for [company]                      ║
+║  Say LINKEDIN CONNECT [name] to send, or SKIP.        ║
 ╚═══════════════════════════════════════════════════════╝
 ```
 

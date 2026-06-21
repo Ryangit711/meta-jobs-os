@@ -17,6 +17,28 @@ description: "Triggered when user says SHOOT, SHOOT [company name], or pastes a 
 - Positioning by Pipe: AGENTS.md — POSITIONING BY PIPE FRAMEWORK section
 - Multi-Role Limit: AGENTS.md — Multi-Role Application Limit kernel rule
 
+## Multi-Role Workflow (Same Company, Multiple Roles)
+
+When applying to 2-3 roles at the same company (see Multi-Role Strategy section 4):
+
+**Shared across all roles:**
+- Section 2 (Company Scout) — covers ALL roles at the company
+- Section 3 (Hiring Process Reveal) — one per company
+- Section 4 (Multi-Role Strategy) — the strategy for THIS company specifically
+
+**Per-role (generated for EACH role):**
+- Section 1 (HEADER) — role-specific
+- Section 5 (CORE Alignment) — per role
+- Section 6 (DNA EXTRACTION) — per role (each JD uses different language)
+- Section 7-8 (ATS, Device) — shared (same platform)
+- Section 9-12 (Resume, Cover Letter) — independently customized per role
+- Section 13 (LinkedIn) — shared personas, role-specific messages
+- Section 14-16 (Interview, Checklist, Follow-Up) — per role
+
+**Format:** `SHOOT [company] --all [role1, role2, role3]` generates a single master document with shared sections + per-role variants.
+
+---
+
 ## The 16 Sections (Every Job, Every Time)
 
 ### 1. HEADER

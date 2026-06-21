@@ -1,9 +1,11 @@
 ---
 name: browser-automation
-description: "Launched when user says AUTO-APPLY, BROWSER, or auto-triggered during FETCH/SHOOT for JS-heavy sites that webfetch can't handle."
+description: "Launched when user says AUTO-APPLY or BROWSER. Auto-detects phone mode (Termux/Android/no Chrome) and falls back to MANUAL SUBMIT mode — generates exact field-by-field submission blueprint. Never blocks on device constraints."
 triggers:
   - "AUTO-APPLY [company]"
   - "AUTO-APPLY --all"
+  - "AUTO-APPLY [company] --manual"
+  - "MANUAL-SUBMIT [company]"
   - "BROWSER [command]"
 source: "github.com/browser-use/browser-use"
 ---
@@ -75,9 +77,30 @@ browser-use tab select <targetId>
 browser-use tab close
 ```
 
+## Phone Mode / Manual Fallback
+
+When browser-use is unavailable (Termux, Android, no Chrome), AUTO-APPLY auto-detects and switches to manual-submit mode:
+
+### Auto-Detection
+```
+if uname contains "android" or "termux" → PHONE_MODE=true
+if which google-chrome OR which chromium returns empty → PHONE_MODE=true
+if node -e "require('playwright')" throws → PHONE_MODE=true
+```
+
+### Behavior in Phone Mode
+`AUTO-APPLY [company]` generates:
+1. `03_Submission_Blueprint_[Company].md` — exact field-by-field mapping
+2. Resume + cover letter files (same as always)
+3. Step-by-step phone submission workflow
+4. Post-submit instructions (SUBMITTED [company])
+
+Manual override: `AUTO-APPLY [company] --manual` forces manual mode even on desktop.
+
 ## Integration Notes
 
 - Requires `pip install browser-use` or `browser-use[core]`
 - Works with logged-in Chrome for authenticated career sites
 - Cloud version available for CAPTCHA solving and proxy rotation
+- Phone mode: no dependencies needed — pure markdown blueprint generation
 - All automated submissions must be user-approved before actual submit
