@@ -2,24 +2,24 @@
 
 | Skill | Description | Triggers | Source References |
 |-------|-------------|----------|-------------------|
-| `fetch-engine` | Full 8-phase FETCH pipeline | `FETCH`, `WIDENET`, `FETCH --pipe`, `FETCH --urls` | JOBS-OS `33_FETCH_ENGINE.py`, FETCH 8-PHASE PROTOCOL |
-| `shoot-deployer` | 13-section full package deployment | `SHOOT`, `SHOOT [company]`, `SHOOT [paste JD]` | JOBS-OS `35_UNIFIED_SHOOT_FORMAT.md`, 13-section format |
+| `fetch-engine` | Full 9-phase FETCH pipeline (24h window, 4 pipes, pipeline-integrated, learned-pipe prioritization, auto-triggers SHOOT Phase 9) | `FETCH`, `WIDENET`, `FETCH --pipe`, `FETCH --urls` | JOBS-OS `33_FETCH_ENGINE.py`, FETCH 9-PHASE PROTOCOL |
+| `shoot-deployer` | 16-section full package deployment. Reads learned data, writes to pipeline, auto-starts networking on YES, LinkedIn profile audit. Cross-skill wired. | `SHOOT [company]`, `SHOOT [company] --all [roles]`, `SHOOT [paste JD]` | JOBS-OS `35_UNIFIED_SHOOT_FORMAT.md`, 16-section format |
 | `dna-extraction` | Company DNA analysis, archetype selection, infiltration | `ATOMIZE`, `SCORE`, or embedded in SHOOT | JOBS-OS `37_INFILTRATION_LAYER.md`, `03_AGNOSTIC_FRAMING.md` |
-| `resume-writer` | ATS-optimized Tailscale-style resume generation | `SHOOT` (section 6-7), `ALCHEMIZE` | JOBS-OS Tailscale style rules, `04_ATS_NUANCE_DB.md`, `32_ATS_TECH_SPEC.md` |
-| `cover-letter-writer` | DNA-alchemized cover letters | `SHOOT` (section 8-9), `ALCHEMIZE` | JOBS-OS `37_INFILTRATION_LAYER.md`, `12_COVER_LETTERS.md` |
+| `resume-writer` | ATS-optimized Tailscale-style resume generation (archetype-locked) | `SHOOT` (section 6-7), `ALCHEMIZE` | JOBS-OS Tailscale style rules, `04_ATS_NUANCE_DB.md`, `32_ATS_TECH_SPEC.md` |
+| `cover-letter-writer` | DNA-alchemized cover letters (multi-role cross-reference aware) | `SHOOT` (section 8-9), `ALCHEMIZE` | JOBS-OS `37_INFILTRATION_LAYER.md`, `12_COVER_LETTERS.md` |
 | `interview-prep` | Callback-ready interview scripts + STAR stories | callback, "interview from [company]", "got an email" | JOBS-OS `05_INTERVIEW_ALCHEMY.md`, CALLBACK_READY protocol |
-| `networking-cadence` | Multi-channel outreach tracking + automation | `SUBMITTED [company]`, `YES`, `LOGNET`, `NETSTAT` | JOBS-OS `20_NETWORKING.md`, Constitutional Amendment #11 |
-| `salary-negotiation` | Compensation analysis + negotiation playbooks | offer received, "got an offer", `NEGOTIATE` | JOBS-OS `06_NEGOTIATION_PLAYBOOK.md`, `16_COMPENSATION_DB.md` |
+| `networking-cadence` | Auto-triggered networking timer. Fires on YES (no SUBMITTED needed). T+0/3/7/14 proactive prompts. Reads pipeline. | Auto-signal from shoot-deployer on YES, `NETSTAT`, `LINKEDIN CONNECT` | JOBS-OS `20_NETWORKING.md`, Constitutional Amendment #11 |
+| `salary-negotiation` | Compensation analysis + negotiation playbooks + offer stalling protocol for multi-offer timeline | `NEGOTIATE [company] [offer]`, auto-signal from pipeline-tracker on 💰 | JOBS-OS `06_NEGOTIATION_PLAYBOOK.md`, `16_COMPENSATION_DB.md` |
 | `rejection-handler` | Rejection → opportunity protocol | "rejected", "didn't get it", rejection email | JOBS-OS `10_REJECTION_RECOVERY.md` |
 | `thought-log` | Auto-thought-logging every prompt | EVERY prompt (runs automatically) | JOBS-OS Constitutional Amendment #23 |
 | `social-distill` | Social intelligence (Instagram/Reddit/LinkedIn) | `DISTILL INSTAGRAM`, `DISTILL REDDIT`, `DISTILL LINKEDIN` | JOBS-OS `40_SOCIAL_DISTILL.md`, Amendments #14-20 |
 | `contact-engine` | Contact management + Apollo + multi-channel cadence | `CONTACT`, `CONTACT LIST`, `CONTACT [name] email` | JOBS-OS `CONTACT_ENGINE.py`, Constitutional Amendment #18 |
 | `document-engine` | DOCX/PDF/XLSX generation + validation | Any document generation need | anthropics/skills docx/pdf/xlsx skills |
 | `system-health` | DIAGNOSE, REFRESH, STATUS commands | `DIAGNOSE`, `REFRESH`, `STATUS`, `STATUS [company] [status]` | JOBS-OS DIAGNOSE PROTOCOL, REFRESH 6-PHASE PROTOCOL |
-| `browser-automation` | Auto-apply via browser-use. Auto-detects phone mode → falls back to manual-submit | `AUTO-APPLY [company]`, `AUTO-APPLY --all`, `AUTO-APPLY --manual`, `BROWSER [command]` | browser-use (github.com/browser-use/browser-use) |
-| `linkedin-automation` | LinkedIn automation via OpenCLI — connect, inbox, search, job-detail, safe-send | `LINKEDIN CONNECT`, `LINKEDIN INBOX`, `LINKEDIN SEARCH`, `LINKEDIN [command]` | OpenCLI (github.com/jackwener/OpenCLI) |
-| `pipeline-tracker` | Live kanban — every job tracked from FETCH to final outcome | `TRACK`, `TRACK [company]`, `TRACK --active`, `TRACK --stats` | AGENTS.md — Pipeline Tracking Protocol |
-| `feedback-engine` | Systemic learning loop — every outcome makes the system smarter | `LEARN [company] [outcome]`, `LEARN [company] --deep` | AGENTS.md — Feedback Loop Protocol |
-| `manual-submit` | Phone/device fallback — exact field-by-field submission blueprint when browser automation unavailable | `AUTO-APPLY --manual`, `MANUAL-SUBMIT [company]`, or auto-triggered in phone mode | AGENTS.md — Phone Fallback Protocol |
-| `negotiation-playbook` | Pre-loaded negotiation strategy — benchmarks, BATNA, anchoring, walk-away floor | `NEGOTIATE [company] [offer]`, or auto-triggered on 💰 OFFER | JOBS-OS `06_NEGOTIATION_PLAYBOOK.md`, `16_COMPENSATION_DB.md` |
+| `browser-automation` | Auto-apply via browser-use. Auto-detects phone mode → falls back to manual-submit. Writes to pipeline + jobs.json after submit. | `AUTO-APPLY [company]`, `AUTO-APPLY --all`, `AUTO-APPLY --manual`, `BROWSER [command]` | browser-use (github.com/browser-use/browser-use) |
+| `linkedin-automation` | LinkedIn automation via OpenCLI + LinkedIn Profile Audit (headline, about, skills, experience alignment check) | `LINKEDIN CONNECT`, `LINKEDIN INBOX`, `LINKEDIN SEARCH`, `OPTIMIZE LINKEDIN [company]` | OpenCLI (github.com/jackwender/OpenCLI) |
+| `pipeline-tracker` | Live kanban. Executable pipeline writes: add job, transition stage, update next action. Cross-signals feedback-engine + negotiation-playbook + networking-cadence. | `TRACK`, `TRACK [company]`, `TRACK --active`, `TRACK --stats`, auto-signal from all skills | AGENTS.md — Pipeline Tracking Protocol |
+| `feedback-engine` | Systemic learning loop. Reads pipeline for context, writes to learned files, signals pipeline-tracker. Auto-triggered on ❌/💰/📞. | `LEARN [company] [outcome]`, `LEARN [company] --deep`, auto-signal from pipeline-tracker | AGENTS.md — Feedback Loop Protocol |
+| `manual-submit` | Phone/device fallback. Generates blueprint + signals pipeline-tracker + jobs.json + networking-cadence after submission confirmed. | `AUTO-APPLY --manual`, `MANUAL-SUBMIT [company]`, or auto-triggered in phone mode | AGENTS.md — Phone Fallback Protocol |
+| `negotiation-playbook` | Executable negotiation strategy. Reads salary.md + pipeline context, generates scripts with multi-offer stalling, writes outcome to learned data. | `NEGOTIATE [company] [offer]`, auto-signal from pipeline-tracker on 💰 | JOBS-OS `06_NEGOTIATION_PLAYBOOK.md`, `16_COMPENSATION_DB.md` |
 | `skill-creator` | Create new skills, improve existing, run evals | "create a skill", "improve this skill", "test this" | anthropics/skills skill-creator |

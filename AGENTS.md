@@ -325,6 +325,8 @@ All organs are installed and alive. When you command, the right part moves. You 
 | `LINKEDIN CONNECT [name]` | Send LinkedIn connection request via OpenCLI |
 | `LINKEDIN INBOX` | Read LinkedIn messages |
 | `LINKEDIN SEARCH [query]` | Search LinkedIn jobs |
+| `OPTIMIZE LINKEDIN [company]` | `skills/linkedin-automation/SKILL.md` — Run LinkedIn Profile Audit for alignment with target company/role |
+| `LINKEDIN APPLY-AUDIT` | Apply LinkedIn audit changes via OpenCLI |
 | `TRACK` | `skills/pipeline-tracker/SKILL.md` — Show full pipeline kanban |
 | `TRACK [company]` | Show that company's jobs in pipeline |
 | `TRACK --active` | Show only non-archived jobs |
@@ -631,6 +633,7 @@ This is all you need to remember:
 | `NEGOTIATE [company] [offer]` | 💰 Load negotiation playbook for this offer |
 | `BATCH [companies]` | 🚀 Batch-approve multiple Tier 1 SHOOTs at once |
 | `LINKEDIN CONNECT [name]` | 🗣️ Voice sends connection request |
+| `OPTIMIZE LINKEDIN [company]` | 👤 Audit LinkedIn profile alignment for target company — headline, about, skills, experience |
 | `STATUS` | See where every organ stands |
 | `THOUGHT` | 📝 Search Memory — what were we thinking on any day? |
 

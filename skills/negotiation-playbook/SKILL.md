@@ -1,111 +1,194 @@
 ---
 name: negotiation-playbook
-description: "Triggered by NEGOTIATE [company] [offer], or auto-loaded when pipeline hits 💰 OFFER. Pre-loaded strategy for every scenario. Anchoring, BATNA, comp benchmarks, walk-away floor, benefits leverage, equity evaluation. Ready before the offer arrives."
+description: "Triggered by NEGOTIATE [company] [offer], or auto-signal from pipeline-tracker on 💰 OFFER. Reads benchmarks from data/learned/salary.md + pipeline context (other pending offers). Generates negotiation strategy. Writes outcome back to data/learned/salary.md. Cross-wired: signals pipeline-tracker on resolution."
 ---
 
-# NEGOTIATION PLAYBOOK — Pre-Loaded Strategy
+# NEGOTIATION PLAYBOOK — Executable Strategy
 
-## Core Principle
-Negotiation starts before the offer. By the time the recruiter says the number, you already know your floor, your target, your leverage, and your next sentence. The system has pre-loaded benchmarks for every company in your pipeline.
+## Cross-Skill Wiring
+
+### Inputs (Read From)
+| Source | What | When |
+|--------|------|------|
+| `pipeline-tracker` (auto-signal) | company, role, offer_amount | On 💰 OFFER |
+| `data/learned/salary.md` | Company-specific + pipe-specific benchmarks | On trigger |
+| `data/pipeline/PIPELINE.md` | Other pending offers/interviews (for multi-offer strategy) | On trigger |
+| `data/learned/[company].md` | Previous outcomes/lessons for this company | On trigger |
+| User | Any specific constraints or preferences | Manual NEGOTIATE command |
+
+### Outputs (Write To)
+| Target | What | When |
+|--------|------|------|
+| `data/learned/salary.md` | Offer amount + company benchmark | After offer resolved |
+| `data/pipeline/PIPELINE.md` | Update stage + next_action | After resolution |
+| `pipeline-tracker` (signal) | Transition to 🏁 or ❌ | After final decision |
 
 ---
 
-## When This Activates
+## Execution Protocol
 
-- `NEGOTIATE [company] [offer_amount]` — manual
-- Auto-triggered when pipeline hits 💰 OFFER
-- Pre-loaded for every company at SHOOT time (salary research baked into section 16)
-
----
-
-## The Framework
-
-### 1. Anchoring
-
-**Who anchors matters:**
-- If recruiter gives first number → they've anchored low. Your response: "I appreciate the transparency. Based on my research and experience, I was targeting something in the [target range] range for this type of role."
-- If you anchor first → say a range where the bottom is your target. "I'm looking at roles in the [$low-$high] range."
-
-**The Golden Rule:** Never give a single number. Always a range. The low end is your actual target. The high end is aspirational.
-
-### 2. Pre-Computed BATNA (Best Alternative to Negotiated Agreement)
-
+### Step 1: On Trigger — Gather Intelligence
 ```
-Current BATNA: [pre-computed]
-
-Strengthens if:
-- Other interviews in pipeline → mention indirectly ("I'm in final stages with a few other teams")
-- Current role → "I'm currently employed, so I have the luxury of finding the right fit"
-- Time on your side → "I'm not in a rush — I want to make sure this is the right mutual fit"
-
-Weakens if:
-- No other options → don't reveal this
-- Time pressure → don't reveal deadlines
-- Been searching long → don't reveal duration
+1. READ data/learned/salary.md:
+   → Find company-specific benchmarks (if any)
+   → Find pipe-specific baseline (C/T/I/S)
+2. READ data/pipeline/PIPELINE.md:
+   → Count other pending offers (💰 count)
+   → Count active interviews (📞 count)
+   → Calculate multi-offer leverage
+3. READ data/learned/[company].md:
+   → Past outcomes, lessons, red flags
+4. CALCULATE:
+   → Offer vs market range: [offer] vs [pipe baseline]
+   → Multi-offer status: [X] other offers pending → LEVERAGE HIGH/MEDIUM/LOW
+   → BATNA: best alternative if this offer is rejected
 ```
 
-### 3. Company-Specific Benchmarks (Pre-Loaded at SHOOT)
+### Step 2: Generate Strategy
+```
+BASED ON analysis:
+  IF multiple offers pending (≥2):
+    → Load MULTI-OFFER STALLING protocol (see below)
+    → Primary anchor: highest other offer
+  IF single offer + active interviews:
+    → Load DELAY protocol: "I have a few conversations wrapping up next week"
+  IF only offer + no pipeline:
+    → Load STANDARD protocol: negotiate within market range
+```
 
-| Company | Role Level | Market Range | Your Target | Walk-Away Floor |
-|---------|-----------|-------------|-------------|-----------------|
-| [company] | [level] | [$low-$high] | [$target] | [$floor] |
+### Step 3: Present Strategy
+```
+SHOW:
+  ┌────────────────────────────────────────────────────────────┐
+  │  NEGOTIATION STRATEGY — [company] [role]                   │
+  │  Offer: $[amount]                                          │
+  │  Market range: $[low]-$[high]                              │
+  │  Your target: $[target]  ·  Walk-away: $[floor]            │
+  │  Multi-offer leverage: [HIGH/MEDIUM/LOW] ([N] other offers)│
+  │  Recommended anchor: $[anchor]                             │
+  │  Script: [selected script from library]                    │
+  │  Timeline: [T+0 to T+7 plan]                              │
+  └────────────────────────────────────────────────────────────┘
+```
 
-**Sources for benchmark data:**
-- Glassdoor: [company] [role] salaries
-- Levels.fyi: [company] compensation
-- LinkedIn Salary: [company] [role]
-- Built In Vancouver: salary surveys
-- Reddit r/CanadaPublicServants / r/cscareerquestions
-- Fishbowl app: anonymous company salary posts
+### Step 4: Execute (User Acts)
+User negotiates using the script. Report back:
+- "Accepted at $[final_amount]"
+- "Rejected — counter not met"
+- "Still waiting — delayed to [date]"
 
-### 4. The Negotiation Script (Stage by Stage)
+### Step 5: Record Outcome
+```
+WRITE to data/learned/salary.md:
+  → Company | Role | Band | Offer/Estimate | Date | Source = "negotiation"
+UPDATE data/pipeline/PIPELINE.md:
+  → If accepted: transition to 🏁 ARCHIVED, record final salary
+  → If rejected: transition to ❌ REJECTED
+SIGNAL pipeline-tracker: stage update applied
+```
 
-#### Stage 1: Initial Offer
+---
+
+## Multi-Offer Stalling Protocol (Critical for 10-12 Day Objective)
+
+**When:** You have offer #1 but expect offer #2 within 3-10 days.
+**Goal:** Delay offer #1 without losing it.
+
+### Script: Initial Response to Offer #1
+```
+"Thank you so much — I'm really excited about this opportunity.
+I have a few other conversations in final stages that I want to respect
+by giving them a fair conclusion. Could we set a decision date for [day 12]?
+I want to make sure I'm giving this decision the full consideration it deserves."
+```
+
+### If They Push for Earlier
+```
+"I completely understand the timeline. Would it work if I give you my
+decision by [day 10]? That gives me enough time to wrap up the other
+conversations properly and come back with a clear yes."
+```
+
+### If They Need an Answer Now (Exploding Offer)
+```
+"I really want to join [company], but I'd be doing both of us a disservice
+if I didn't properly consider all my options. If you need an answer today,
+I'll have to respectfully decline — but if you can give me until [day X],
+I'm very confident I'll say yes."
+```
+
+### Stalling Timeline
+```
+T+0: Receive offer #1 → "Thank you, I need [X] days"
+T+1: Check in with offer #2 recruiter → "Any update on timeline?"
+T+3: Re-evaluate: can offer #1 wait longer? 
+T+[X-1]: Final decision on offer #1
+If offer #2 arrives → compare both → negotiate against each other
+```
+
+### Comparing Two Offers
+```
+Create comparison table:
+  Factor          | Offer #1 | Offer #2
+  Base salary     | $X       | $Y
+  Total comp Y1   | $X       | $Y
+  Role scope      | [desc]   | [desc]
+  Growth path     | [desc]   | [desc]
+  Culture fit     | [score]  | [score]
+  Location/flex   | [desc]   | [desc]
+
+Use offer #2 to negotiate offer #1 up (and vice versa):
+  "I have another offer at [$higher]. I'd prefer [company #1] because [reason],
+  but I need you to at least match the base. Can you do $[target]?"
+```
+
+---
+
+## Standard Scripts Library
+
+### Anchoring
 ```
 Recruiter: "The offer is $X."
-You: [pause 3 seconds — silence is leverage]
-You: "I appreciate the offer. Based on my experience leading a $17M exit, building a team from 3 to 70, and the market value for this role, I was expecting something in the [Y-Z] range. Is there flexibility on the base?"
+You: [pause 3 seconds]
+You: "I appreciate the offer. Based on my experience leading a $17M exit,
+building from 3 to 70 people, and the market value for this role at companies
+like [peer company], I was targeting $[target]. Is there flexibility?"
 ```
 
-#### Stage 2: "What's your number?"
+### What's Your Number?
 ```
-You: "I don't want to throw out a number that's outside your range. Based on the role scope and my background, I believe [$target-$target+20K] is fair market value for this position. Does that align with your budget?"
-```
-
-#### Stage 3: They come back with higher number
-```
-You: "That's getting closer. If you can get to [$target], we have a deal."
+You: "I don't want to throw out a number outside your range. Based on the
+role scope and my background, $[target-$target+10K] is fair market value.
+Does that align with your budget?"
 ```
 
-#### Stage 4: "We can't go higher on base"
+### Can't Move on Base
 ```
-You: "I understand. Then can we look at:
-  - Signing bonus ($10-20K)
-  - Performance bonus guarantee (first year)
-  - Additional equity / RSUs
-  - Extended vesting cliff
-  - Relocation assistance (if applicable)
-  - Professional development budget
-  - Extra vacation week"
-```
-
-### 5. Total Compensation Deconstruction
-
-```
-Base Salary:     $[amount]
-+ Signing Bonus: $[amount]
-+ Annual Bonus:  $[amount] ([percent]% target)
-+ Equity:        $[amount] ([type]: RSU/NSO/ISO)
-+ Benefits:      $[amount] (medical, dental, vision)
-+ 401k Match:    $[amount] ([percent]% match)
-+ PTO:           [days] days
-+ Other:         $[amount] (commuter, wellness, education)
-
-Total Year 1:    $[total]
-Total Recurring: $[recurring]
+You: "I understand. Can we look at:
+  → Signing bonus ($10-20K)
+  → Performance bonus guarantee (first year)
+  → Additional equity / RSUs
+  → Extended vesting cliff
+  → Professional development budget
+  → Extra vacation week"
 ```
 
-### 6. Walk-Away Analysis
+### Competing Offer
+```
+You: "I have another offer at [$amount]. I'd prefer to join your team because
+[reason], but I need you to match or exceed this to make it work.
+Can you do $[target]?"
+```
+
+### The Close
+```
+You: "If you can get to $[target] + [key term], I'm ready to sign today.
+When can you come back to me?"
+```
+
+---
+
+## Walk-Away Analysis
 
 | Factor | Green (Accept) | Yellow (Consider) | Red (Walk) |
 |--------|---------------|-------------------|------------|
@@ -116,86 +199,15 @@ Total Recurring: $[recurring]
 | Culture | Good fit | Unknown | Red flags |
 | Location | Remote/Vancouver | Hybrid limited | On-site elsewhere |
 
-### 7. Scripts for Specific Scenarios
-
-#### Competing Offers
-```
-"I have another offer at [$amount]. I'd prefer to join your team because [reason],
-but I need you to match or exceed this to make it work. Can you do [$target]?"
-```
-
-#### Equity Negotiation (Startups)
-```
-"I believe in the mission and want to be invested in the outcome.
-Can we look at increasing the equity grant to [X]% / adding an early exercise option /
-extending the exercise window to 10 years?"
-```
-
-#### Remote/Flex Negotiation
-```
-"I'm based in Vancouver and plan to stay. I'm flexible on in-person for key moments
-but need remote as the baseline. Is that workable?"
-```
-
-#### Title Negotiation
-```
-"I'm currently at Director level. If the base can't move, can we adjust the title
-to reflect the scope? That matters for my professional trajectory."
-```
-
-### 8. The Close
-
-```
-You: "If you can get to [$target] + [key term], I'm ready to sign today.
-When can you come back to me?"
-```
-
-**Never say "I need to think about it" without a timeline.** Always give them a path to "yes" and a reason to move fast.
-
----
-
-## Pre-Loaded Benchmarks (By Pipe)
-
-### C Pipe (Consulting)
-| Level | Base Range | Target | Floor |
-|-------|-----------|--------|-------|
-| Senior Manager | $160K-$200K | $180K | $150K |
-| Manager | $120K-$150K | $135K | $115K |
-| Signing bonus | $10K-$25K | $15K | $5K |
-| Annual bonus target | 10-20% | 15% | 10% |
-
-### T Pipe (Tech/BigTech)
-| Level | Base Range | Target | Floor |
-|-------|-----------|--------|-------|
-| Sr Manager / Director | $150K-$220K | $180K | $140K |
-| Manager | $130K-$170K | $150K | $120K |
-| RSUs (annual) | $20K-$100K | $50K | $0 |
-| Annual bonus target | 10-25% | 15% | 10% |
-
-### I Pipe (Internal Strategy/Corporate)
-| Level | Base Range | Target | Floor |
-|-------|-----------|--------|-------|
-| Sr Manager / Director | $130K-$180K | $155K | $120K |
-| Manager | $110K-$140K | $125K | $100K |
-| Annual bonus target | 10-20% | 15% | 10% |
-
-### S Pipe (Startups)
-| Level | Base Range | Target | Floor |
-|-------|-----------|--------|-------|
-| COO / Head of Ops | $140K-$180K | $160K | $120K |
-| Chief of Staff | $120K-$160K | $140K | $110K |
-| Equity (% of company) | 0.5-2.0% | 1.0% | 0.25% |
-| Annual bonus target | 10-20% | 15% | 10% |
-
 ---
 
 ## Offer Response Timeline
 
 | Time | Action |
 |------|--------|
-| T+0 | Receive offer → "Thank you, I need a few days to review the details" |
-| T+1 | Analyze offer vs benchmarks → prepare counter |
-| T+2 | Send counter → "I'm very interested, here's what I was hoping for" |
+| T+0 | Receive offer → "Thank you, I need a few days to review" |
+| T+1 | Gather intel, prepare counter |
+| T+2 | Send counter or delay request |
 | T+4 | Follow up if no response |
-| T+7 | Final decision deadline (set by you, not them) |
-| Sign | Celebrate → update pipeline → LEARN offer |
+| T+[deadline] | Final decision |
+| Sign | Record in `data/learned/salary.md`, update pipeline to 🏁 |

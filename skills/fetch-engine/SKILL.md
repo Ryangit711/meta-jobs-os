@@ -18,14 +18,16 @@ description: "Triggered when user says FETCH, WIDENET, or FETCH --pipe / --urls 
 Before anything else, verify:
 1. AGENTS.md loaded — kernel active
 2. local_config.json exists — identity ready
-3. data/jobs.json read — applied jobs excluded
-4. Master Corpus accessible — truth anchor set
-5. CONSULTING_OS.md accessible — consulting DNA ready
-6. secrets.json exists — Apify API key available
-7. APIFY_FETCH.py exists — JS fallback module loaded
-8. OMNI configs synced — all tools see same rules
-9. OneDrive path verified — dual-write active
-10. Git remote verified — push target live
+3. `data/jobs.json` read — applied jobs excluded (CREATE if not exists: `{"applied":{}, "excluded":[], "last_updated": "YYYY-MM-DD"}`)
+4. `data/pipeline/PIPELINE.md` read — already-tracked jobs excluded (CREATE if not exists with template)
+5. `data/learned/pipes.md` read — pipe success rates loaded for prioritization
+6. Master Corpus accessible — truth anchor set
+7. CONSULTING_OS.md accessible — consulting DNA ready
+8. secrets.json exists — Apify API key available
+9. APIFY_FETCH.py exists — JS fallback module loaded
+10. OMNI configs synced — all tools see same rules
+11. OneDrive path verified — dual-write active
+12. Git remote verified — push target live
 
 Show SYSTEM READY banner. If any check fails → warn user and stop.
 
@@ -40,6 +42,7 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 - **T PIPE (Tech/Ops Core)**: Clio, Shopify, Amazon, 1Password, Tailscale, DoorDash, SaaS ops
 - **I PIPE (Internal Strategy)**: lululemon, TELUS, corporate strategy, BizOps, RevOps
 - **S PIPE (Startups)**: Procurify, Ada, funded Vancouver startups, chief of staff roles
+- **Pipe prioritization**: READ `data/learned/pipes.md` — prioritize pipes with highest callback/offer rate. If S pipe has 50% callback rate and C pipe has 0%, allocate more search effort to S.
 - Cross-check Greenhouse boards: Brex, Hootsuite, EviSmart, Thinkific, Practice Better
 - Test NEW Greenhouse slugs each run: GitLab, Zapier, Notion, Canva, Stripe, HubSpot, etc.
 - Apify fallback when webfetch returns blank/truncated
@@ -52,7 +55,8 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 - Score fit% against Master Corpus
 - Filter: ≥60% fit, $120K+ floor, TEER 0/1, Vancouver/Remote Canada only
 - Skip: government jobs (citizenship required), licensed roles (P.Eng, CPA, MD, RN), credit check roles
-- Check data/jobs.json — exclude already-applied
+- Check `data/jobs.json` — exclude already-applied
+- Check `data/pipeline/PIPELINE.md` — exclude already-SHOT or already-SUBMITTED
 - Quality gate: established companies only (no sketchy domains/startups with broken HR)
 
 ## Phase 5 — Write CURATED_30.md + FETCH_LOG.md
@@ -63,17 +67,29 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 - One-pager per company: DNA, 60-sec pitch, 5 Q&A, 3 STAR, keywords, outreach
 - Contact method column: Phone / Email / Portal (with user sleep-schedule notes)
 
-## Phase 7 — Display
-1. Full proofread table (pipe, wave, company, role, salary, fit%, ATS format, why, contact method)
-2. Simplest Summary — 3-4 sentence plain-language recap
-3. Command footer — full command reference
+## Phase 7 — Write New Jobs to Pipeline
+For every new job discovered (not in pipeline, not in jobs.json):
+```
+WRITE to data/pipeline/PIPELINE.md:
+  ADD row: [company] | [role] | [salary] | [pipe] | 🟢 LIVE | [today] | — | "Awaiting SHOOT"
+```
 
-## Phase 8 — SHOOT All Jobs
-- Immediately after display, execute full 13-section for EVERY unsHOT job
-- One by one, full depth, shown for proofreading
+## Phase 8 — Display
+1. Full proofread table (pipe, wave, company, role, salary, fit%, ATS format, why, contact method)
+2. Pipeline integration readout: "N new jobs added to pipeline. M jobs already tracked."
+3. Simplest Summary — 3-4 sentence plain-language recap
+4. Command footer — full command reference
+
+## Phase 9 — SHOOT All Jobs (Auto-Trigger)
+- Immediately after display, for EVERY unsHOT job:
+  - If Tier 1 (Trust): auto-generate 16-section, show summary, ask "BATCH approve?"
+  - If Tier 2 (Normal): generate and show full 16-section for proofreading
+  - If Tier 3 (Strategic): generate and show full 16-section + "Strategy: discuss [X]"
+- One by one, full depth
 
 ## Output
 - Table + summary + footer in chat
 - Files in `YYYY-MM-DD/{WAVE_1,WAVE_2,WAVE_3,CALLBACK_READY}/`
+- Pipeline file updated with 🟢 rows
 - Dual-write to OneDrive
 - Git push (placeholders only)

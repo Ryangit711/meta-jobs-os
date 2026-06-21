@@ -31,7 +31,10 @@ Navigate to the company's career page, find the job posting, fill in the applica
    - Additional questions → answered from Master Corpus
 4. Preview filled form (user approves)
 5. Submit
-6. Log to `data/jobs.json`
+6. Log to `data/jobs.json` (if not exists → create: `{"applied":{}, "excluded":[], "last_updated": "YYYY-MM-DD"}`)
+7. SIGNAL pipeline-tracker: transition [company] [role] to ✅ SUBMITTED
+8. WRITE to `data/pipeline/PIPELINE.md`: update stage to ✅, set T+0 = today
+9. DISPLAY: "✅ [company] submitted. Networking cadence running."
 
 ### 2. FETCH Enhancement
 When webfetch returns blank/truncated for a JS-heavy career page (Lever, Ashby, Workday, HiringCafe), fall back to browser-use:

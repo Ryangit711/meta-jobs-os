@@ -1,9 +1,64 @@
 ---
 name: shoot-deployer
-description: "Triggered when user says SHOOT, SHOOT [company name], or pastes a JD for the 16-section master output (upgraded from 15 — added Multi-Role Strategy + Esoteric Knowledge). Generates the complete 16-section application package for proofreading. Every section shown in chat before any file touches disk. Never shortcut, never streamline — full depth every time."
+description: "Triggered by SHOOT [company], SHOOT [company] --all [roles], or paste JD. Before generation: reads data/learned/ for relevant lessons + data/pipeline/ for existing tracking. After generation: writes to data/pipeline/PIPELINE.md. After YES: transitions pipeline to ✅, auto-starts networking timer, generates DOCX. Full 16-section depth, cross-skill wired."
 ---
 
 # SHOOT DEPLOYER — Full 16-Section Application Package
+
+## Cross-Skill Wiring (Auto-Executed)
+
+### Before Generation (Data Inputs)
+```
+Step A1: READ data/pipeline/PIPELINE.md
+  → Check if this company/role already tracked
+  → If already SHOT/SUBMITTED → warn user, ask if resubmit
+
+Step A2: READ data/learned/ for relevant lessons
+  → READ data/learned/pipes.md — find success/fail for this pipe
+  → READ data/learned/[company].md if exists — company-specific lessons
+  → READ data/learned/keywords.md — keywords that won/lost for similar roles
+  → READ data/learned/skill_gaps.md — flagged gaps for this company/pipe
+  → INJECT lessons into section generation (DNA, keywords, archetype)
+
+Step A3: CALCULATE trust tier
+  → Tier 1 (Trust): fit ≥85% AND familiar pipe AND salary listed AND past success in pipe
+  → Tier 2 (Normal): fit 70-84% OR unfamiliar pipe OR no salary data
+  → Tier 3 (Strategic): fit <70% OR new company type OR confusing JD
+  → SHOW tier in output header
+```
+
+### After Generation (Data Outputs)
+```
+Step B1: WRITE to data/pipeline/PIPELINE.md
+  → ADD row: [company] | [role] | [salary] | [pipe] | 🔵 SHOT | [today] | T+0 | "Awaiting approval"
+  → If --all multi-role: add one row per role
+  → If row already exists (resubmit): UPDATE status to 🔵
+
+Step B2: WRITE to data/jobs.json if not exists (create with {})
+  → Add to applied.exclusion list for this company (so FETCH skips it)
+
+Step B3: DISPLAY output with pipeline row shown
+```
+
+### After User Says YES (Approval → Auto-Trigger Chain)
+```
+Step C1: TRANSITION pipeline row: 🔵 SHOT → ✅ SUBMITTED
+  → WRITE to data/pipeline/PIPELINE.md: set stage = ✅, set T+0 = today
+
+Step C2: GENERATE DOCX via document-engine
+  → Convert LaTeX resume + cover letter to DOCX
+  → Save to date folder
+
+Step C3: AUTO-START networking timer
+  → WRITE to data/networking_log.json: company, T+0 date, personas, message templates
+  → Networking footer auto-shows cadence from this point
+
+Step C4: Git commit + push
+
+Step C5: SHOW next action: "AUTO-APPLY [company] | AUTO-APPLY --manual (phone)"
+```
+
+---
 
 ## Source Truth Anchors (JOBS-OS Primary)
 - Unified format: `35_UNIFIED_SHOOT_FORMAT.md`
@@ -16,6 +71,9 @@ description: "Triggered when user says SHOOT, SHOOT [company name], or pastes a 
 - Consulting: `CONSULTING_OS.md`
 - Positioning by Pipe: AGENTS.md — POSITIONING BY PIPE FRAMEWORK section
 - Multi-Role Limit: AGENTS.md — Multi-Role Application Limit kernel rule
+- Learned data: `data/learned/[company].md`, `data/learned/pipes.md`, `data/learned/keywords.md`
+- Pipeline: `data/pipeline/PIPELINE.md`
+- Jobs log: `data/jobs.json`
 
 ## Multi-Role Workflow (Same Company, Multiple Roles)
 
@@ -35,6 +93,9 @@ When applying to 2-3 roles at the same company (see Multi-Role Strategy section 
 - Section 13 (LinkedIn) — shared personas, role-specific messages
 - Section 14-16 (Interview, Checklist, Follow-Up) — per role
 
+**Cover letter cross-reference:** Each cover letter must acknowledge the other application:
+> "I've also applied to [other role] because my background bridges both [skill A] and [skill B]. Applying to both demonstrates my genuine interest in [company] and my conviction that I can add value across teams."
+
 **Format:** `SHOOT [company] --all [role1, role2, role3]` generates a single master document with shared sections + per-role variants.
 
 ---
@@ -42,9 +103,11 @@ When applying to 2-3 roles at the same company (see Multi-Role Strategy section 
 ## The 16 Sections (Every Job, Every Time)
 
 ### 1. HEADER
-Company, Role, Team, Salary (range + midpoint), Location, Fit Score, Pipe, Wave, NOC, TEER, Archetype
+Company, Role, Team, Salary (range + midpoint), Location, Fit Score, Pipe, Wave, NOC, TEER, Archetype, **Trust Tier**
 
 **Pipe positioning pre-selected:** Run the decision tree from POSITIONING BY PIPE FRAMEWORK in AGENTS.md. Read company DNA → select pipe frame → blend if needed → choose archetype. All 16 sections flow from this selection.
+
+**Archetype locked:** Once selected, this archetype (A/B/C) is enforced across ALL 16 sections. Resume, cover letter, interview script — same archetype. No drift.
 
 ### 2. COMPANY SCOUT (All Relevant Roles)
 **Permanent constitutional section — kills fear by showing the full landscape.**
@@ -71,6 +134,7 @@ Company, Role, Team, Salary (range + midpoint), Location, Fit Score, Pipe, Wave,
 - **Back-door path:** What's the optimal route — referral, direct apply, recruiter reach-out? Does this company have a generalist pipeline for experienced hires?
 - **Rejection cooldown:** 6 months same role, no wait for different role at same company
 - **Transparency rule:** If asked in interview, be honest about other applications — frame as genuine interest in the company
+- **Cover letter cross-reference (if multi-role):** Each cover letter acknowledges the other application(s).
 
 ### 5. CORE Alignment Matrix
 One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's done)
@@ -81,6 +145,7 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 - Value System (what they reward)
 - Cultural Cues (how they communicate)
 - Anti-Patterns (what they hate — never include these)
+- **Learned lessons from data/learned/ injected here** (keywords that worked/failed for similar companies)
 
 ### 7. ATS SPECS
 - Platform (Greenhouse/Workday/Lever/Ashby/etc.)
@@ -93,6 +158,7 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 ### 9. RESUME TEXT (Plain)
 - Tailscale style: Name+contact centered, Professional Summary (3-4 sentences), Core Competencies (pipe-separated), Experience (Company — Title | Location, metrics bullets), Education, Technical Proficiency
 - LOCAL CANADIAN IN BC framing — no immigration language
+- Archetype enforced: resume text matches chosen archetype (A: builder verbs, B: operator verbs, C: strategist verbs)
 - In code fence for proofreading
 
 ### 10. RESUME LATEX (.tex source)
@@ -103,6 +169,8 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 
 ### 11. COVER LETTER TEXT (Plain)
 - 6-paragraph narrative mirroring company DNA
+- Archetype enforced: same archetype as resume
+- If multi-role: includes cross-reference to the other role(s) applied
 - Header: `[NAME]` / Date: DD/MM/YYYY / Vancouver, BC, Canada
 - Closing: Best regards, `[NAME]` / Phone: `[PHONE]` / Email: `[EMAIL]` / LinkedIn: `[LINKEDIN]`
 - In code fence for proofreading
@@ -118,7 +186,7 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 - Each with full message text + persona rationale
 
 ### 14. INTERVIEW CHEAT SHEET
-- 60-sec pitch
+- 60-sec pitch (archetype-locked)
 - 5 Q&A with specific answers (not generic)
 - 3 STAR stories (Profitability, Credibility, Visibility pillars)
 - Keywords to use, anti-patterns to avoid
@@ -128,15 +196,35 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 ### 15. CHECKLIST (18+ Items)
 - DNA extracted? ATS keywords at 2-4%? Title aligned? No immigration language? DOCX ready? etc.
 - Company scout completed? Hiring process revealed? Provenance verified? Multi-role strategy defined?
+- data/learned/ read? Archetype locked across all sections?
+- Pipeline updated? Trust tier assigned?
 
 ### 16. FOLLOW-UP + FINOPS
 - T+0 through T+28 cadence with conditional triggers
 - FinOps: negotiation targets, walk-away floor, benefits leverage
 
-## Proofreading Protocol
-1. SHOW full 16-section in chat (upgraded from 15 — Multi-Role Strategy + Esoteric Knowledge is new)
-2. User proofreads
-3. User says "looks good" / "proceed" / "save it" / "approved" → only THEN save files
-4. Write DOCX via document-engine
-5. Git commit + push
-6. Advance to next job
+## Execution Protocol (Concrete Steps)
+
+### On SHOOT Trigger
+```
+ 1. READ data/pipeline/PIPELINE.md → check for existing entries
+ 2. READ data/learned/pipes.md + data/learned/[company].md + data/learned/keywords.md
+ 3. RUN LinkedIn Profile Audit → check alignment with target company/role
+ 4. CALCULATE trust tier
+ 5. RUN Semantic Layer (10 questions)
+ 6. GENERATE 16 sections (with learned lessons injected)
+ 7. RUN provenance auto-verify (cross-ref every claim with Master Corpus)
+ 8. SHOW full 16-section in chat (with trust tier + provenance pass/fail)
+ 9. SHOW LinkedIn Audit output (aligned/misaligned items)
+10. WRITE row to data/pipeline/PIPELINE.md (🔵 SHOT)
+11. WRITE to data/jobs.json (company added to exclusion)
+```
+
+### On YES (Approval) — Auto-Trigger Chain
+```
+1. TRANSITION data/pipeline/PIPELINE.md: 🔵 → ✅, set T+0 = today
+2. GENERATE DOCX via document-engine
+3. WRITE to data/networking_log.json: auto-start cadence (T+0/3/7/14)
+4. Git commit + push
+5. DISPLAY: "Ready for AUTO-APPLY. | Phone mode: AUTO-APPLY --manual"
+```

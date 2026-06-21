@@ -1,74 +1,121 @@
 ---
 name: networking-cadence
-description: "Triggered by SUBMITTED [company], YES, or auto-triggered after every YES (no SUBMITTED needed). Networking timer auto-starts when user approves a SHOOT. Proactive prompts at T+0, T+3, T+7, T+14 without user command. Zero manual touch — fully automated networking tracker."
+description: "Auto-triggered after YES (approval) — no SUBMITTED command needed. Reads pipeline for submission date, auto-starts T+0→T+28 timer. Proactive prompts at T+0, T+3, T+7, T+14. Cross-wired: receives signal from shoot-deployer + pipeline-tracker, writes to networking_log.json, displays in AUTO-NETWORKING footer."
 ---
 
-# NETWORKING CADENCE — Automated Outreach Tracker
+# NETWORKING CADENCE — Auto-Triggered Outreach Timer
 
-## Source Truth Anchors
-- Networking rules: AGENTS.md Networking section (JOBS-OS)
-- Constitutional Amendment #11 (Fully Automated Networking Tracker)
-- Contact Engine: `CONTACT_ENGINE.py` (JOBS-OS)
+## Cross-Skill Wiring
 
-## System
+### Inputs (Read From)
+| Source | What | When |
+|--------|------|------|
+| `shoot-deployer` (auto-signal after YES) | company, T+0=today, personas from SHOOT section 13 | On YES |
+| `pipeline-tracker` (auto-signal on ✅) | company, role, submission date | On pipeline update |
+| `data/pipeline/PIPELINE.md` | All submitted jobs with T+ dates | Every response (footer check) |
+| SHOOT package | Personas + message templates for each company | On YES |
 
-### Data Store
-- `data/networking_log.json` — NEVER deleted, reset, or archived. Permanent system memory.
-- Pipeline data at `data/pipeline/PIPELINE.md` — auto-synced.
+### Outputs (Write To)
+| Target | What | When |
+|--------|------|------|
+| `data/networking_log.json` | Cadence entries (company, T+ dates, personas, sent status) | On YES + on each action completed |
+| `data/pipeline/PIPELINE.md` | Update next_action for follow-up items | On cadence advance |
 
-### Seed Flow (On YES — Auto-Triggered, No SUBMITTED Command Needed)
+---
 
-Every YES auto-starts the networking timer. The system tracks T+0 from the approval date. No SUBMITTED command needed.
+## Execution: On YES (Auto-Trigger from shoot-deployer)
 
-When YES is given:
-1. Auto-set T+0 = today
-2. Read company's SHOOT package → extract personas + message templates
-3. Calculate all T+0 through T+14 dates from approval date
-4. Write to `data/networking_log.json`
-5. Show auto-cadence in footer
+```
+1. RECEIVE signal from shoot-deployer:
+   → company, role, T+0 = today
+   → personas from SHOOT section 13 (IC/Associate, Manager/Director, Sr IC/Manager, Exec Sponsor)
+   → message templates for each persona
 
-If submission hasn't happened yet (T+0), the system reminds: "Submit [company] first."
-1. Read company's SHOOT package → extract personas + message templates
-2. Calculate all T+0 through T+14 dates from submission date
-3. Write to `data/networking_log.json` with `today` as `last_checked`
-4. Set `hook_active: true`
+2. WRITE to data/networking_log.json:
+   {
+     "company": "[name]",
+     "role": "[title]",
+     "submitted_date": "YYYY-MM-DD",
+     "cadence": {
+       "T+0": {"action": "Submit application", "done": false},
+       "T+3": {"action": "Connect with IC/Associate", "persona": "IC/Associate", "done": false},
+       "T+7": {"action": "Follow up with Manager/Director", "persona": "Manager/Director", "done": false},
+       "T+14": {"action": "Value-add to Sr IC/Manager", "persona": "Sr IC/Manager", "done": false}
+     },
+     "personas": [messages from SHOOT section 13],
+     "active": true
+   }
 
-### Response Flow (Every Output)
-1. Read `data/networking_log.json`
-2. Compute countdown for ALL pending actions
-3. Append AUTO-NETWORKING footer at end:
+3. SIGNAL pipeline-tracker: set next_action = "Networking: T+0 submit"
 
+4. DISPLAY: "Networking cadence started for [company]. Say LINKEDIN CONNECT to send."
+```
+
+---
+
+## Execution: On Every Response (Auto-Footer Check)
+
+```
+1. READ data/networking_log.json
+2. For each active cadence:
+   → Calculate T+ = today - submitted_date
+   → Check which actions are due (T+ >= action day AND not done)
+   → If action due today: set DUE TODAY
+   → If action due in future: set as upcoming
+3. DISPLAY in AUTO-NETWORKING footer:
+```
 ```
 ╔═══════════════════════════════════════════════════════╗
 ║  📡 AUTO-NETWORKING                                    ║
-║  🎯 T+[N]: [action] for [company] — due today         ║
-║  ⏳ T+[N]: [action] for [company]                      ║
-║  ⏳ T+[N]: [action] for [company]                      ║
+║  🎯 T+0: Submit [company] — due today                  ║
+║  ⏳ T+3: Connect IC at [company]                       ║
+║  ⏳ T+7: Follow-up Mgr at [company]                    ║
 ║  Say LINKEDIN CONNECT [name] to send, or SKIP.        ║
 ╚═══════════════════════════════════════════════════════╝
 ```
 
-### Confirmation Flow (On YES)
-- If one action due today → auto-log as sent, compute next action
-- If multiple due today → ask "Which one? [company list]"
-- Update `data/networking_log.json`
+---
 
-### Persona Tracking Rules
-- Up to 4 personas per company (IC/Associate, Manager/Director, Sr IC/Manager, Exec Sponsor)
-- If persona RESPONDS → mark "engaged", stop messaging that persona
-- If NO_RESPONSE after T+7 of their last message → switch to next persona
-- Never double-message a non-responsive connection
-- Always remind unless responded
+## Execution: On LINKEDIN CONNECT (Action Completed)
 
-### Status Updates
-- `STATUS [company] [status]`: pending, submitted, live_interviewing, rejected, offer, closed
-- When all messages sent: "✅ [Company] cadence complete — waiting for response"
-- Tracker stays in "pending" until user updates
+```
+1. RECEIVE: LINKEDIN CONNECT [persona_name] for [company]
+2. READ data/networking_log.json → find matching cadence
+3. Mark action as done: "T+3": {"action": "...", "done": true, "sent_date": "YYYY-MM-DD"}
+4. UPDATE pipeline PIPELINE.md: next_action = "Waiting for response"
+5. DISPLAY: "Sent. Waiting for response. Next: T+7 follow-up."
+```
+
+---
+
+## Execution: On SKIP
+
+```
+1. RECEIVE: SKIP [company] or SKIP [T+ action]
+2. Mark action as skipped in networking_log.json
+3. Advance to next action in cadence
+```
+
+---
 
 ## Commands
-- `SUBMITTED [company]` — Register submission + seed cadence
-- `YES` — Confirm sent, advance cadence
-- `LOGNET [company]` — Manually log a networking message
-- `NETSTAT` — Show full networking log
-- `STATUS [company] [status]` — Update company status
-- `SUBMITDATE [company] YYYY-MM-DD` — Change submission date (recalculates cadence)
+
+| Command | Execution |
+|---------|-----------|
+| (auto) YES | Triggers cadence start — no SUBMITTED needed |
+| `LINKEDIN CONNECT [name] for [company]` | Sends message, marks action done |
+| `SKIP [company]` | Skips current action, advances cadence |
+| `NETSTAT` | Read `data/networking_log.json` → display full cadence table |
+| `SUBMITDATE [company] YYYY-MM-DD` | Override submission date (recalculates all T+ dates) |
+
+---
+
+## Hard Rules
+
+1. Cadence auto-starts on YES — never needs SUBMITTED command
+2. Footer auto-updates every response — never stale
+3. If persona responds → mark "engaged", stop messaging that persona
+4. If no response after T+7 of their last message → switch to next persona
+5. Never double-message a non-responsive connection
+6. If all messages sent → "✅ [Company] cadence complete — waiting for response"
+7. If company at T+0 and not yet submitted → footer says "Submit [company] first"

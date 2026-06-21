@@ -1,13 +1,14 @@
 ---
 name: linkedin-automation
-description: "Launched when user says LINKEDIN, or for automating LinkedIn networking tasks via OpenCLI."
+description: "Launched when user says LINKEDIN, or for automating LinkedIn networking tasks via OpenCLI. Also handles LinkedIn Profile Audit — checks profile alignment with application narrative before every SHOOT."
 triggers:
   - "LINKEDIN [command]"
   - "LINKEDIN CONNECT [name]"
   - "LINKEDIN INBOX"
   - "LINKEDIN SEARCH [query]"
   - "LINKEDIN JOB-DETAIL [url]"
-source: "github.com/jackwener/OpenCLI"
+  - "OPTIMIZE LINKEDIN [company]"
+source: "github.com/jackwender/OpenCLI"
 ---
 
 ## Capability
@@ -96,3 +97,64 @@ opencli linkedin sent-invitations — View sent invitations
 opencli linkedin thread-snapshot — View message thread
 opencli linkedin timeline    — View timeline
 ```
+
+## LinkedIn Profile Audit (Run Before Every SHOOT)
+
+**Purpose:** Recruiters check LinkedIn before calling. If your profile tells a different story than your resume, you lose trust before you start. This audit ensures alignment.
+
+### Audit Checklist (Generate Before SHOOT Output)
+
+```
+For the target company [company] and role [role]:
+
+1. HEADLINE alignment:
+   → Current headline: [current]
+   → SHOOT headline: [from resume/cover]
+   → ❌ MISMATCH if they differ → fix headline
+
+2. ABOUT section alignment:
+   → Does the About section lead with the same narrative as the Professional Summary?
+   → ❌ If not → rewrite to match resume summary
+
+3. EXPERIENCE alignment:
+   → Do job titles match the masquerade from the resume?
+   → Do date ranges match?
+   → Do descriptions use the same keywords as resume ATS section?
+   → ❌ MISMATCH if any differ
+
+4. SKILLS alignment:
+   → Are the top 3 skills the same as the resume's Core Competencies?
+   → ❌ If not → reorder skills to match
+
+5. RECOMMENDATIONS:
+   → Do any recommendations contradict the current narrative?
+   → ❌ If so → hide or archive problematic recommendations
+
+6. ACTIVITY:
+   → Is the recent activity appropriate for a professional currently seeking?
+   → ❌ If not → advise user to clean up
+
+7. COMPANY-FOCUSED OPTIMIZATION:
+   → Does the profile contain keywords from the target company's DNA?
+   → ❌ If not → add relevant keywords to About + Skills
+
+8. OPEN TO WORK:
+   → Is "Open to Work" set correctly? (visible to recruiters only, not public?)
+   → ❌ If public → advise setting to recruiters-only
+```
+
+### Output
+```
+╔══════════════════════════════════════════════════════════════════════════╗
+║  LINKEDIN PROFILE AUDIT — [company]                                   ║
+║  ✅ Headline aligned: [current headline]                              ║
+║  ❌ About section needs rewrite → suggest new text                    ║
+║  ✅ Experience titles aligned                                          ║
+║  ❌ Skills need reorder → put [keyword] first                         ║
+║  ✅ Recommendations fine                                               ║
+║  ✅ Recent activity appropriate                                        ║
+║  🛠 Action needed: Rewrite About section + reorder skills             ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+
+User applies changes via LinkedIn UI or says `LINKEDIN APPLY-AUDIT` to apply via OpenCLI.

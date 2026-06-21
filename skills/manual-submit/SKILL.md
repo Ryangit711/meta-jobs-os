@@ -112,8 +112,12 @@ Files to transfer to phone:
 ```
 After submit:
 1. Screenshot confirmation page
-2. Run: SUBMITTED [company]
-3. T+0 = today → networking auto-starts
+2. Tell me: SUBMITTED [company] (or I detect from your message)
+3. I will:
+   → UPDATE data/pipeline/PIPELINE.md: transition to ✅ SUBMITTED
+   → WRITE to data/jobs.json: mark as applied
+   → SIGNAL networking-cadence: start T+0 timer
+4. T+0 = today → networking auto-starts
 ```
 
 ---
