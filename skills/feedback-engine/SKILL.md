@@ -14,6 +14,7 @@ description: "Triggered by LEARN [company] [outcome], LEARN [company] --deep, or
 | `data/pipeline/PIPELINE.md` | Current pipeline state for this job | On manual LEARN |
 | `data/learned/[company].md` | Previous lessons for this company | Always |
 | User | Additional context ("they said I lacked X") | On LEARN --deep |
+| SHOOT package | Resume text + JD text stored with submission | If available for ATS scoring |
 
 ### Outputs (Write To)
 | Target | What | When |
@@ -23,7 +24,8 @@ description: "Triggered by LEARN [company] [outcome], LEARN [company] --deep, or
 | `data/learned/keywords.md` | Keywords that won/lost | Every LEARN |
 | `data/learned/skill_gaps.md` | Flagged skills | If rejection cites skill gap |
 | `data/learned/salary.md` | Offer salary data | If 💰 OFFER with amount |
-| `pipeline-tracker` | Signal: stage update | If outcome changes pipeline |
+| `data/learned/ats_scores.md` | TF-IDF score + missing keywords for this application | Every LEARN with ATS scoring |
+| `pipeline-tracker` | Signal: stage update + ATS score attached | If outcome changes pipeline |
 
 ---
 
@@ -75,7 +77,37 @@ Why?
 → UPDATE data/learned/pipes.md: +1 failure for this pipe
 ```
 
-### Step 3: Update the System (The Critical Step)
+### Step 3: Run ATS Scoring (TF-IDF Analysis)
+
+If the SHOOT package included resume text + JD text, run automated ATS scoring:
+
+```
+RUN: python3 scripts/ats_scorer.py --resume [resume_text_file] --jd [jd_text_file] --json
+  → Score: [0-100]%
+  → Missing keywords: [terms in JD not in resume]
+  → Matched keywords: [terms in both]
+
+IF score < 50%:
+  → Likely ATS keyword mismatch → focus analysis on keyword gaps
+  → RECOMMEND: keyword density increase for next SHOOT at similar company
+  → UPDATE data/learned/keywords.md: +1 loss for unmatched terms
+
+IF score 50-70%:
+  → Moderate match → analyze which keywords carried weight
+  → ADD to data/learned/[company].md: ATS score + gap suggestions
+
+IF score > 70%:
+  → Good keyword match → failure likely due to positioning/other factors
+  → Narrow analysis away from ATS, toward fit/culture/level
+
+STORE score in data/learned/ats_scores.md:
+  → Append row: [company] | [role] | [score] | [outcome] | [matched_terms] | [missing_terms]
+  → This builds a corpus that predicts: "For this pipe, X score means Y outcome"
+```
+
+The ATS score acts as a FOCUSING LENS — it tells you WHERE to look for the problem.
+
+### Step 4: Update the System (The Critical Step)
 
 Based on analysis, make ONE or MORE of these updates:
 
@@ -89,7 +121,7 @@ Based on analysis, make ONE or MORE of these updates:
 | Salary mismatch | Adjust salary data | `data/learned/salary.md` |
 | Red flag detected | Add to company anti-patterns | `data/learned/[company].md` |
 
-### Step 4: Write the Lesson
+### Step 5: Write the Lesson
 
 Append to `data/learned/[company].md`:
 ```
@@ -101,7 +133,7 @@ Append to `data/learned/[company].md`:
 **Lesson for future:** [one-sentence takeaway]
 ```
 
-### Step 5: Propagate to Pipeline
+### Step 6: Propagate to Pipeline
 
 ```
 SIGNAL pipeline-tracker:
@@ -112,7 +144,7 @@ SIGNAL pipeline-tracker:
   UPDATE next_action: "Learned from outcome"
 ```
 
-### Step 6: Propagate to System (General Lessons)
+### Step 7: Propagate to System (General Lessons)
 
 If the lesson is general (not company-specific), update the relevant system component:
 - DNA extraction → add/remove keywords
@@ -132,6 +164,7 @@ If the lesson is general (not company-specific), update the relevant system comp
 | `data/learned/skill_gaps.md` | Skills flagged as missing by rejections | Yes (template exists) |
 | `data/learned/pipes.md` | Pipe positioning success/fail log | Yes (template exists) |
 | `data/learned/salary.md` | Salary data from offers/rejections | Yes (created on first offer) |
+| `data/learned/ats_scores.md` | TF-IDF scores per application — corpus for predicting score→outcome by pipe | Yes (created on first ATS-scored LEARN) |
 
 ---
 

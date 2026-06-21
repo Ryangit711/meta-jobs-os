@@ -332,6 +332,10 @@ All organs are installed and alive. When you command, the right part moves. You 
 | `TRACK --active` | Show only non-archived jobs |
 | `TRACK --offers` | Show offers only |
 | `TRACK --stats` | Pipeline metrics (apply/callback/offer rates) |
+| `AUDIT` | `skills/pipeline-tracker/SKILL.md` — Full system health audit (skill freshness, CTIS coverage, pipeline health, pre-SHOOT warnings) |
+| `AUDIT --skills` | Check skill freshness only |
+| `AUDIT --coverage` | Check CTIS pipe coverage only |
+| `AUDIT --pipeline` | Check pipeline health only |
 | `LEARN [company] [outcome]` | `skills/feedback-engine/SKILL.md` — Feed outcome back into system |
 | `LEARN [company] --deep` | Full multi-source analysis (5-10 min) |
 | `NEGOTIATE [company] [offer]` | `skills/negotiation-playbook/SKILL.md` — Load negotiation strategy |

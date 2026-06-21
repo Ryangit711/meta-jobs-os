@@ -107,6 +107,85 @@ Function: pipeline_set_action(company, role, action)
 | `TRACK --next` | READ → FILTER where next_action not empty → DISPLAY |
 | `TRACK --stats` | Run Step 3 only → DISPLAY stats banner |
 | `TRACK --export` | READ → convert to JSON → WRITE data/pipeline/pipeline_export.json → DISPLAY path |
+| `AUDIT` | Run system health audit: skill freshness, CTIS coverage, pipeline health |
+| `AUDIT --skills` | Run skill audit only (last used, output count, cross-wiring) |
+| `AUDIT --coverage` | Run CTIS pipe coverage check only |
+| `AUDIT --pipeline` | Run pipeline health check only (stale items, ghosting risks) |
+
+---
+
+## AUDIT Execution (System Health Audit)
+
+### On AUDIT Trigger
+
+```
+Step A1: READ skill freshness
+  → READ SKILL_REGISTRY.md → extract all skill names
+  → For each skill, check:
+    ✓ Last execution date (from thought_log or pipeline writes)
+    ✓ Output count (how many SHOOTs/LEARNs/SUBMs this skill generated)
+    ✓ Cross-wiring status (does the skill read/write to other skills?)
+  → FLAG skills not used in >14 days → "⚠️ [skill] not used since [date]"
+  → FLAG skills with 0 outputs → "❌ [skill] defined but never executed"
+  → FLAG skills with no cross-wiring → "⚠️ [skill] reads/writes nothing — silo risk"
+
+Step A2: READ CTIS pipe coverage
+  → READ data/pipeline/PIPELINE.md — count active jobs per pipe (C/T/I/S)
+  → READ data/learned/pipes.md — count past successes/fails per pipe
+  → CALCULATE coverage per pipe:
+    C: N active, X jobs last 14d, Y success rate
+    T: N active, X jobs last 14d, Y success rate
+    I: N active, X jobs last 14d, Y success rate
+    S: N active, X jobs last 14d, Y success rate
+  → FLAG pipes with <2 active jobs → "⚠️ [pipe] pipe under-served — only N active"
+  → FLAG pipes with 0 jobs in last 14 days → "❌ [pipe] pipe dry — need FETCH"
+
+Step A3: READ pipeline health
+  → COUNT stale items: ✅ + T+ > 7 without follow-up
+  → COUNT ghosting risks: 🔵 + T+ > 7 without SHOT→SUBMIT transition
+  → COUNT dead leads: 📞 + T+ > 30 without resolution
+  → CHECK negotiation pre-loads: 💰 items with no NEGOTIATE activity
+  → CHECK networking cadence: ✅ items with T+ > 3 and no follow-up
+
+Step A4: Run pre-SHOOT warnings
+  → If last FETCH > 6 hours ago: "⚠️ Last FETCH was [time] ago. Run FETCH for fresh targets."
+  → If pipeline has >3 jobs in 🔵 SHOT without YES: "⏸ You have [N] approved SHOOTs awaiting submit."
+  → If no jobs in pipeline: "❌ Pipeline empty. Start with FETCH."
+  → If salary data missing for active targets: "⚠️ [company] has no salary data — pipeline estimates may be off"
+  → If quality scores missing for SHOOTed items: "⚠️ [company] SHOOTed before quality gates existed — consider re-SHOOT"
+
+Step A5: DISPLAY audit dashboard
+  ┌─────────────────────────────────────────────┐
+  │ 📋 SYSTEM AUDIT — YYYY-MM-DD HH:MM          │
+  │                                              │
+  │ SKILL HEALTH                                 │
+  │   ✅ 14/16 skills active                     │
+  │   ⚠️ 2 skills unused >14d: [names]          │
+  │   ❌ 0 skills never executed                 │
+  │                                              │
+  │ CTIS COVERAGE                                │
+  │   C: 3 active  ✅  |  T: 5 active  ✅       │
+  │   I: 1 active  ⚠️  |  S: 0 active  ❌       │
+  │                                              │
+  │ PIPELINE HEALTH                              │
+  │   ⏸ 2 stale submissions need follow-up      │
+  │   ⏳ 3 ghosting risks (🔵 >7d)              │
+  │   📞 1 dead lead (no resolution >30d)       │
+  │                                              │
+  │ PRE-SHOOT WARNINGS                           │
+  │   ⚠️ Last FETCH was 8h ago                   │
+  │   ⚠️ 2 SHOOTs awaiting YES                  │
+  └─────────────────────────────────────────────┘
+```
+
+### On AUDIT --skills
+Run Step A1 only → display skill health section
+
+### On AUDIT --coverage
+Run Step A2 only → display CTIS coverage section
+
+### On AUDIT --pipeline
+Run Step A3 + A4 only → display pipeline health + pre-SHOOT warnings
 
 ---
 

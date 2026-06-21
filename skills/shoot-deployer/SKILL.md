@@ -27,6 +27,72 @@ Step A3: CALCULATE trust tier
   → SHOW tier in output header
 ```
 
+### During Generation (Quality Gates — Auto-Executed After Section Gen, Before Output)
+
+```
+Step G1: ATS VALIDATION PASS
+  → CHECK font family: Liberation Sans 10pt (or ATS-specified font for this platform)
+  → CHECK margins: 0.5-1.0 inch all sides
+  → CHECK section headers: standard names (Experience, Education, Skills — no custom headers)
+  → CHECK file type: DOCX per ATS spec (not PDF for Workday, etc.)
+  → CHECK keyword density: 2-4% from Language Registry
+  → CHECK section completeness: all 16 sections present
+  → PASS if 6/6 checks pass. FAIL if ≥2 fail. WARN if 1 fails.
+  → Output: "ATS Validation: ✅ / ⚠️ / ❌" with detail per check
+
+Step G2: BULLET QUALITY UPGRADE
+  → Scan every bullet in resume text (section 9) against rules:
+    ✓ STAR format: Situation-Action-Result structure
+    ✓ Metrics: every bullet has a number (%, $, people, locations, time)
+    ✓ Strong verb lead: built, scaled, led, designed, transformed (NOT: responsible for, involved in, helped)
+    ✓ Passive → active conversion: "was responsible for" → "led"
+  → FLAG bullets missing metrics → list them
+  → FLAG bullets leading with weak verbs → list replacements
+  → FLAG bullets lacking STAR structure → suggest rewrite
+  → Output: "Bullet Quality: N/X pass. ⚠️ bullets missing [metrics/verbs/STAR]"
+
+Step G3: ANTI-PATTERN SWEEP
+  → SCAN all 16 sections for weasel words:
+    "think outside the box", "synergy", "go-getter", "results-driven", "team player",
+    "detail-oriented", "hardworking", "proactive", "self-starter", "excellent communication"
+  → SCAN for unsupported claims:
+    "transformed X" — does Master Corpus support X? "led Y" — does Corpus mention Y?
+    Cross-ref every strong claim against provenance file
+  → SCAN for archetype drift:
+    Archetype A uses builder verbs (built, constructed, designed, architected)
+    Archetype B uses operator verbs (managed, optimized, streamlined, executed)
+    Archetype C uses strategist verbs (analyzed, planned, advised, directed)
+    If selected archetype is A but bullets use strategist verbs → FLAG
+  → SCAN for repetition gaps:
+    "managed operations" appearing 3+ times across different sections
+    Skills listed but never demonstrated in experience bullets
+  → Output: "Anti-Patterns: N found. ❌ duplicates / unsupported / drift / gaps"
+
+Step G4: QUALITY DASHBOARD (Summarize All Three)
+  → Show single block at the end:
+    ┌──────────────────────────────────────────┐
+    │ 📋 QUALITY DASHBOARD                     │
+    │ ATS Validation:    ✅ (6/6)              │
+    │ Bullet Quality:    ⚠️ (14/18)           │
+    │ Anti-Patterns:     ❌ 3 found            │
+    │ Semantic Enrich:   ✅ JSON-LD generated  │
+    │ Fix before submit? → ────────────        │
+    └──────────────────────────────────────────┘
+  → If any gate fails: list specific fixes, numbers, exact replacements
+  → AUTO-FIX: for bullet quality and anti-patterns, generate corrected versions
+  → User sees: raw output + quality dashboard + auto-fixed suggestions
+
+Step G5: SEMANTIC ENRICHMENT (JSON-LD Generation)
+  → RUN: python3 scripts/semantic_enricher.py
+       --company "[company]" --role "[role]"
+       --skills "[pipe keywords from Language Registry]"
+       --pretty --output "2026-XX-XX/semantic/[company]_[role]_ld.json"
+  → Generates schema.org/Person JSON-LD block
+  → Attached alongside DOCX for next-gen ATS platforms
+  → Output appears in QUALITY DASHBOARD as "Semantic Enrich" line
+  → No user-facing change — this is invisible enrichment for machines
+```
+
 ### After Generation (Data Outputs)
 ```
 Step B1: WRITE to data/pipeline/PIPELINE.md
@@ -37,7 +103,10 @@ Step B1: WRITE to data/pipeline/PIPELINE.md
 Step B2: WRITE to data/jobs.json if not exists (create with {})
   → Add to applied.exclusion list for this company (so FETCH skips it)
 
-Step B3: DISPLAY output with pipeline row shown
+Step B3: WRITE quality report to data/pipeline/PIPELINE.md
+  → APPEND quality scores to the pipeline row as metadata
+
+Step B4: DISPLAY output with pipeline row shown + quality dashboard
 ```
 
 ### After User Says YES (Approval → Auto-Trigger Chain)
@@ -193,11 +262,14 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
 - "One year from now" question
 - Rejection response script
 
-### 15. CHECKLIST (18+ Items)
+### 15. CHECKLIST (21+ Items)
 - DNA extracted? ATS keywords at 2-4%? Title aligned? No immigration language? DOCX ready? etc.
 - Company scout completed? Hiring process revealed? Provenance verified? Multi-role strategy defined?
 - data/learned/ read? Archetype locked across all sections?
 - Pipeline updated? Trust tier assigned?
+- **ATS Validation passed?** (font, margins, headers, keywords, file type, sections)
+- **Bullet Quality check passed?** (metrics in every bullet, strong verbs, STAR structure)
+- **Anti-Pattern sweep done?** (weasel words removed, unsupported claims flagged, archetype consistent, no gaps)
 
 ### 16. FOLLOW-UP + FINOPS
 - T+0 through T+28 cadence with conditional triggers
@@ -213,11 +285,17 @@ One-liner + Table: `JD Requirement → Aman's Map` (what they need → what he's
  4. CALCULATE trust tier
  5. RUN Semantic Layer (10 questions)
  6. GENERATE 16 sections (with learned lessons injected)
- 7. RUN provenance auto-verify (cross-ref every claim with Master Corpus)
- 8. SHOW full 16-section in chat (with trust tier + provenance pass/fail)
- 9. SHOW LinkedIn Audit output (aligned/misaligned items)
-10. WRITE row to data/pipeline/PIPELINE.md (🔵 SHOT)
-11. WRITE to data/jobs.json (company added to exclusion)
+ 7. RUN ATS VALIDATION PASS (Step G1) → check font, margins, headers, keywords, sections
+ 8. RUN BULLET QUALITY UPGRADE (Step G2) → quantifier scan, verb audit, STAR check
+ 9. RUN ANTI-PATTERN SWEEP (Step G3) → weasel words, unsupported claims, archetype drift, gaps
+10. RUN SEMANTIC ENRICHMENT (Step G5) → generate JSON-LD for next-gen ATS
+11. RUN provenance auto-verify (cross-ref every claim with Master Corpus)
+12. SHOW QUALITY DASHBOARD (Step G4) — gates summary + auto-fix suggestions
+13. SHOW full 16-section in chat (with trust tier + quality dashboard + provenance pass/fail)
+14. SHOW LinkedIn Audit output (aligned/misaligned items)
+15. WRITE row to data/pipeline/PIPELINE.md (🔵 SHOT) with quality scores
+16. WRITE to data/jobs.json (company added to exclusion)
+17. WRITE JSON-LD to date folder (semantic enrichment — machine use only)
 ```
 
 ### On YES (Approval) — Auto-Trigger Chain
