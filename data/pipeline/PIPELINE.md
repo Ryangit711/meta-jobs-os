@@ -17,7 +17,7 @@ Auto-maintained. Every SHOT → SUBMITTED → CALLBACK → OFFER/REJECT is track
 
 | # | Company | Role | Salary | Pipe | Stage | Applied | T+ | Next Action |
 |---|---------|------|--------|------|-------|---------|----|-------------|
-| — | — | — | — | — | — | — | — | — |
+| 1 | Indeed | Sr. Manager, Integration & Business Acceleration | $133K-$199K | T | 🔵 SHOT | — | D0 | Submit via MANUAL-SUBMIT blueprint |
 
 ---
 
