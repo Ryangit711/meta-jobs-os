@@ -485,6 +485,146 @@ Best regards,
 
 ---
 
+---
+
+## SECTION 17: CASE SEMANTIC CASE
+
+See `CASE_Methanex_Director_Strategy.md` — standalone narrative page in Methanex's language.
+
+This is neither a resume (showcase) nor a cover letter (offer of help). It is a third document: a case for Aman, written in Methanex's own lexicon — Global Methanol Leadership, Power of Agility, One Team, OCI integration, low-carbon strategy, capital allocation, board-level strategy cycle.
+
+**Use:** Send to the hiring manager (Priscilla Fuchslocher) or senior stakeholder (Kevin Maloney) as a "thought I'd share" attachment after the LinkedIn connect is accepted. It tells your story in their language without offering help (that's the cover letter's job) or reciting credentials (that's the resume's job).
+
+---
+
+## SECTION 18: 100% PEOPLE MAP — Methanex
+
+### Full People Map (All Known Contacts)
+
+#### Executive Leadership Team (ELT)
+| Name | Title | Relevance |
+|------|-------|-----------|
+| Rich Sumner | President & CEO | Final interviewer. Cultural fit + strategic altitude. |
+| Kevin Maloney | SVP, Corporate Development | **KEY SENIOR STAKEHOLDER.** Strategy team reports to him. The ultimate decision-maker for this hire. UBC Chem Eng + Queen's MBA. |
+| Dean Richardson | SVP, Finance & CFO | Adjacent stakeholder. Finance team works closely with strategy on valuation models. |
+| Karine Delbarre | SVP, Global Marketing & Logistics | Cross-functional partner for strategy. |
+| Brad Boyd | SVP, Corporate Resources | HR/IT/Communications. Low relevance. |
+| Gustavo Parra | SVP, Manufacturing | Operations. Low relevance for this role. |
+| Mark Allard | SVP, Low Carbon Solutions | Strategic adjacency — low-carbon is a key strategic theme. Useful insight connect. |
+| Kevin Price | SVP, General Counsel & Corporate Secretary | Low relevance for strategy role. |
+
+#### VP Level (Vancouver HQ)
+| Name | Title | Relevance |
+|------|-------|-----------|
+| **Priscilla Fuchslocher** | **VP, Strategy** | **TIER 1 — HIRING MANAGER.** The role reports to her. Direct line. |
+| Kim Campbell | VP, Business Transformation | **TIER 3 — INSIGHT CONNECT.** Led OCI Integration Management Office. Perfect M&A/strategy conversation. |
+| Lucy Ge | VP, Global Supply Chain and Market Planning | Adjacent. Supply chain strategy intersects with corporate strategy. |
+| Darin Bains | VP, Information Technology | Low relevance. |
+| Nojan Abrary | VP, Tax | Low relevance. |
+| Greg MacKie | VP, Human Resources | HR oversight. Useful for process insight. |
+| Sarah Herriott | Director, Investor Relations | Adjacent. IR works closely with strategy team on messaging. |
+| Renato Monteiro | VP, Low-carbon Methanol Supply | Low-carbon supply chain. Niche. |
+| Sergio Almarza | VP, Marketing & Logistics Europe | Europe-based. Low relevance. |
+
+#### Board of Directors (Key)
+| Name | Background | Relevance |
+|------|-----------|-----------|
+| Doug Arnell | Chair | Governance context. No direct reach. |
+| Leslie O'Donoghue | Former EVP Strategy & Corp Dev at Nutrien/Agrium | Strategic peer perspective. Useful if connection opportunity arises. |
+| Don Marchand | Former EVP/CFO at TC Energy, ran Strategy & Corp Dev | Directly relevant — he ran strategy at a major energy company. |
+
+### Networking Cadence (Expanded)
+
+| Tier | Person | Channel | T+x | Message |
+|------|--------|---------|-----|---------|
+| **T1** | Priscilla Fuchslocher (VP Strategy) | LinkedIn | T+0 | Connect + note (applying for her role) |
+| **T1 follow** | Priscilla Fuchslocher | Email | T+3 | After connect accepted → share CASE document |
+| **T2** | Kevin Maloney (SVP Corp Dev) | LinkedIn | T+3 | Connect + note (organization fit, OCI acquisition) |
+| **T3** | Kim Campbell (VP Business Transformation) | LinkedIn | T+7 | Connect + note (OCI integration conversation) |
+| **T3** | Lucy Ge (VP Supply Chain) | LinkedIn | T+7 | Connect + note (strategy/supply chain intersection) |
+| **T4** | Rich Sumner (CEO) | LinkedIn | T+14 | Connect + note (strategic interest in Methanex) |
+| **T4** | Dean Richardson (CFO) | LinkedIn | T+14 | Connect + note (finance/strategy overlap) |
+
+### Cold Email Sequence (Apollo.io)
+
+#### Email 1 — Priscilla Fuchslocher (T+0)
+```
+Subject: Director, Strategy — application + a thought
+
+Hi Priscilla,
+
+I submitted my application for the Director, Strategy role today. Rather than have my resume speak for itself in the ATS black hole, I wanted to share something more direct.
+
+I built the strategic operating system for a multi-site organization from zero — board-level strategy cycle, financial models governing $4M in annual resource allocation, and a $17M acquisition that I directed end-to-end through diligence, Day 1 readiness, and 100-day integration.
+
+The resume tells you what I did. The attached case tells you who I am and why Methanex's specific context — global strategy cycle, post-OCI integration, low-carbon transition — is exactly the environment where I deliver the most value.
+
+If you're open to a 10-minute conversation, I'd welcome the chance to connect the dots between my experience and your team's priorities.
+
+Best,
+Aman
+```
+
+#### Email 2 — Kevin Maloney (T+3)
+```
+Subject: Director, Strategy — connecting the dots
+
+Hi Kevin,
+
+I've applied for the Director, Strategy role on Priscilla's team. Given that the Corporate Development team oversees the strategic planning process, I wanted to reach out directly.
+
+My background: I built the strategic planning system for a 70-person, 32-location organization from scratch — including the financial models, board reporting, and M&A capability that delivered a $17M exit. The OCI acquisition ($2.05B) and the integration work your team is leading is the exact scale of strategic challenge I'm looking to apply my experience to.
+
+Would you be open to a brief conversation?
+
+Best,
+Aman
+```
+
+#### Email 3 — Kim Campbell (T+7)
+```
+Subject: OCI integration / strategy operations
+
+Hi Kim,
+
+I'm applying for the Director, Strategy role at Methanex and came across your work leading the OCI Integration Management Office. I recently directed a $17M acquisition — structured 8 diligence workstreams, built Day 1 readiness, consolidated 8 operational systems within 90 days, retained 100% of key talent.
+
+The integration playbook I created was adopted by the acquiring company as their ongoing framework. I'd love to hear your perspective on how integration strategy connects to corporate strategy at Methanex's scale.
+
+Open to a 10-minute call?
+
+Best,
+Aman
+```
+
+#### Email 4 — Sarah Herriott, Director IR (T+7)
+```
+Subject: Strategy / IR connection
+
+Hi Sarah,
+
+I've applied for the Director, Strategy role. My background includes building board-level reporting infrastructure and investor materials from scratch — the kind that bridges strategic planning with external communication. Given IR's close coordination with the strategy team on messaging, I'd value understanding how that dynamic works at Methanex.
+
+Best,
+Aman
+```
+
+#### Email 5 — Rich Sumner, CEO (T+14)
+```
+Subject: Director, Strategy / strategic interest
+
+Hi Rich,
+
+I've applied for the Director, Strategy role. I built the strategic and financial infrastructure for a multi-site organization from zero — board-level strategy cycle, $4M P&L models, a $17M acquisition — and I'm drawn to Methanex because the strategic challenges here (global market leadership, post-M&A integration, low-carbon transition) are the ones I've spent my career preparing for.
+
+If you have 10 minutes, I'd value your perspective on the company's strategic priorities.
+
+Best,
+Aman
+```
+
+---
+
 ## SECTION 16: QUALITY GATES
 
 ### G1: ATS Validation
