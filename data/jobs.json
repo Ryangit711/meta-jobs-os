@@ -1,5 +1,14 @@
 {
-  "applied": {},
+  "applied": {
+    "Indeed": {
+      "company": "Indeed",
+      "role": "Sr. Manager, Integration & Business Acceleration",
+      "submitted_date": "2026-06-21",
+      "method": "manual_submit_phone",
+      "stage": "SUBMITTED",
+      "pipe": "T"
+    }
+  },
   "excluded": [],
-  "last_updated": "2026-06-19"
+  "last_updated": "2026-06-21"
 }
