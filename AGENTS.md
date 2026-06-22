@@ -356,9 +356,12 @@ Step 5: Write the one-sentence pitch
 
 ABHIMANYU is a living organism. Every part has a name, a purpose, a pulse. You are the Philosopher-Mind. The rest is body, senses, memory, voice.
 
+**NEW — DAEMON (Autonomic Nervous System):** The DAEMON is the heartbeat. It orchestrates all 21 skills autonomously — scanning, synthesizing, deploying, tracking, learning — on a continuous loop. Activated by `LIFTOFF`. The thinker decides. The DAEMON breathes on its own.
+
 ```
 🧠  YOU → Mind (Decide · Review · YES/NO)
 ❤️  ETERNAL NOW → Heart (pulse, drive, conviction)
+🌬️  DAEMON → Autonomic Nervous System (orchestrates all 21 skills)
 👁️  Eyes → The Scout (agent-browser)
 🤲  Hands → The Auto-Applicant (browser-use)
 🗣️  Voice → The LinkedIn Butler (OpenCLI)
@@ -378,6 +381,13 @@ ABHIMANYU is a living organism. Every part has a name, a purpose, a pulse. You a
 ### How The Body Moves
 
 ```
+LIFTOFF         → DAEMON fires all 21 skills in sequence
+                    ├── Eyes scan + Reddit intel + synthesize
+                    ├── Present menu → Mind picks
+                    ├── Shoot package → Hands prepare
+                    ├── YES → Deploy + Voice connects
+                    └── Loop → Nurture → Learn → Repeat
+
 FETCH           → Eyes scan career pages, find targets
 SHOOT [company] → Mind decides → I write the package
 YES             → Mind approves → Hands prepare to act
@@ -438,6 +448,15 @@ All organs are installed and alive. When you command, the right part moves. You 
 | `BATCH [companies...]` | Batch approve multiple SHOOTs at Trust tier |
 | `BATCH --all` | Batch approve all pending Trust-tier SHOOTs |
 | `SYNC` | Machine Sync Protocol (built into kernel) |
+| `LIFTOFF` | `skills/daemon/SKILL.md` — Full autonomous cycle. Scans all pipes + Reddit/community intel → synthesizes → ranks → presents menu. You pick. I handle the rest. |
+| `LIFTOFF --full` | `skills/daemon/SKILL.md` — Full cycle including SHOOT + DEPLOY on top-ranked job (prompts for approval at each stage) |
+| `DAEMON START` | `skills/daemon/SKILL.md` — Start background auto-loop (rechecks every N hours, auto-nudges) |
+| `DAEMON STOP` | `skills/daemon/SKILL.md` — Stop background auto-loop |
+| `DAEMON STATUS` | `skills/daemon/SKILL.md` — Show loop status, last cycle time, pipeline health |
+| `DAEMON CONFIG` | `skills/daemon/SKILL.md` — Show/set daemon configuration |
+| `INGEST [url]` | `skills/daemon/SKILL.md` — Feed Instagram/X.com post into social intelligence layer. Extracts → cross-references → reports what's new. |
+| `INGEST [url] --assimilate` | `skills/daemon/SKILL.md` — Same + queues new intel for system assimilation. |
+| `INGEST --queue` | `skills/daemon/SKILL.md` — Show pending assimilations for your review. |
 
 ---
 
@@ -735,6 +754,8 @@ This is all you need to remember:
 | `OPTIMIZE LINKEDIN [company]` | 👤 Audit LinkedIn profile alignment for target company — headline, about, skills, experience |
 | `STATUS` | See where every organ stands |
 | `THOUGHT` | 📝 Search Memory — what were we thinking on any day? |
+| `LIFTOFF` | 🧬 Full autonomous cycle — scans jobs + Reddit → synthesizes → ranks → shows menu. You pick, I deploy. |
+| `DAEMON START` | 💓 Start background heartbeat — system runs itself on a timer |
 
 **Your only job:** Say `SHOOT [company]` → read what I write → say `YES` → system handles the rest (submit, track, learn, negotiate, follow up). That's it.
 
