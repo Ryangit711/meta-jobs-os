@@ -93,6 +93,97 @@ Step 10: git add -A && git commit -m "[action] — [description] — YYYY-MM-DD 
 
 ---
 
+---
+
+## THE QUANTUM A-Z FRAMEWORK — System Architecture (Added 2026-06-21)
+
+**This is the EXECUTION MODEL. Never deviate. Every action, every output, every thought fits into exactly one of these 8 quantum bits. No skips. No reordering. No improvisation outside the framework.**
+
+### The 8 Quantum Bits (Immutable Sequence)
+
+```
+QBIT 1 — EYES SCAN
+├── WebSearch + Browser scan ALL sources in parallel
+├── Indeed · LinkedIn · Glassdoor · Workopolis · Jooble · Company career pages
+├── Each source returns: job_title × salary × freshness × fit
+├── Raw wavefunction of ALL live jobs
+└── OUTPUT: unfiltered job stream
+
+QBIT 2 — COLLAPSE WAVEFUNCTION
+├── 24h fresh? → collapses stale
+├── $120K+? → collapses low-pay
+├── Vancouver? → collapses other locations
+├── Fit > 7/10? → collapses weak matches
+├── Each assigned: Pipe (C/T/I/S) + Score + Salary + Freshness
+└── OUTPUT: CURATED list (5-30 targets)
+
+QBIT 3 — ONTOLOGY MAPPING
+├── Read company DNA → what do they sell? → Pipe
+├── Read JD verbs → what do they need? → Archetype
+├── Map A→C score (Aman vs Company fit)
+├── Map C→A score (Company vs Aman value)
+├── Store in data/fit_maps/[COMPANY].md — permanent, never deleted
+└── OUTPUT: Each target has ontological fingerprint
+
+QBIT 4 — PRIORITY RANKING
+├── Priority = (Speed × 0.4) + (Ease × 0.3) + (Pay × 0.3)
+├── Sorted ladder presented to user
+├── Stored in data/rankings/CTIS_PRIORITY.md
+└── OUTPUT: Priority ladder → user sees → user says SHOOT [X]
+
+QBIT 5 — SHOOT PACKAGE
+├── Load Fit Map + Company DNA + JD Language Registry
+├── Write 16-section package (header, alignment, scout, process, DNA, ATS, resume, cover letter, LinkedIn outreach, interview cheat sheet, checklist, cadence, finops, quality gates)
+├── Every claim traceable to Master Corpus
+└── OUTPUT: Complete SHOOT package for user review
+
+QBIT 6 — GEN DOCX
+├── Read SHOOT package + Fit Map + Company ATS Specs
+├── Font: per company ATS
+├── Margins: per company ATS
+├── Vocab: company language registry woven in
+├── Length: company-preferred (1-2 pages)
+├── Semantic secrets from data/fit_maps/[COMPANY].md embedded
+├── Dual-write: OneDrive + Linux dir
+└── OUTPUT: Aman_[Company]_[Role].docx + Cover_Letter.docx — ready to upload
+
+QBIT 7 — SUBMIT
+├── If PHONE (S25U): MANUAL_SUBMIT blueprint → field-by-field → user submits
+├── If LAPTOP (T480/T440p): browser-use → auto-fill → auto-upload → auto-submit
+└── OUTPUT: Application sent ✅
+
+QBIT 8 — POST-SUBMIT (Living Organism)
+├── PIPELINE.md: auto-update stage
+├── jobs.json: record applied + date + pipe
+├── networking_log.json: seed T+0/T+3/T+7/T+14 cadence
+├── Thought journal: log
+├── Git: commit + push
+├── OneDrive: sync
+├── CADENCE RUNS: T+0 LinkedIn connect → T+3 peer engage → T+7 recruiter DM → T+14 exec nudge
+├── CALLBACK → interview prep skill
+├── OFFER → negotiation playbook
+├── REJECT → feedback engine → system learns → smarter next loop
+└── OUTPUT: System evolved. Loop back to QBIT 1.
+```
+
+### The Philosophy (Never Forget)
+
+- **You are the quantum observer.** Before FETCH, all possibilities exist. The moment you say SHOOT → YES → SUBMIT, the waveform collapses into one reality.
+- **Machines never decide.** They scan, filter, write, fill, submit — mechanical 3D actions. Only the observer decides.
+- **Fit maps are not opinions.** They are measured alignments (A→C, C→A). Pure alchemy. Not guesswork.
+- **The DOCX is a frequency.** Tuned to that company's ATS, language registry, cultural DNA. The ATS says "this belongs here."
+- **The loop is infinite but not circular.** Every cycle improves. The system learns from every outcome. The next FETCH is smarter than the last.
+
+### The Three Actions (Your Only Job)
+
+1. **Decide** which company to target
+2. **Review** the output
+3. **Say YES or NO**
+
+The machines do the typing. You do the thinking. **Never deviate from this framework.**
+
+---
+
 ## Permanent Kernel Rules (Apply Always, Across All Skills)
 
 | Rule | Detail |
