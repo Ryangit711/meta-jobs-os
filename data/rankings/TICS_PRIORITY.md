@@ -1,4 +1,4 @@
-# CTIS Priority Ranking — Recalibrated 2026-06-22
+# TICS Priority Ranking — Recalibrated 2026-06-24
 
 ## Goal
 On payroll. Fastest/easiest entry. Highest pay. Only targets where Aman's real profile is a fit.
@@ -58,15 +58,15 @@ Pay scale (1-10): 10 = $250K+, 1 = $100K-
 
 ---
 
-## Pipe Ranking (By Strategic Priority)
+## Pipe Ranking (By Strategic Priority — TICS Order)
 
 | Pipe | Top Target | Priority | Why This Order |
 |------|-----------|:--------:|----------------|
+| **T (Tech/BigTech)** | Indeed | 9.1 (already submitted) | Tech ops + M&A integration. Already SHOT. Waiting on callback. |
 | **I (Internal Strategy)** | Providence Healthcare Dir Clinical Ops | ~7.0 | **Direct industry match.** Multi-site healthcare ops = what Aman did for 8 years. Highest probability. |
 | **S (Startup)** | Hiive Chief of Staff | 8.1 | Fastest yes. Natural builder archetype. Startup pace matches Aman's energy. |
 | **I (Internal Strategy)** | Vancity VP Strategy | 7.0 | Highest salary. Strong internal strategy team. Credit union = purpose-driven. |
-| **T (Tech/BigTech)** | Indeed | 9.1 (already submitted) | Tech ops + M&A integration. Already SHOT. Waiting on callback. |
-| **I (Corporate Strategy)** | Methanex | 7.8 | Highest pay. Simplest interview. Director title. |
+| **C (Consulting)** | Accenture Sr Mgr | 5.5 | Highest pay. Steepest pedigree wall. Reserved for strategic plays. |
 
 ---
 

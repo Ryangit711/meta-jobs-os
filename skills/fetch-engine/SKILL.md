@@ -37,11 +37,14 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 - DELETE and recreate if exists (fresh start every time)
 - NEVER delete `data/jobs.json` — that is permanent system memory
 
-## Phase 2 — Websearch 4 Pipes + Apify Bulk Search (24h fresh window)
-- **C PIPE (Consulting)**: EY-Parthenon, Deloitte, EY, KPMG, PwC, Accenture, MBB
-- **T PIPE (Tech/Ops Core)**: Clio, Shopify, Amazon, 1Password, Tailscale, DoorDash, SaaS ops
-- **I PIPE (Internal Strategy)**: lululemon, TELUS, corporate strategy, BizOps, RevOps
-- **S PIPE (Startups)**: Procurify, Ada, funded Vancouver startups, chief of staff roles
+## Phase 2 — Websearch TICS 4 Pipes + All Sources (24h fresh window)
+- Full source registry: `data/pipeline/SYSTEM_SOURCES.md`
+- READ SYSTEM_SOURCES.md first — sweep ALL primary job boards + pipe-specific company pages
+- **Primary boards (always)**: Indeed · LinkedIn · Glassdoor · Workopolis · Jooble · Google Jobs · Hiring Cafe
+- **T PIPE (Tech/Ops Core)**: Clio, Shopify, Amazon, 1Password, Tailscale, DoorDash, SaaS ops — plus SYSTEM_SOURCES.md T pipe list
+- **I PIPE (Internal Strategy)**: lululemon, TELUS, corporate strategy, BizOps, RevOps — plus SYSTEM_SOURCES.md I pipe list
+- **C PIPE (Consulting)**: EY-Parthenon, Deloitte, EY, KPMG, PwC, Accenture, MBB — plus SYSTEM_SOURCES.md C pipe list
+- **S PIPE (Startups)**: Procurify, Ada, funded Vancouver startups, chief of staff roles — plus SYSTEM_SOURCES.md S pipe list
 - **Pipe prioritization**: READ `data/learned/pipes.md` — prioritize pipes with highest callback/offer rate. If S pipe has 50% callback rate and C pipe has 0%, allocate more search effort to S.
 - Cross-check Greenhouse boards: Brex, Hootsuite, EviSmart, Thinkific, Practice Better
 - Test NEW Greenhouse slugs each run: GitLab, Zapier, Notion, Canva, Stripe, HubSpot, etc.

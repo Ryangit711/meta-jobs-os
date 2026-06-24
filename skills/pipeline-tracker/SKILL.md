@@ -107,9 +107,9 @@ Function: pipeline_set_action(company, role, action)
 | `TRACK --next` | READ → FILTER where next_action not empty → DISPLAY |
 | `TRACK --stats` | Run Step 3 only → DISPLAY stats banner |
 | `TRACK --export` | READ → convert to JSON → WRITE data/pipeline/pipeline_export.json → DISPLAY path |
-| `AUDIT` | Run system health audit: skill freshness, CTIS coverage, pipeline health |
+| `AUDIT` | Run system health audit: skill freshness, TICS pipe coverage, pipeline health |
 | `AUDIT --skills` | Run skill audit only (last used, output count, cross-wiring) |
-| `AUDIT --coverage` | Run CTIS pipe coverage check only |
+| `AUDIT --coverage` | Run TICS pipe coverage check only |
 | `AUDIT --pipeline` | Run pipeline health check only (stale items, ghosting risks) |
 
 ---
@@ -129,7 +129,7 @@ Step A1: READ skill freshness
   → FLAG skills with 0 outputs → "❌ [skill] defined but never executed"
   → FLAG skills with no cross-wiring → "⚠️ [skill] reads/writes nothing — silo risk"
 
-Step A2: READ CTIS pipe coverage
+Step A2: READ TICS pipe coverage
   → READ data/pipeline/PIPELINE.md — count active jobs per pipe (C/T/I/S)
   → READ data/learned/pipes.md — count past successes/fails per pipe
   → CALCULATE coverage per pipe:
@@ -163,7 +163,7 @@ Step A5: DISPLAY audit dashboard
   │   ⚠️ 2 skills unused >14d: [names]          │
   │   ❌ 0 skills never executed                 │
   │                                              │
-  │ CTIS COVERAGE                                │
+   │ TICS COVERAGE                                │
   │   C: 3 active  ✅  |  T: 5 active  ✅       │
   │   I: 1 active  ⚠️  |  S: 0 active  ❌       │
   │                                              │
@@ -182,7 +182,7 @@ Step A5: DISPLAY audit dashboard
 Run Step A1 only → display skill health section
 
 ### On AUDIT --coverage
-Run Step A2 only → display CTIS coverage section
+Run Step A2 only → display TICS coverage section
 
 ### On AUDIT --pipeline
 Run Step A3 + A4 only → display pipeline health + pre-SHOOT warnings

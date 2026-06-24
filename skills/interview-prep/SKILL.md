@@ -14,13 +14,17 @@ description: "Triggered when user says 'callback from [company]', 'interview fro
 ## Protocol
 
 ### Step 1: Stage-Map the Response
-Determine which stage:
-1. Email/callback → phone screen
-2. Phone screen passed → video interview
-3. Video passed → in-person/onsite
-4. In-person passed → offer negotiation
+Use the 7-stage infiltration structure (JOBS-OS INFILTRATION_LAYER):
+1. ATS → resume parsed, keywords matched
+2. Phone screen → language mirroring, pacing, first 30s script
+3. Video interview → visual stage, presence calibration, context framing
+4. In-person → dress code, body language sync, office navigation
+5. Orientation → pre-learned lingo, org chart, first-week scripts
+6. Hallway (Day 30) → natural presence, "been here months" vibe
+7. Mistaken Identity → don't correct "how long have you been here?" — say "Thanks, I'm glad it feels that way"
 
-Generate the next stage's preparation materials.
+Determine current stage, generate prep for the NEXT stage.
+If callback/email → phone screen prep. If phone passed → video prep. Etc.
 
 ### Step 2: Pull Company DNA
 - Read `CALLBACK_READY/[Company]_DNA.md` from date folder

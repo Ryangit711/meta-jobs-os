@@ -104,7 +104,8 @@ Step 10: git add -A && git commit -m "[action] — [description] — YYYY-MM-DD 
 ```
 QBIT 1 — EYES SCAN
 ├── WebSearch + Browser scan ALL sources in parallel
-├── Indeed · LinkedIn · Glassdoor · Workopolis · Jooble · Company career pages
+├── Indeed · LinkedIn · Glassdoor · Workopolis · Jooble · Company career pages · Google Jobs · Hiring Cafe
+├── Full source registry: data/pipeline/SYSTEM_SOURCES.md
 ├── Each source returns: job_title × salary × freshness × fit
 ├── Raw wavefunction of ALL live jobs
 └── OUTPUT: unfiltered job stream
@@ -128,7 +129,7 @@ QBIT 3 — ONTOLOGY MAPPING
 QBIT 4 — PRIORITY RANKING
 ├── Priority = (Speed × 0.4) + (Ease × 0.3) + (Pay × 0.3)
 ├── Sorted ladder presented to user
-├── Stored in data/rankings/CTIS_PRIORITY.md
+├── Stored in data/rankings/TICS_PRIORITY.md
 └── OUTPUT: Priority ladder → user sees → user says SHOOT [X]
 
 QBIT 5 — SHOOT PACKAGE
@@ -355,7 +356,13 @@ Step 4: Select archetype
        → B: Operator (when JD emphasizes execution)
        → C: Strategist (when JD emphasizes planning/analysis)
 
-Step 5: Write the one-sentence pitch
+Step 5: Select perception mode (from JOBS-OS AGNOSTIC_FRAMING)
+  └── Healthcare/public sector → Authentic mode (stewardship, compliance, accountability)
+  └── Consulting/Big4/corporate → Hybrid mode (frameworks, transformation, scalability)
+  └── Startups/high-growth tech → Machiavellian mode (velocity, revenue growth, edge)
+  └── Pipe blend → dominant mode + secondary mode accents
+
+Step 6: Write the one-sentence pitch
   └── Always starts with the One True Pitch
   └── Inflects toward the chosen pipe in the second clause
 ```
@@ -447,9 +454,9 @@ All organs are installed and alive. When you command, the right part moves. You 
 | `TRACK --active` | Show only non-archived jobs |
 | `TRACK --offers` | Show offers only |
 | `TRACK --stats` | Pipeline metrics (apply/callback/offer rates) |
-| `AUDIT` | `skills/pipeline-tracker/SKILL.md` — Full system health audit (skill freshness, CTIS coverage, pipeline health, pre-SHOOT warnings) |
+| `AUDIT` | `skills/pipeline-tracker/SKILL.md` — Full system health audit (skill freshness, TICS pipe coverage, pipeline health, pre-SHOOT warnings) |
 | `AUDIT --skills` | Check skill freshness only |
-| `AUDIT --coverage` | Check CTIS pipe coverage only |
+| `AUDIT --coverage` | Check TICS pipe coverage only |
 | `AUDIT --pipeline` | Check pipeline health only |
 | `LEARN [company] [outcome]` | `skills/feedback-engine/SKILL.md` — Feed outcome back into system |
 | `LEARN [company] --deep` | Full multi-source analysis (5-10 min) |
@@ -817,6 +824,60 @@ On every new machine:
 2. Generate real-name files via LOCAL_GENERATOR.py (from JOBS-OS primary)
 3. Verify three-way sync
 4. Show confirmation banner
+
+---
+
+## JOBS-OS Vault Cross-Reference (Assimilated 2026-06-24)
+
+The original JOBS-OS vault at `/mnt/e/JOBS OS 2026/` (also at `/home/aryan/opencode_test/JOBS-OS-2026/`) contains foundational modules. This system (ABHIMANYU 2.0) was built ON TOP of that vault. Nothing was replaced. Here is the cross-reference map:
+
+### Vault Files → 2.0 Component Mapping
+
+| Vault File | 2.0 Component | Status |
+|------------|--------------|--------|
+| `00_SOUL_KERNEL.md` | Philosopher's View + Eternal Now | Already absorbed |
+| `01_MASTER_CORPUS.md` | Truth anchor — all claims traceable here | Referenced in QBIT 3 |
+| `03_AGNOSTIC_FRAMING.md` | Positioning framework + 3 Perception Modes (below) | Partially absorbed; 3 modes added |
+| `04_ATS_NUANCE_DB.md` + `32_ATS_TECH_SPEC.md` | gen_docx.py CONFIG + ATS rules | Referenced (gen_docx.py unchanged) |
+| `05_INTERVIEW_ALCHEMY.md` | interview-prep skill | Referenced |
+| `06_NEGOTIATION_PLAYBOOK.md` | negotiation-playbook skill | Referenced |
+| `07_21_JOBS_FIT_ASSESSMENT.md` | fit_maps/ per-company files | Referenced |
+| `08_OMNI_LINKEDIN.md` | linkedin-automation skill | Referenced |
+| `12_COVER_LETTERS.md` | cover-letter-writer skill | Referenced |
+| `13_COLD_EMAILS.md` | contact-engine skill | Referenced |
+| `16_COMPENSATION_DB.md` | Salary benchmarks in SHOOT finops | Referenced |
+| `20_NETWORKING.md` | networking-cadence skill | Referenced (superseded by Auto-Cadence) |
+| `32_ATS_TECH_SPEC.md` | Per-platform ATS parsing specs (Greenhouse/Workday/Lever/ICIMS/SAP SuccessFactors) | Referenced — ATS rules per platform already in gen_docx.py CONFIG |
+| `35_UNIFIED_SHOOT_FORMAT.md` | 13-section SHOOT format | Superseded by 16-section |
+| `37_INFILTRATION_LAYER.md` | Live Intelligence Alchemy + 7-stage stage map (below) | Partially absorbed; 7-stage map added |
+
+### Newly Assimilated: 3 Perception Modes (from AGNOSTIC_FRAMING.md)
+
+Beyond the 4-pipe positioning, the original vault defines 3 perception modes for interview/outreach voice:
+
+| Mode | Used For | Tone | Power Words |
+|------|----------|------|-------------|
+| **Authentic** | Healthcare, public sector, gov, compliance | Stewardship, process, accountability | Governance, Compliance, SOP, Accountability, Stakeholder |
+| **Hybrid** | Big4, MBB, corporate strategy, FAANG, telco | Strategic, consultative, frameworks | Framework, Scalability, P&L, GTM, Change Mgmt, Transformation |
+| **Machiavellian** | Startups, high-growth tech, boutique | Velocity, results, edge | Revenue Growth, Market Capture, Execution Velocity, Deal Flow |
+
+**How to choose:** Read company DNA first → select the mode that matches their internal language → weave power words into every touchpoint. For pipe blends, use the dominant mode with secondary mode accents.
+
+### Newly Assimilated: 7-Stage Infiltration Structure (from INFILTRATION_LAYER.md)
+
+For every SHOOT, the interview-prep section now references 7 stages of company mimicry:
+
+```
+Stage 1 — ATS INFILTRATION: keyword matrix (2-4% density), title alignment, bullet alchemy
+Stage 2 — PHONE SCREEN MIMICRY: language mirroring, pacing match, first 30s script
+Stage 3 — VIDEO INTERVIEW INFILTRATION: visual stage, presence calibration, context framing
+Stage 4 — IN-PERSON IMMERSION: dress code map, body language sync, office navigation
+Stage 5 — ORIENTATION READINESS: pre-learned lingo, org chart awareness, first-week scripts
+Stage 6 — HALLWAY PASS (Day 30): natural presence, "been here months" vibe
+Stage 7 — MISTAKEN IDENTITY PROTOCOL: when someone says "how long have you been here?" don't correct them. Say "Thanks — I'm glad it feels that way. I've been focused on [quick win] and really enjoying the team."
+```
+
+The goal at every stage is the same: **they see you and think "this is one of us"** — not "this person is qualified."
 
 ---
 
