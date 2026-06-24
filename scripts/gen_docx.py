@@ -8,6 +8,8 @@ from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
+from docx.oxml import parse_xml
+from lxml import etree
 
 ONEDRIVE = "/mnt/c/Users/owner/OneDrive/ABHIMANYU-2.0"
 LINUX = "/home/aryan/opencode_test/ABHIMANYU-2.0"
@@ -78,10 +80,11 @@ def add_contact(doc, config):
     run.bold = True
     p2 = doc.add_paragraph()
     p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run2 = p2.add_run(f"{PHONE} | {EMAIL} | {LINKEDIN} | {LOCATION}")
-    run2.font.name = config["font"]
-    run2.font.size = Pt(9)
-    run2.font.color.rgb = RGBColor(80, 80, 80)
+    add_plain_run(p2, f"{PHONE}  |  ", config["font"], Pt(9), color="505050")
+    add_hyperlink_contact(p2, EMAIL, f"mailto:{EMAIL}", config["font"], Pt(9))
+    add_plain_run(p2, "  |  ", config["font"], Pt(9), color="505050")
+    add_hyperlink_contact(p2, "LinkedIn", f"https://{LINKEDIN}", config["font"], Pt(9))
+    add_plain_run(p2, f"  |  {LOCATION}", config["font"], Pt(9), color="505050")
 
 def add_section_header(doc, text, config):
     p = doc.add_paragraph()
@@ -128,6 +131,62 @@ def add_bullet(doc, text, config, bold_prefix=None):
         run = p.add_run(f"• {text}")
         run.font.name = config["font"]
         run.font.size = config["size"]
+
+def add_hyperlink_contact(p, label, url, font_name, font_size):
+    part = p.part
+    r_id = part.relate_to(url,
+        'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink',
+        is_external=True)
+    ns_w = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+    ns_r = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'
+    hyperlink_xml = (
+        f'<w:hyperlink xmlns:w="{ns_w}" xmlns:r="{ns_r}" '
+        f'r:id="{r_id}" w:history="1">'
+        f'<w:r><w:rPr>'
+        f'<w:rFonts w:ascii="{font_name}" w:hAnsi="{font_name}"/>'
+        f'<w:sz w:val="{int(font_size.pt * 2)}"/>'
+        f'<w:color w:val="0563C1"/>'
+        f'<w:u w:val="single"/>'
+        f'</w:rPr>'
+        f'<w:t xml:space="preserve">{label}</w:t>'
+        f'</w:r></w:hyperlink>'
+    )
+    hyperlink_elem = parse_xml(hyperlink_xml)
+    p._p.append(hyperlink_elem)
+
+def add_plain_run(p, text, font_name, font_size, color=None):
+    ns_w = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+    color_attr = f'<w:color w:val="{color}"/>' if color else ''
+    run_xml = (
+        f'<w:r xmlns:w="{ns_w}">'
+        f'<w:rPr>'
+        f'<w:rFonts w:ascii="{font_name}" w:hAnsi="{font_name}"/>'
+        f'<w:sz w:val="{int(font_size.pt * 2)}"/>'
+        f'{color_attr}'
+        f'</w:rPr>'
+        f'<w:t xml:space="preserve">{text}</w:t>'
+        f'</w:r>'
+    )
+    run_elem = parse_xml(run_xml)
+    p._p.append(run_elem)
+
+def add_signature(doc, config):
+    p = doc.add_paragraph()
+    p.paragraph_format.space_after = Pt(0)
+    p.paragraph_format.space_before = Pt(0)
+    add_plain_run(p, "Best regards,", config["font"], config["size"])
+    p2 = doc.add_paragraph()
+    p2.paragraph_format.space_after = Pt(0)
+    p2.paragraph_format.space_before = Pt(0)
+    add_plain_run(p2, NAME, config["font"], config["size"])
+    p3 = doc.add_paragraph()
+    p3.paragraph_format.space_after = Pt(0)
+    p3.paragraph_format.space_before = Pt(0)
+    add_plain_run(p3, PHONE, config["font"], config["size"], color="505050")
+    p4 = doc.add_paragraph()
+    p4.paragraph_format.space_after = Pt(0)
+    p4.paragraph_format.space_before = Pt(0)
+    add_hyperlink_contact(p4, EMAIL, f"mailto:{EMAIL}", config["font"], config["size"])
 
 def get_date(company):
     DATES = {
@@ -355,7 +414,13 @@ def generate(company):
     set_margins(doc, config["margins"])
 
     add_body(doc, NAME, config, bold=True, space_after=0)
-    add_body(doc, f"{PHONE} | {EMAIL} | {LINKEDIN}", config, size=Pt(9), space_after=0)
+    cover_contact = doc.add_paragraph()
+    cover_contact.paragraph_format.space_after = Pt(0)
+    cover_contact.paragraph_format.space_before = Pt(0)
+    add_plain_run(cover_contact, f"{PHONE}  |  ", config["font"], Pt(9), color="505050")
+    add_hyperlink_contact(cover_contact, EMAIL, f"mailto:{EMAIL}", config["font"], Pt(9))
+    add_plain_run(cover_contact, "  |  ", config["font"], Pt(9), color="505050")
+    add_hyperlink_contact(cover_contact, "LinkedIn", f"https://{LINKEDIN}", config["font"], Pt(9))
     add_body(doc, LOCATION, config, size=Pt(9), space_after=4)
     DATE_LABELS = {"Indeed": "June 20, 2026", "Methanex": "June 21, 2026", "Deloitte": "June 19, 2026", "Hiive": "June 22, 2026", "Providence_Healthcare": "June 22, 2026"}
     add_body(doc, DATE_LABELS.get(company, "June 22, 2026"), config, space_after=8)
@@ -386,9 +451,7 @@ def generate(company):
             "the same: Where do we allocate capital? How do we grow? What risks do we manage? How do we align a global "
             "organization around a shared plan? I have solved these problems in my domain, and I am ready to solve them in yours.\n\n"
             "I would welcome the opportunity to discuss how my experience building strategic and financial infrastructure "
-            "can support Methanex's next phase of global leadership.\n\n"
-            "Best regards,\n"
-            f"{NAME}\n{PHONE}\n{EMAIL}"
+            "can support Methanex's next phase of global leadership."
         )
     elif company == "Hiive":
         add_body(doc, "Hiive", config, space_after=0)
@@ -420,9 +483,7 @@ def generate(company):
             "serving geriatric populations in multi-facility settings. My combination of formal business education and "
             "hands-on seniors care operations experience provides the equivalent foundation this role requires.\n\n"
             "I would welcome the opportunity to discuss how my experience building and leading multi-site healthcare "
-            "operations for aging populations can support Providence and Fraser Health's vision for seniors care.\n\n"
-            "Best regards,\n"
-            f"{NAME}\n{PHONE}\n{EMAIL}"
+            "operations for aging populations can support Providence and Fraser Health's vision for seniors care."
         )
     elif company == "Hiive":
         add_body(doc, "Hiive", config, space_after=0)
@@ -445,9 +506,7 @@ def generate(company):
             "market has been running on brokers and spreadsheets for too long. You are building the infrastructure "
             "that changes that.\n\n"
             "I want to help you clear the bottlenecks.\n\n"
-            "I am based in Vancouver and ready to be in your HQ five days a week.\n\n"
-            "Best regards,\n"
-            f"{NAME}\n{PHONE}\n{EMAIL}"
+            "I am based in Vancouver and ready to be in your HQ five days a week."
         )
     else:
         add_body(doc, "Indeed", config, space_after=0)
@@ -473,12 +532,12 @@ def generate(company):
             "I am not looking for a role that requires a playbook to exist before I start. I am looking for "
             "one that needs a playbook written.\n\n"
             "I would welcome the opportunity to discuss how my experience building and integrating multi-site "
-            "operations can support Indeed's continued growth through M&A. Thank you for your time and consideration.\n\n"
-            "Best regards,\n"
-            f"{NAME}\n{PHONE}\n{EMAIL}"
+            "operations can support Indeed's continued growth through M&A. Thank you for your time and consideration."
         )
 
     add_body(doc, body, config, space_after=0)
+    add_body(doc, "", config, space_after=0)
+    add_signature(doc, config)
 
     clpath = os.path.join(folder, f"Cover_Letter_{company}_{role_str}.docx")
     try:
