@@ -58,11 +58,11 @@
 Vancouver, BC, Canada
 
 PROFESSIONAL SUMMARY
-Operations executive and systems builder with 8 years scaling a healthcare
-business from 3 to 70 people, 32 locations, and $4M ARR. Led the complete
-technology transformation, owned end-to-end P&L, and delivered a $17M exit.
-Built marketplace-style incentive systems that balanced worker earnings with
-cost efficiency — directly transferable to Dasher pay strategy at DoorDash.
+Operations executive with 8 years scaling a business from 3 to 70 people,
+32 locations, and $4M ARR. Led the complete technology transformation, owned
+end-to-end P&L, and delivered a $17M exit. Built marketplace-style incentive
+systems balancing worker earnings with cost efficiency — directly transferable
+to Dasher pay strategy.
 
 CORE COMPETENCIES
 Marketplace Operations · Pay & Incentive Design · P&L Management ·
@@ -73,40 +73,28 @@ EXPERIENCE
 
 [Company Name] — [Former Role]
 2017–2025 | Metro Vancouver
-Built the business from ground zero to 70 employees, 32 locations across BC.
-Managed full P&L ($0→$4M ARR). Led technology transformation (EHR, billing,
-scheduling, RCM). Structured worker compensation and incentive programs
-across diverse regional markets — balancing labour cost with service quality.
+Built the business from zero — 3 to 70 people, 32 locations, $4M ARR. Owned
+end-to-end P&L, designed the incentive architecture, led the technology
+transformation, and delivered a $17M exit.
 
 Key achievements:
-• Scaled operations from 3 to 70 people and 3 to 32 locations — building
-  the systems, processes, and infrastructure from scratch
-• Delivered $17M exit through operational discipline — right-sized cost
-  structure, optimized margins, demonstrated scalable unit economics
-• Designed and implemented incentive compensation system across 32
-  locations — balancing worker earnings with business cost efficiency
-• Led technology transformation — migrated from paper/manual to fully
-  integrated EHR, billing, and scheduling platform
-• Owned end-to-end P&L — managed $3M+ annual budget, forecasting,
-  variance analysis, and board reporting
-• Built cross-functional team structure — operations, finance, clinical,
-  technology — and established accountability frameworks
-
-[Company Name] — [Earlier Role]
-2015–2017 | Metro Vancouver
-Managed regional operations for multi-location healthcare business.
-• Led daily operations across 8 locations — scheduling, staffing, quality,
-  customer experience
-• Implemented process improvements that reduced cost per visit by 15%
+• Scaled 3 to 70 people, 32 locations — built infrastructure, processes, and
+  hiring frameworks that supported 23x growth without adding complexity
+• Designed incentive compensation across 32 markets — tuned per location for
+  labour cost, competitive pressure, and worker expectations while maintaining
+  budget discipline
+• Directed full-cycle acquisition: 8 diligence workstreams, Day 1 readiness,
+  90-day systems consolidation, 100% key talent retention
+• Managed \$3M+ annual budget, multi-scenario forecasting, variance analysis,
+  capital allocation across 12 departments — presented board-ready reporting
+• Led transformation from paper to fully integrated digital platform — EHR,
+  billing, scheduling, analytics — selected, deployed, and owned every system
 
 EDUCATION
-MBA — [University]
-BSc, Information Technology — [University]
-Post-Baccalaureate Diploma — KPU
+MBA, Strategy & Finance · BSc, Information Technology · Post-Bacc Diploma, KPU
 
 TECHNICAL PROFICIENCY
-ERP/Financial Systems · EHR Platforms · SQL (querying) · Excel/Google Sheets
-(advanced modeling) · Data Analysis · Project Management Tools
+ERP/Financial Systems · SQL · Excel/Google Sheets (advanced modeling) · Data Analysis · Project Management Tools
 ```
 
 ## 7. COVER LETTER

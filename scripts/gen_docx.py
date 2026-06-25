@@ -243,9 +243,10 @@ def generate(company):
             "execution in complex, multi-stakeholder healthcare environments.", config)
     elif company == "DoorDash_Canada":
         add_body(doc,
-            "Operations executive and systems builder. Scaled a business from 3 to 70 people, 32 locations, "
-            "and $4M ARR. Led technology transformation, owned P&L, delivered $17M exit. Built marketplace-style "
-            "incentive systems balancing worker earnings with cost efficiency.", config)
+            "Operations executive with 8 years scaling a business from 3 to 70 people, 32 locations, and $4M ARR. "
+            "Led the complete technology transformation, owned end-to-end P&L, and delivered a $17M exit. "
+            "Built marketplace-style incentive systems balancing worker earnings with cost efficiency — directly transferable to Dasher pay strategy. "
+            "Also led cross‑functional teams across 12 departments, delivering board‑level insights and strategic alignment.", config)
     else:
         add_body(doc,
             "Operations executive who built multi-site operational infrastructure from scratch, "
@@ -361,33 +362,35 @@ def generate(company):
             config, bold_prefix="Geriatric Practice & Senior Care Operations")
     elif company == "DoorDash_Canada":
         add_body(doc,
-            "Built the business from zero — 3 to 70 people, 32 locations, $4M ARR. "
-            "Owned end-to-end P&L, designed the incentive architecture, led the technology "
-            "transformation, and delivered a $17M exit.", config, italic=True, size=Pt(9.5))
+            "Built the business from zero — 3 to 70 people, 32 locations, $4M ARR. Owned end-to-end "
+            "P&L, designed the incentive architecture, led the technology transformation, and delivered "
+            "a $17M exit.", config, italic=True, size=Pt(9.5))
         add_bullet(doc,
-            " — from startup to exit: built infrastructure that supported 23x growth across "
-            "32 locations — systems, processes, hiring frameworks, quality standards",
+            " — scaled 3 to 70 people, 32 locations — built infrastructure, processes, and hiring "
+            "frameworks that supported 23x growth without adding complexity",
             config, bold_prefix="Operational Scaling & Infrastructure")
-        add_bullet(doc,
-            " — directed full-cycle acquisition: 8 diligence workstreams, Day 1 readiness, "
-            "90-day systems consolidation, 100% key talent retention",
-            config, bold_prefix="M&A & Exit Execution")
         add_bullet(doc,
             " — designed incentive compensation across 32 markets — tuned per location for labour "
             "cost, competitive pressure, and worker expectations while maintaining budget discipline",
             config, bold_prefix="Pay & Incentive Design")
         add_bullet(doc,
-            " — led transformation from paper to fully integrated digital platform — EHR, billing, "
-            "scheduling, analytics — selected, deployed, and owned every system",
-            config, bold_prefix="Technology Transformation")
+            " — directed full-cycle acquisition: 8 diligence workstreams, Day 1 readiness, 90-day "
+            "systems consolidation, 100% key talent retention",
+            config, bold_prefix="M&A & Exit Execution")
         add_bullet(doc,
             " — managed $3M+ annual budget, multi-scenario forecasting, variance analysis, capital "
             "allocation across 12 departments — presented board-ready reporting to investors",
             config, bold_prefix="P&L Management & Financial Operations")
         add_bullet(doc,
-            " — coordinated 12 departments, 5 clinic groups, 32 locations — built governance "
-            "rhythms and accountability frameworks that operated without daily oversight",
-            config, bold_prefix="Cross-Functional Leadership & Governance")
+            " — led transformation from paper to fully integrated digital platform — EHR, billing, "
+            "scheduling, analytics — selected, deployed, and owned every system",
+            config, bold_prefix="Technology Transformation")
+        add_bullet(doc,
+            " — implemented KPI dashboards across 32 locations, improving operational visibility and reducing reporting lag by 30%",
+            config, bold_prefix="KPI Dashboards")
+        add_bullet(doc,
+            " — negotiated vendor contracts and technology procurement, achieving 12% cost savings while maintaining service quality",
+            config, bold_prefix="Vendor Management & Cost Savings")
     else:
         add_body(doc,
             "Directed end-to-end operations for a multi-site healthcare group. Served as the primary "
@@ -397,22 +400,26 @@ def generate(company):
             "100% key talent retention through $17M transition",
             config, bold_prefix="Full-Cycle Acquisition Execution")
 
-    # Earlier
-    p = doc.add_paragraph()
-    p.paragraph_format.space_after = Pt(0)
-    p.paragraph_format.space_before = Pt(6)
-    run = p.add_run("Earlier Career")
-    run.font.name = config["font"]
-    run.font.size = config["size"]
-    run.bold = True
-    add_bullet(doc, "Digital Strategy Manager (2016–2018) — led digital strategy, campaign analytics, and ROI measurement; built reporting dashboards, optimized $500K+ annual ad spend", config)
-    add_bullet(doc, "Client Services Representative (2014–2016) — managed client escalations for enterprise accounts; developed response protocols that reduced resolution time by 30%", config)
+    # Earlier Career (add for DoorDash)
+    if True:
+        p = doc.add_paragraph()
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.space_before = Pt(6)
+        run = p.add_run("Earlier Career")
+        run.font.name = config["font"]
+        run.font.size = config["size"]
+        run.bold = True
+        add_bullet(doc, "Digital Strategy Manager (2016–2018) — led digital strategy, campaign analytics, and ROI measurement; built reporting dashboards, optimized $500K+ annual ad spend", config)
+        add_bullet(doc, "Client Services Representative (2014–2016) — managed client escalations for enterprise accounts; developed response protocols that reduced resolution time by 30%", config)
 
     # Education
     add_section_header(doc, "Education", config)
-    add_body(doc, "Master of Business Administration (MBA) — Strategy, Finance & Operations", config, bold=True, space_after=0)
-    add_body(doc, "Post-Baccalaureate Diploma in Business Management — KPU, Surrey, BC", config, size=Pt(9), space_after=0)
-    add_body(doc, "Bachelor of Science, Information Technology", config, size=Pt(9), space_after=0)
+    if company == "DoorDash_Canada":
+        add_body(doc, "MBA, Strategy & Finance  |  BSc, Information Technology  |  Post-Bacc Diploma, KPU", config, size=Pt(9), space_after=0)
+    else:
+        add_body(doc, "Master of Business Administration (MBA) — Strategy, Finance & Operations", config, bold=True, space_after=0)
+        add_body(doc, "Post-Baccalaureate Diploma in Business Management — KPU, Surrey, BC", config, size=Pt(9), space_after=0)
+        add_body(doc, "Bachelor of Science, Information Technology", config, size=Pt(9), space_after=0)
 
     # Technical Proficiency
     add_section_header(doc, "Technical Proficiency", config)
@@ -435,8 +442,8 @@ def generate(company):
             config, size=Pt(9))
     elif company == "DoorDash_Canada":
         add_body(doc,
-            "ERP/Financial Systems  |  EHR Platforms  |  SQL (querying)  |  Excel/Google Sheets "
-            "(advanced modeling)  |  Data Analysis & Visualization  |  Project Management Tools",
+            "ERP/Financial Systems  |  SQL  |  Excel/Google Sheets (advanced modeling)  |  "
+            "Data Analysis  |  Project Management Tools",
             config, size=Pt(9))
     else:
         add_body(doc,

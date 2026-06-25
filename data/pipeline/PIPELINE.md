@@ -6,7 +6,7 @@ Updated: 2026-06-24 18:30 — Indeed ❌ REJECTED — learning captured
 
 | Status | Company | Role | Salary | ~Net/Mo | Stage | Reality |
 |:------:|---------|------|:------:|:-------:|:-----:|---------|
-| 🔵 | **DoorDash Canada** | Mgr, S&O – Dasher & Logistics | $148K-$185K | $7.9K-$9.5K | **SHOT — SUBMIT NOW** | ✅ Live on Greenhouse |
+| ✅ | **DoorDash Canada** | Mgr, S&O – Dasher & Logistics | $148K-$185K | $7.9K-$9.5K | **SUBMITTED** | ✅ Live on Greenhouse |
 | 🔵 | **Providence Healthcare** | Dir, Clinical & Operations | $130.9K-$188.1K | $7.2K-$9.7K | **SHOT — SUBMIT NOW** | ✅ Still live (Jun 18) |
 | ❌ | **Indeed** | Sr Mgr, Integration | $133K-$199K | $7.2K-$9.9K | REJECTED D3 | 💡 Screening rejection — ATS/keyword mismatch likely |
 | 🟢 | FMD Services | Dir, Strategy & Execution | $150K-$195K | $8.0K-$9.7K | LIVE | ❓ Need 24h freshness check |
