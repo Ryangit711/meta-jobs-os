@@ -117,9 +117,12 @@ QBIT 1 — EYES SCAN (13 primary sources + career pages + Greenhouse)
 
 QBIT 2 — COLLAPSE WAVEFUNCTION
 ├── 24h fresh? → collapses stale
-├── $120K+? → collapses low-pay
-├── Vancouver? → collapses other locations
-├── Fit > 7/10? → collapses weak matches
+├── $80K+? → collapses low-pay (no ceiling)
+├── Vancouver/Remote Canada? → collapses other locations
+├── No credit check required? → silently skip (banks, credit unions, insurance, finance)
+├── No heavy Excel/quant? → silently skip (financial modeling, FP&A, analytics, data science, pricing)
+├── PR-qualifying (TEER 0/1)? → collapses non-qualifying
+├── Fit > 6/10? → collapses weak matches
 ├── Each assigned: Pipe (C/T/I/S) + Score + Salary + Freshness
 └── OUTPUT: CURATED list (5-30 targets)
 
@@ -209,6 +212,7 @@ The machines do the typing. You do the thinking. **Never deviate from this frame
 | **DOCX everywhere** | Generate DOCX for every application. PDF is for job guides/cheat sheets only. |
 | **DOCX direct to OneDrive** | On this laptop (S25U not connected), DOCX files are generated DIRECTLY to OneDrive at `/mnt/c/Users/owner/OneDrive/ABHIMANYU-2.0/` — NOT to the Linux work dir first. The Linux work dir gets the `.md` package only. DOCX lives in OneDrive as the primary + only location. Dual-write for DOCX is OneDrive-only, no Linux copy needed. |
 | **No immigration language** | Never mention PR, work permit, visa, or immigration status in any resume, cover letter, or application. Frame as Local Canadian professional in BC. |
+| **Silent Credit Check & No Heavy Quant Filter (NEW — Immutable)** | Both filters are applied silently, no energy spent debating. **Credit check:** Skip any role at banks (RBC, TD, BMO, CIBC, Scotia), credit unions (Vancity, Coast Capital), insurance (ICBC, Manulife, Sun Life), wealth management, accounting firms, or any role where the JD mentions "credit check" or touches financial fiduciary responsibility. Rationale: credit history is not strong enough to pass. No fight, no workaround. Just skip. **No heavy quant/Excel:** Skip roles that emphasize "Advanced Excel," "financial modeling," "VBA," "complex spreadsheets," "FP&A," "data analytics," "pricing strategy," "supply chain optimization," "quantitative analysis," "risk modeling." Rationale: not Aman's strength, and the competition has stronger quant backgrounds. No shame, no workaround. Skip and redirect energy. **Exception:** If a role pays $200K+ and the quant requirement is minimal (just basic Excel), we can evaluate case-by-case. Default is skip. |
 | **Quality bar** | Full depth on every output. 16-section for every SHOOT. No shortcuts. |
 | **Self-learning** | Every outcome feeds back. APPLY → RESULT → LEARN → UPDATE SYSTEM → APPLY AGAIN. |
 | **24h Fresh Window** | FETCH and REFRESH return ONLY jobs posted in the last 24 hours from the moment of command. No exceptions. Stale jobs are dead weight. |
@@ -893,5 +897,6 @@ The goal at every stage is the same: **they see you and think "this is one of us
 - **Education:** MBA + BSc IT + Post-Bacc Diploma (KPU)
 - **Location:** Vancouver, BC, Canada
 - **Framing:** Local Canadian professional with US operational experience
-- **Target:** $120-220K+, Director/Manager level, Vancouver/Remote Canada
+- **Target:** $80K-$300K+, any title (Manager to VP, IC to exec), Vancouver/Remote Canada, highest net monthly paycheck wins
+- **Hard filters (silently skip):** Credit check required | Heavy Excel/quant | Finance/banking role
 - **Start:** Immediate

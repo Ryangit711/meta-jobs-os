@@ -1,81 +1,57 @@
 # TICS Priority Ranking — Recalibrated 2026-06-24
 
-## Goal
-On payroll. Fastest/easiest entry. Highest pay. Only targets where Aman's real profile is a fit.
+## Ground Rules (Applied to This Rank)
+- ❌ Credit check → silently skip (banks, credit unions, insurance, finance-touching)
+- ❌ Heavy Excel/quant → silently skip (FP&A, modeling, analytics, data science)
+- ✅ Any title, any industry, $80K+, highest net monthly paycheck wins
 
-## Real Aman Profile (Truth Anchor — No Hallucination)
-- ONE employer: SkyflyMD (multi-site healthcare operations, 8 years)
-- Never at McKinsey/BCG/Bain/Deloitte/KPMG — no T1 strategy firm experience
-- Never in heavy industry/mining/construction
-- 3→70 FTEs, $0→$4M ARR, $17M exit, 32 locations
-- Internal consulting frame ("consultant who happened to operate")
-- Vancouver-based, MBA + BSc IT + Post-Bacc Diploma (KPU)
+## New Scoring Formula
+`Priority = (Net Monthly Pay × 0.40) + (PR Strength × 0.25) + (No-Credit-Check × 0.25) + (Career Path × 0.10)`
 
-## Scoring
-| Dimension | Weight | What It Measures |
-|-----------|:------:|------------------|
-| **Speed** | 40% | Days to first interview × probability of callback |
-| **Ease** | 30% | Interview complexity, prep needed, network requirement |
-| **Pay** | 30% | Total compensation (base + bonus + equity) |
+- **Net Monthly Pay (1-10):** $5K = 5, $10K = 10
+- **PR Strength (1-10):** Does role clearly qualify TEER 0/1?
+- **No-Credit-Check (1-10):** 10 = completely safe, 0 = would need credit check
+- **Career Path (1-10):** Growth potential, company brand, internal mobility
 
-**Formula:** `Priority = (Speed × 0.4) + (Ease × 0.3) + (Pay × 0.3)`
+## The Priority Ladder
 
----
+| Rank | Score | Company | Role | Salary | ~Net/Mo | Pipe | Credit | Action |
+|:----:|:-----:|---------|------|:------:|:-------:|:----:|:-----:|--------|
+| 1 | **9.4** | **EA SPORTS** | Sr Dir, FC Franchise Strategy | $190.5K-$267.3K | $9.5K-$12.5K | I/T | 🟢 | 🟢 LIVE — SHOOT #1 |
+| 2 | **9.0** | **Providence Healthcare** | Dir, Clinical & Operations | $130.9K-$188.1K | $7.2K-$9.7K | I | 🟢 | 🔵 SHOT — needs submit |
+| 3 | **8.5** | **FMD Services** | Dir, Strategy & Execution | $150K-$195K | $8.0K-$9.7K | I | 🟢 | 🟢 LIVE |
+| 4 | **8.3** | **Indeed** | Sr Mgr, Integration | $133K-$199K | $7.2K-$9.9K | T | 🟢 | ✅ SUBMITTED D3 |
+| 5 | **8.0** | **Accenture** | Performance Strategy Mgr | $119.7K-$247.8K | $6.7K-$11.7K | C | 🟢 | 🟢 LIVE |
+| 6 | **7.8** | **Jobber** | Sr Mgr, Product Marketing | $155.2K-$204.5K | $8.2K-$10.1K | I | 🟢 | 🟢 LIVE |
+| 7 | **7.7** | **CGI** | Director Consulting Svcs | $110K-$210K | $6.3K-$10.3K | C | 🟡 | 🟢 LIVE |
+| 8 | **7.5** | **Coast Mountain Bus** | Sr Dir, Bus Transformation | $146K-$219K | $7.9K-$10.6K | I | 🟡 | 🟢 LIVE — verify |
+| 9 | **7.3** | **BC Cancer** | Dir, Clinical Operations | $130K-$188K | $7.2K-$9.5K | I | 🟢 | 🟢 Recovered |
+| 10 | **7.2** | **Providence Healthcare** | Sr Mgr, Strategic Projects | $106K-$153K | $6.1K-$7.9K | I | 🟢 | 🟢 Recovered |
+| 11 | **7.1** | **BC Rapid Transit** | Sr Mgr, Asset Integration | $120.6K-$180.8K | $6.8K-$9.2K | I | 🟡 | 🟢 LIVE — verify |
+| 12 | **7.0** | **EA** | Dev Director, Tech Operations | $141.4K-$204.4K | $7.6K-$10.1K | T | 🟢 | 🟡 JD review needed |
+| 13 | **6.8** | **BC 1 Call** | Dir, Strategic Ops & Innovation | $130K-$140K | $7.1K-$7.5K | I | 🟢 | 🟢 LIVE |
+| 14 | **6.5** | **EA** | Operations & Process Lead | $92.9K-$129.2K | $5.5K-$7.0K | T | 🟢 | 🟢 Recovered |
 
-## The Priority Ladder (Recalibrated)
+## Silently Removed from Old Pipeline
+| Target | Salary | Why |
+|--------|:------:|-----|
+| Vancity VP Strategy | $204K-$240K | ❌ Credit check (credit union) |
+| Vancity Dir Enterprise Strategy | $141K-$175K | ❌ Credit check (credit union) |
+| Methanex Director Strategy | $195K-$252K | ❌ Credit check (energy/Sr) |
+| Canfor Sr Dir Corp Reporting | $150.5K-$215K | ❌ Heavy quant |
+| Jobber Mgr Customer Analytics | $151.2K-$204.5K | ❌ Heavy quant |
+| Hiive Chief of Staff COO | $140K-$180K | ⏭️ Already skipped |
 
-| Rank | Target | Pipe | Role | Fit Note | Speed | Ease | Pay | Priority | Action |
-|:----:|--------|:----:|------|----------|:----:|:----:|:---:|:--------:|--------|
-| **1** | **Providence Healthcare** | I | Director Clinical & Operations | **Direct industry match.** Multi-site seniors care ops = almost identical to SkyflyMD. Burnaby. Healthcare industry. $130K-$188K. | 7 | 8 | 6 | **7.0** | 🟢 LIVE — SHOOT next. Healthcare ops is your industry. |
-| **2** | **Indeed** | T | Sr Mgr Integration | ✅ Already submitted. Tech ops + M&A integration. Systems builder frame. $133K-$199K. | 10 | 10 | 7 | **9.1** | ✅ SHOT — waiting for callback |
-| **3** | **Hiive** | S | Chief of Staff to COO | **Natural builder archetype.** Fastest yes. No T1 req. 1-3 rounds. $140K-$180K+. | 9 | 9 | 6 | **8.1** | 🟢 LIVE — Startup native fit |
-| **4** | **Vancity** | I | VP Strategy | Internal strategy at credit union. No T1 req. Highest salary. $204K-$240K. | 5 | 7 | 10 | **7.0** | 🟢 LIVE — Apply this week |
-| **5** | **Methanex** | I | Director Strategy | Highest pay in pipeline ($195K-$252K). Strategy transferable cross-industry. No case interview. | 6 | 8 | 10 | **7.8** | 🟢 LIVE — SHOOT package ready |
-| **6** | **BC Cancer** | I | Director Clinical Operations | Healthcare. Vancouver. Multi-site clinical ops. $130K-$188K. | 6 | 7 | 6 | **6.3** | 🟢 LIVE — Healthcare pipeline |
-| **7** | **Vancity** | I | Dir Enterprise Strategy | Second Vancity role. Lower than VP but easier entry. $141K-$175K. | 6 | 8 | 6 | **6.6** | 🟢 LIVE — Apply after VP |
-| **8** | **EA** | T | Operations & Process Lead | Chief of Staff style. EA brand. Low salary but foot in door. $92.9K-$129.2K. | 7 | 8 | 4 | **6.4** | 🟢 LIVE — Apply |
-| **9** | **Jobber** | I | Mgr Customer Analytics | Internal consulting team ($151K-$204.5K). SaaS. Analytics stretch but team frame fits. | 6 | 6 | 7 | **6.3** | 🟢 LIVE — Apply |
-| **10** | **Providence Healthcare** | I | Sr Mgr Strategic Projects | Temporary role but healthcare fit. Easy entry. | 7 | 9 | 3 | **6.4** | 🟢 LIVE — Apply alongside Dir role |
-| **11** | **PHSA** | I | Dir Professional Practice & Policy | Healthcare. Vancouver. $130K-$188K. Less ops, more policy. | 5 | 6 | 6 | **5.6** | 🟢 LIVE — Healthcare stretch |
-| **12** | **lululemon** | I | Sr Mgr Store Experience | Multi-site retail ops. Strong brand. Vancouver. No T1 req. | 5 | 7 | 7 | **6.2** | 🟢 LIVE — Apply |
-| **13** | **Elevation Capital** | S | Dir Strategic Initiatives | CEO-partner role. Startup builder. No salary listed. | 6 | 6 | 5 | **5.7** | 🟢 LIVE — Research salary first |
-| **14** | **Scribd** | T | Sr Mgr TPM | Remote. Systems builder. $130K+. | 5 | 7 | 6 | **5.9** | 🟢 LIVE — Remote option |
-| **15** | **Aritzia** | I | Business Transformation | Retail ops. Vancouver. Multiple roles. | 5 | 7 | 6 | **5.9** | 🟢 LIVE — Apply |
-| **16** | **Arc'teryx** | I | Sr Mgr Guest Services Strategy | Vancouver lifestyle brand. Multi-site ops. | 5 | 7 | 6 | **5.9** | 🟢 LIVE — Apply |
+## Rankings by Pipe
+| Pipe | Top Target | Priority | Why |
+|:----:|-----------|:--------:|-----|
+| I/T | EA SPORTS Sr Dir FC Strategy | **9.4** | Highest net pay, clean, strong brand |
+| I | Providence Dir Clinical & Ops | **9.0** | Healthcare native — Aman's industry |
+| C | Accenture Performance Strategy Mgr | **8.0** | Strategy consulting, wide band |
+| T | Indeed Sr Mgr Integration | **8.3** | Already submitted, waiting |
 
-**Silently excluded (non-fits — no discussion needed):**
-- Accenture PIP (requires T1 strategy firm consulting experience)
-- Deloitte / EY / KPMG Sr Mgr (traditional consulting requires firm pedigree)
-- Mastercard Associate Managing Consultant (requires T1 consulting background)
-- GoldBeck Recruiting (construction equipment — heavy industry)
-- BC Hydro (supply chain — no alignment)
-- Bosch Building Technologies (construction)
-- Rio Tinto / OceanaGold (mining)
-
-Speed scale (1-10): 10 = interview this week, 1 = needs prep + network + long process
-Ease scale (1-10): 10 = just apply, 1 = multi-round case gauntlet  
-Pay scale (1-10): 10 = $250K+, 1 = $100K-
-
----
-
-## Pipe Ranking (By Strategic Priority — TICS Order)
-
-| Pipe | Top Target | Priority | Why This Order |
-|------|-----------|:--------:|----------------|
-| **T (Tech/BigTech)** | Indeed | 9.1 (already submitted) | Tech ops + M&A integration. Already SHOT. Waiting on callback. |
-| **I (Internal Strategy)** | Providence Healthcare Dir Clinical Ops | ~7.0 | **Direct industry match.** Multi-site healthcare ops = what Aman did for 8 years. Highest probability. |
-| **S (Startup)** | Hiive Chief of Staff | 8.1 | Fastest yes. Natural builder archetype. Startup pace matches Aman's energy. |
-| **I (Internal Strategy)** | Vancity VP Strategy | 7.0 | Highest salary. Strong internal strategy team. Credit union = purpose-driven. |
-| **C (Consulting)** | Accenture Sr Mgr | 5.5 | Highest pay. Steepest pedigree wall. Reserved for strategic plays. |
-
----
-
-## Recommended Next Action
-
-Pick your target from the ladder. Say `SHOOT [Target]` and I'll write the package.
-
-Best bets (what I'd recommend):
-
-1. **Providence Healthcare Dir Clinical & Operations** — Healthcare is YOUR industry. This is almost the same job you already did. Highest probability callback.
-2. **Hiive Chief of Staff** — Fastest interview process. Most natural story. 1-3 rounds.
-3. **Vancity VP Strategy** — $204K-$240K. Strong brand. Internal strategy at a mission-driven org.
+## Recommended Next Move
+Top 3 SHOOT targets (by pay & probability):
+1. **`SHOOT EA SPORTS`** — #1, $190.5K-$267.3K, 9/10 fit
+2. **`SUBMIT Providence`** — Already SHOT, just needs manual submit
+3. **`SHOOT FMD Services`** — $150K-$195K, clean fit
