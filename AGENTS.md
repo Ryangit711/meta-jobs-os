@@ -229,6 +229,7 @@ The machines do the typing. You do the thinking. **Never deviate from this frame
 | **Networking Auto-Cadence** | No more need to say `SUBMITTED`. After YES (approval), the system auto-starts a T+0→T+28 networking timer. Proactive prompts at T+0, T+3, T+7, T+14 without user command. The system tracks. The user acts. |
 | **Provenance Auto-Verify** | Before every SHOOT output, every claim cross-referenced against Master Corpus. No manual check needed. Any claim without a source line number is flagged before output. Zero fabrication enforced by system, not by discipline. |
 | **Negotiation Pre-Load** | Salary benchmarks, BATNA, anchoring strategy, walk-away floor, and comp deconstruction pre-loaded at SHOOT time — before any offer arrives. When the offer comes, the system is ready instantly. See NEGOTIATION PLAYBOOK skill. |
+| **Networking Cadence Footer (NEW — Always Displayed)** | AFTER EVERY response, read and display the networking cadence footer from `data/networking/CADENCE_FOOTER.md`. This shows what leg each application is on, what's due today, and what action is needed. The footer auto-updates every hour via DAEMON. **Commands:** `CADENCE` — show full NETWORKING_TRACKER.md. `CADENCE UPDATE [company] [leg] [action]` — mark leg as sent/replied/complete. `CADENCE CONTACT [company] [name] [title] [linkedin]` — add a contact. `CADENCE SUBMIT [company]` — record submission date, start T+0 timer. The footer lives at `data/networking/CADENCE_FOOTER.md`. The full tracker lives at `data/networking/NETWORKING_TRACKER.md`. The machine-readable JSON lives at `data/networking/cadence.json`. All entries are permanent — never delete, only archive. |
 | **Insider Intelligence Spine (NEW — Core Differentiator)** | Before EVERY external-facing communication — cover letter, email, interview answer (even 1 line), LinkedIn message, follow-up, thank-you note — run exhaustive live intelligence sweep across ALL sources: Glassdoor, LinkedIn, company site, Crunchbase/PitchBook, recent news, product launches, leadership changes, G2 reviews, Reddit, X.com, employee reviews, competitors, funding rounds, product updates, recent hires, ongoing strategic initiatives. Then WEAVE that intelligence into every response so the recipient feels "how does this person know THAT about us?" The goal is not to show off research. The goal is to make every response feel like it came from an insider who already lives in their world. One line or one hour interview — same rule. Every syllable carries intelligence. This is THE differentiator that makes Aman THE ONE for the job. It turns a generic candidate into someone who feels inevitable. |
 
 ---
@@ -773,6 +774,11 @@ This is all you need to remember:
 | `AUTO-APPLY --manual` | 🤲 I can't use browser here → 📝 blueprint generated for you to submit from phone |
 | `TRACK` | 📊 Show live pipeline — every job, stage, T+ days, next action |
 | `TRACK --stats` | 📊 Pipeline metrics — apply rate, callback rate, offer rate |
+| `CADENCE` | 📡 Show full NETWORKING_TRACKER.md — every company, every leg, who replied |
+| `CADENCE UPDATE [company] [leg] [action]` | Mark networking leg as sent/replied/complete |
+| `CADENCE CONTACT [company] [name] [title] [linkedin]` | Add a contact to networking tracker |
+| `CADENCE SUBMIT [company]` | Record submission date, start networking T+0 timer |
+| `CADENCE --footer` | Show live footer only |
 | `LEARN [company] [outcome]` | ❓ Outcome captured → system learns → future SHOOTs get smarter |
 | `NEGOTIATE [company] [offer]` | 💰 Load negotiation playbook for this offer |
 | `BATCH [companies]` | 🚀 Batch-approve multiple Tier 1 SHOOTs at once |

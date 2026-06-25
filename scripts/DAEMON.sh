@@ -19,9 +19,11 @@ start() {
             TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
             echo "[$TIMESTAMP] DAEMON heartbeat — checking pipeline..." >> "$DAEMON_LOG"
             
-            # Check for jobs aging past 7 days
-            # Check for new Indeed/Providence callbacks
-            # Auto-trigger networking cadence reminders
+            # Run networking cadence update (T+ calc, leg status, footer gen)
+            bash "/home/aryan/opencode_test/ABHIMANYU-2.0/scripts/update_cadence.sh" >> "$DAEMON_LOG" 2>&1
+            
+            # Check for stale jobs (over 7 days without action)
+            # Placeholder for future: auto-archive stale entries
             
             sleep $INTERVAL
         done
