@@ -1,0 +1,14 @@
+{
+  "signal_weights": {
+    "reddit_salary": 0.6,
+    "reddit_culture": 0.5,
+    "reddit_interview": 0.8,
+    "glassdoor_trend": 0.7,
+    "company_subreddit": 0.9,
+    "industry_trend": 0.5
+  },
+  "winning_signals": [],
+  "losing_signals": [],
+  "adjustments": [],
+  "last_updated": "2026-06-22T00:00:00"
+}

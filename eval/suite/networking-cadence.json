@@ -1,0 +1,15 @@
+{
+  "skill": "networking-cadence",
+  "description": "Test suite for networking-cadence — auto-seeding, countdown display, persona tracking",
+  "tests": [
+    {
+      "id": "nc-001",
+      "prompt": "SUBMITTED Clio. The role was Revenue Operations Manager.",
+      "assertions": [
+        { "id": "a1", "type": "contains", "value": "Clio", "weight": 1 },
+        { "id": "a2", "type": "contains", "value": "T\\+0|T\\+3|T\\+7|T\\+14|T\\+21", "weight": 1 },
+        { "id": "a3", "type": "contains", "value": "NETWORKING COUNTDOWN|DUE TODAY|days", "weight": 2 }
+      ]
+    }
+  ]
+}

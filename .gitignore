@@ -1,0 +1,27 @@
+# Privacy — never commit personal data
+local_config.json
+secrets.json
+data/contacts.json
+data/networking_log.json
+data/social_distill/
+
+# Document outputs — generated locally from placeholders
+*.docx
+*.pdf
+*.xlsx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Eval output
+eval/viewer/output/
