@@ -93,6 +93,14 @@ CONFIG = {
         "margins": Inches(0.75),
         "pages": 2,
         "ats_notes": "RAM Consulting DayforceHCM ATS — DOCX, Liberation Sans 10pt, 0.75in margins, project delivery focus"
+    },
+    "BWZ": {
+        "font": "Calibri",
+        "size": Pt(10),
+        "header_size": Pt(12),
+        "margins": Inches(0.75),
+        "pages": 2,
+        "ats_notes": "BWZ Lever ATS — DOCX, Calibri 10pt, 0.75in margins, strategy & operations focus"
     }
 }
 
@@ -230,7 +238,8 @@ def get_date(company):
         "DoorDash_Canada": "2026-06-24",
         "UBC": "2026-06-25",
         "Practice_Better": "2026-06-25",
-        "RAM_Consulting": "2026-06-25"
+        "RAM_Consulting": "2026-06-25",
+        "BWZ": "2026-06-25"
     }
     return DATES.get(company, "2026-06-22")
 
@@ -281,6 +290,13 @@ def generate(company):
             "Combines a builder's instinct for scalable systems with an operator's discipline for SaaS metrics (MRR, ARR, churn, CAC, LTV), "
             "pipeline integrity, and cross-functional GTM execution. Proven ability to own the revenue operations function end-to-end "
             "for a scaling healthcare SaaS company.", config)
+    elif company == "BWZ":
+        add_body(doc,
+            "Operations executive who built a multi-site organization from 3 to 70 people, 32 locations, and $4M ARR — "
+            "then directed a $17M exit. Specializes in zero-to-one initiative build, cross-functional program discipline, "
+            "and business case development for scale-stage companies. Combines a builder's hands-on execution with "
+            "a strategist's ability to pressure-test ideas and turn ambiguity into actionable plans. "
+            "MBA preferred, founder DNA, AI-native operator.", config)
     else:
         add_body(doc,
             "Operations executive who built multi-site operational infrastructure from scratch, "
@@ -314,6 +330,12 @@ def generate(company):
             "Revenue Cycle Management  |  GTM Alignment  |  Pipeline Management  |  Forecasting & Budgeting  |  "
             "Process Optimization  |  Workflow Automation  |  EHR / Practice Management Platforms  |  "
             "KPI Dashboard Design  |  SaaS Scaling Infrastructure  |  Team Building (3$\\rightarrow$70 FTEs)", config, size=Pt(9.5))
+    elif company == "BWZ":
+        add_body(doc,
+            "Zero-to-One Initiative Build  |  Program & Project Discipline  |  Business Case Development  |  "
+            "Cross-Functional Leadership  |  Business Modeling (Revenue, Cost, Margin)  |  P&L Management  |  "
+            "AI-Augmented Workflows  |  Data Analytics & Dashboarding  |  Strategic Planning & OKRs  |  "
+            "Operational Infrastructure Design", config, size=Pt(9.5))
     else:
         add_body(doc,
             "M&A Integration  |  Cross-Functional Program Management  |  Operational Infrastructure  |  "
@@ -489,6 +511,37 @@ def generate(company):
             " — coordinated cross-functional GTM alignment: sales, operations, finance, and clinical teams — "
             "reduced pipeline variance from 40% to under 10% through unified reporting and accountability",
             config, bold_prefix="GTM Alignment & Cross-Functional Leadership")
+    elif company == "BWZ":
+        add_body(doc,
+            "Built a multi-site organization from 3 to 70 people, 32 locations, and $4M ARR — then directed "
+            "a $17M exit. Served as the primary operator, systems architect, and cross-functional integrator "
+            "across all revenue-generating and operational functions.", config, italic=True, size=Pt(9.5))
+        add_bullet(doc,
+            " — owned end-to-end build of zero-to-one initiatives: took new ventures and expansions from idea "
+            "to launch — costing, lead time, pricing, go-to-market — across 32 locations and 5 clinic groups",
+            config, bold_prefix="Zero-to-One Initiative Build")
+        add_bullet(doc,
+            " — installed project discipline across leadership initiatives: designed governance frameworks that "
+            "ensured business cases were built before shipping, decisions were documented, owners were clear, "
+            "and cross-functional partners followed through — without adding bureaucracy",
+            config, bold_prefix="Program & Project Discipline")
+        add_bullet(doc,
+            " — acted as business-case clearinghouse: when department heads had half-baked ideas, pressure-tested "
+            "them and turned them into board-ready proposals with revenue projections, cost structures, "
+            "break-even analysis, and risk assessment that let leadership make fast decisions",
+            config, bold_prefix="Business Case Development")
+        add_bullet(doc,
+            " — built business models for new initiatives: revenue projections, cost structures, break-even "
+            "and sensitivity analysis for every new product, location, and investment — napkin math to board-ready",
+            config, bold_prefix="Financial Modeling & Analysis")
+        add_bullet(doc,
+            " — managed full P&L ownership for $4M ARR organization: budget planning, variance analysis, "
+            "resource allocation, multi-scenario forecasting across 12 departments and 32 locations",
+            config, bold_prefix="P&L Management & Forecasting")
+        add_bullet(doc,
+            " — led AI-driven workflow transformation: automated billing, scheduling, and reporting processes — "
+            "reduced administrative overhead by 40%+, used AI tools daily to accelerate decision-making",
+            config, bold_prefix="AI-Augmented Operations")
     else:
         add_body(doc,
             "Directed end-to-end operations for a multi-site healthcare group. Served as the primary "
@@ -549,6 +602,12 @@ def generate(company):
             "G Suite  |  CRM Platforms  |  KPI Dashboard Design  |  Financial Modeling  |  "
             "OKR Frameworks  |  Jira / Confluence  |  Data Visualization",
             config, size=Pt(9))
+    elif company == "BWZ":
+        add_body(doc,
+            "Business Modeling (Excel/Sheets)  |  SQL & Data Analytics  |  KPI Dashboard Design  |  "
+            "AI-Augmented Workflows  |  Project Management Tools  |  OKR Frameworks  |  "
+            "ERP / Financial Systems  |  Data Visualization  |  Cross-Functional Collaboration Tools",
+            config, size=Pt(9))
     else:
         add_body(doc,
             "Athenahealth  |  eClinicalWorks  |  CRM Platforms  |  Google Workspace  |  "
@@ -567,6 +626,8 @@ def generate(company):
         role_str = "SrMgr_Strategic_Initiatives"
     elif company == "Practice_Better":
         role_str = "Director_Revenue_Operations"
+    elif company == "BWZ":
+        role_str = "Strategy_Ops_Manager"
     else:
         role_str = "SrMgr_Integration"
 
@@ -592,7 +653,7 @@ def generate(company):
     add_plain_run(cover_contact, "  |  ", config["font"], Pt(9), color="505050")
     add_hyperlink_contact(cover_contact, "LinkedIn", f"https://{LINKEDIN}", config["font"], Pt(9))
     add_body(doc, LOCATION, config, size=Pt(9), space_after=4)
-    DATE_LABELS = {"Indeed": "June 20, 2026", "Methanex": "June 21, 2026", "Deloitte": "June 19, 2026", "Hiive": "June 22, 2026", "Providence_Healthcare": "June 22, 2026", "DoorDash_Canada": "June 24, 2026", "UBC": "June 25, 2026"}
+    DATE_LABELS = {"Indeed": "June 20, 2026", "Methanex": "June 21, 2026", "Deloitte": "June 19, 2026", "Hiive": "June 22, 2026", "Providence_Healthcare": "June 22, 2026", "DoorDash_Canada": "June 24, 2026", "UBC": "June 25, 2026", "BWZ": "June 25, 2026"}
     add_body(doc, DATE_LABELS.get(company, "June 22, 2026"), config, space_after=8)
 
     if company == "Methanex":
@@ -779,6 +840,32 @@ def generate(company):
             "the team, and create the infrastructure that makes the next phase of growth inevitable.\n\n"
             "I would welcome the opportunity to discuss how my experience building and scaling revenue "
             "operations for healthcare SaaS can support Practice Better's next chapter."
+        )
+    elif company == "BWZ":
+        add_body(doc, "Black & White Zebra", config, space_after=0)
+        add_body(doc, "Vancouver, BC (Remote)", config, space_after=8)
+        add_body(doc, "Re: Strategy & Operations Manager", config, bold=True, space_after=8)
+
+        body = (
+            "Dear Hiring Manager,\n\n"
+            "I read your JD and felt like someone had transcribed my career. 'Own the end-to-end build of zero-to-one initiatives.' "
+            "'Bring order to the messy middle.' 'Impatient with meetings that don't move toward a decision.' "
+            "That's not a job description — that's how I've operated for the last 8 years.\n\n"
+            "I built a multi-site organization from 3 people to 70, across 32 locations, from zero to $4M ARR. "
+            "I led the technology transformation, managed every dollar of the P&L, and directed a $17M exit. "
+            "Along the way, I became the person people came to when they had a half-baked idea that needed "
+            "pressure-testing — building the business case, running the costing, designing the go-to-market, "
+            "and delivering the board-ready package that let leadership say yes or no with confidence.\n\n"
+            "That's exactly what BWZ needs right now. You're at that sweet spot — 70 people, diversifying revenue, "
+            "expanding beyond content into SaaS, and you need someone who can install project discipline "
+            "without killing the startup soul. I've already walked this path. I know which processes matter "
+            "and which ones just add bureaucracy.\n\n"
+            "What draws me to BWZ specifically: you're bootstrapped and independent. You're not chasing unicorn "
+            "valuations — you're building something sustainable. That's exactly how I built my company. "
+            "And your CEO Ben Aston started as a solo blogger and built this from nothing — "
+            "that's a founder story I deeply understand because I lived my own version of it.\n\n"
+            "I'd welcome the chance to talk about how I can help BWZ bring order to the messy middle "
+            "while keeping the builder spirit that got you here."
         )
     else:
         add_body(doc, "Indeed", config, space_after=0)
