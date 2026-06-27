@@ -147,33 +147,38 @@ Instead of a hypothetical case, prepare to walk through:
 
 ## SECTION 7: RESUME
 
+**Aman** | +1 236-885-2285 | amankumar7111@outlook.com | Vancouver, BC
+
 ### Professional Summary
-Strategic Operations and Technology Transformation leader with 9+ years of experience scaling organizations, driving technology adoption, and leading change management programs across multi-site healthcare operations. Proven track record of building businesses from 3 to 120 people, delivering $4M in annual revenue, and directing a $17M acquisition through full-cycle integration. Known for navigating complex organizational transformations, implementing enterprise-wide systems, and achieving sustainable business outcomes through people-centered change management.
+Operations and program delivery executive who built a multi-site organization from 3 to 70 people, 32 locations, and $4M ARR — then directed a $17M acquisition end-to-end. Specializes in organizational transformation, technology change management, and strategic advisory at the C-suite level. Combines a builder's hands-on execution with a consultant's ability to design and deliver transformation programs that achieve sustainable business outcomes. MBA + BSc IT.
 
-### Experience (Tailored for Deloitte)
+### Core Competencies
+Organizational Transformation | Technology Change Management | Strategic Advisory | M&A & Integration | Cross-Functional Leadership | P&L Management | Program Delivery & Governance | Board-Level Reporting | Business Development | AI-Augmented Operations
 
-**Skyfly Health / MDTech LLC** — Operations Lead / Director of Operations (11/2016–10/2024)
-*Originally titled Business Development & Strategy Manager, Director of Operations, Senior Operations Manager — semantic masquerade applied for consulting framing.*
+### Professional Experience
 
-- Led the organizational transformation of a healthcare business from 3 to 120 employees across 5 US states, designing the operating system, governance structure, and culture from zero — achieving 94% retention through change.
-- Directed a $17M acquisition from due diligence through Day 100 integration, managing 8 workstreams across finance, operations, technology, and talent — retained 100% of acquired talent.
-- Designed and implemented enterprise-wide technology systems (EHR, billing, scheduling, RCM), driving 62% faster implementations and 60% automation of administrative workflows.
-- Served as trusted strategic advisor to the CEO and executive team, shaping business strategy, OKR frameworks, and organizational design through a period of 3× revenue growth.
-- Led business development and client relationship management for a $4M ARR portfolio, including multi-year contract negotiations and M&A scouting across 50+ target companies in 5 states.
-- Built and mentored a 12-department leadership team, establishing coaching, promotion, and succession pipelines.
+**SkyflyMD | Director of Operations | Phoenix, AZ / Vancouver, BC | 2018 – 2025**
 
-### Key Achievements (Metric-Focused)
-| Achievement | Metric |
-|-------------|--------|
-| Scaled organization | 3→120 employees |
-| Revenue delivery | $4M+ ARR |
-| Exit value | $17M acquisition |
-| Operational efficiency | 60% AI automation, 94% retention |
-| Tech implementation | 62% faster than industry standard |
-| Compliance | 99% verification accuracy, 100% audit pass rate |
+Built a multi-site organization from 3 to 70 people, 32 locations, and $4M ARR — then directed a $17M acquisition end-to-end. Served as both the builder who executed and the strategist who designed the organizational transformation.
 
-### Skills
-Organizational Transformation | Technology Change Management | Strategic Advisory | M&A Integration | Cross-functional Leadership | C-Suite Engagement | Business Development | Operational Excellence | Change Management | Team Development
+- **Organizational Transformation & Change Management** — led full-scale organizational transformation scaling 3→70 across 5 US states and 32 locations: designed operating system, governance structure, and culture from zero; drove technology change adoption through people-centered change management programs — achieved 94% retention and 99% verification accuracy
+- **Technology Change Management** — led complete digital transformation: designed and implemented EHR, billing, scheduling, RCM, and analytics platform across 32 locations — replaced paper-based processes with integrated tech stack; drove 62% faster implementations and 60% automation of administrative workflows through AI-augmented operations
+- **M&A & Integration** — directed end-to-end $17M acquisition: 8 concurrent due diligence workstreams across finance, legal, operations, and provider contracts — built integration playbook, Day 1/100 milestones, consolidated 8 systems into 1 unified platform, 100% key talent retention
+- **Program Delivery & Governance** — built strategic planning and governance framework from scratch: annual strategy cycles, OKR cascades, quarterly reviews, board reporting — across 5 clinic groups, 12 departments, 32 locations, and 5 jurisdictional regulatory environments
+- **P&L Management & Financial Reporting** — managed full P&L ownership for $4M ARR organization: department budgets, variance analysis, multi-scenario forecasting, capital allocation across 12 departments — presented board-ready financial reporting to executive leadership and investors
+- **Cross-Functional Leadership & Advisory** — served as trusted advisor to CEO and executive team; led cross-functional teams across 12 departments, 6 clinical and operational functions; managed 70 FTEs through hypergrowth; built hiring frameworks, training programs, and quality standards
+
+**Earlier Career**
+- Digital Strategy Manager (2016–2018) — led digital strategy, campaign analytics, and ROI measurement; built reporting dashboards, optimized $500K+ annual ad spend
+- Client Services Representative (2014–2016) — managed client escalations for enterprise accounts; developed response protocols that reduced resolution time by 30%
+
+### Education
+- Master of Business Administration (MBA) — Strategy & Operations & I.T
+- Post-Baccalaureate Diploma in Business Management — KPU, Surrey, BC
+- Bachelor of Science, Information Technology
+
+### Technical Proficiency
+Organizational Transformation & Change Management | Program Management & Governance | ERP / Financial Systems | Digital Transformation Platforms | AI-Augmented Workflows | OKR Frameworks | Business Modeling & Analysis | Board-Level Reporting | Data Visualization & KPI Dashboards | Strategic Planning Tools
 
 ---
 
