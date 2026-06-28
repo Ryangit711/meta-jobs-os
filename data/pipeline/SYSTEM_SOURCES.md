@@ -114,6 +114,57 @@ Add column to FETCH table: **Apply Via** — one of "Company site", "ATS portal"
 
 ---
 
+## Deep Scan Career Pages (Phase 4b — Top Targets)
+
+Used during Deep Company Scan to scrape ALL open roles at a company, not just what job boards returned.
+
+The key URLs below point to the career portal's **full listings page** (not a search filtered by keyword) so ALL roles are visible in one scrape.
+
+### C PIPE (Consulting) — Deep Scan URLs
+| Company | Career Portal URL | Notes |
+|---------|------------------|-------|
+| Deloitte | https://careers.deloitte.ca/search-jobs | Canada portal — search by business area |
+| EY / EY-Parthenon | https://eyglobal.yello.co/jobs | Global Yello portal — filter by Canada |
+| KPMG | https://careers.kpmg.ca/search-jobs | Canada portal |
+| PwC | https://www.pwc.com/ca/en/careers.html | Canada career page |
+| Accenture | https://www.accenture.com/ca-en/careers | Canada careers |
+| McKinsey | https://www.mckinsey.com/careers/search-jobs | Global — filter by Canada |
+| BCG | https://careers.bcg.com/search-jobs | Global — filter by Canada |
+| Bain | https://www.bain.com/careers | Global portal |
+
+### T PIPE (Tech/BigTech) — Deep Scan URLs
+| Company | Career Portal URL | Notes |
+|---------|------------------|-------|
+| Clio | https://www.clio.com/about/careers/ | Lever portal |
+| Shopify | https://www.shopify.com/careers | Greenhouse |
+| Amazon | https://www.amazon.jobs/en-gb/search?base_query=&loc_query=Vancouver%2C+BC%2C+Canada | Filter to Vancouver |
+| 1Password | https://1password.com/jobs | Greenhouse |
+| Indeed | https://www.indeed.com/careers | Careers page |
+
+### I PIPE (Internal Strategy/Corporate) — Deep Scan URLs
+| Company | Career Portal URL | Notes |
+|---------|------------------|-------|
+| TELUS | https://careers.telus.com/search-jobs | Canada portal |
+| lululemon | https://www.lululemon.com/careers | Workday |
+| Aritzia | https://www.aritzia.com/en/careers.html | Careers page |
+| Arc'teryx | https://www.arcteryx.com/ca/en/careers | Workday |
+
+### S PIPE (Startups) — Deep Scan URLs
+| Company | Career Portal URL | Notes |
+|---------|------------------|-------|
+| Procurify | https://procurify.com/careers/ | Lever |
+| Ada | https://ada.com/careers/ | Lever |
+| Hiive | https://hiive.com/careers | Lever |
+| EvenUp | https://www.evenup.com/careers | Lever |
+
+### Protocol
+1. During Phase 4b (Deep Company Scan), open the career portal URL for each top target
+2. Scrape all visible job listings (title, location, department)
+3. Cross-check against the same filters as Phase 4
+4. Add any new fitting roles to the company's CURATED entry
+5. If the URL returns a filtered search by default, look for an "All Jobs" or "Browse All" link
+6. If JS-rendered and webfetch can't parse → try Apify fallback; if both fail, skip gracefully
+
 ## Add/Remove Protocol
 - **Add:** Append to relevant section above + update AGENTS.md QBIT 1 inline list
 - **Remove:** Delete from relevant section + update AGENTS.md QBIT 1 inline list

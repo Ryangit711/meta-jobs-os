@@ -43,9 +43,18 @@ LIFTOFF
   │   ├── 2e. Score + rank (fetch-engine)
   │   └── OUTPUT: CURATED list with enriched DNA fingerprints
   │
+  ├── PHASE 2x: DEEP COMPANY SCAN (NEW) ──────────────
+  │   ├── 2x1. Take top ~10 companies from CURATED list by fit score
+  │   ├── 2x2. For each: open career page → scrape ALL open roles
+  │   ├── 2x3. Cross-check all roles against same filters ($120K+, TEER 0/1, no pivot, Vancouver)
+  │   ├── 2x4. Score each new role (fit%) against Master Corpus
+  │   ├── 2x5. Flag companies with 2-3+ fitting roles → priority boost (+3-5%)
+  │   ├── 2x6. Enrich CURATED list: attach role list + badge per company
+  │   └── OUTPUT: CURATED list enriched with deep-scanned roles
+  │
   ├── PHASE 3: PRESENT ──────────────────────────────
-  │   ├── 3a. Build priority ladder (pipeline-tracker)
-  │   ├── 3b. Show menu: Rank | Company | Role | Pipe | Salary | Fit | Intel Highlights
+  │   ├── 3a. Build priority ladder (pipeline-tracker) — companies with 2-3+ fitting roles get higher rank
+  │   ├── 3b. Show menu: Rank | Company | Role(s) | Pipe | Salary | Fit | Intel Highlights | 🔥 Badge
   │   ├── 3c. WAIT for user decision
   │   └── OUTPUT: Menu presented. User says SHOOT [X] or YES to auto-pick #1
   │

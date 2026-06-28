@@ -96,9 +96,35 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 - Check `data/pipeline/PIPELINE.md` — exclude already-SHOT or already-SUBMITTED
 - Quality gate: established companies only (no sketchy domains/startups with broken HR)
 
+## Phase 4b — Deep Company Scan (Top Targets)
+
+After Phase 4 produces the scored/filtered job list, deep-scan the highest-fit companies:
+
+1. **Select targets**: Take the top ~10 companies by fit score from the filtered list. Also include any company where a job scored ≥75% fit.
+2. **Open career page**: Navigate directly to the company's career page URL (from `data/pipeline/SYSTEM_SOURCES.md` Deep Scan section) or find their career portal via the ATS domain (greenhouse.io, workday.com, etc.).
+3. **Scrape ALL open roles** from that career page — not just what job boards returned.
+4. **Cross-check each role** against the same filters:
+   - $120K+ floor (or estimate from level + market data)
+   - TEER 0/1
+   - No domain pivot (NO DOMAIN PIVOT HARD RULE)
+   - Fit ≥ 60% against Master Corpus
+   - Vancouver/Remote Canada
+   - No credit check, no heavy quant
+5. **Score each role** (fit%) using same Master Corpus cross-ref
+6. **Flag companies with 2-3+ fitting roles** — these get a priority boost (more shots on goal = higher ROI):
+   - 2 fitting roles → +3% to overall company priority
+   - 3+ fitting roles → +5% to overall company priority
+7. **Attach role list** to the company entry in CURATED output:
+   - Format: `🔥 Company (N roles) — Role1, Role2, Role3 — $SalaryRange — FitScore`
+   - Show all discovered roles in the company's pipe section
+
+**Exception**: If the career page is behind a login wall, JS-heavy and unresolvable via webfetch, or returns no matching roles, skip the company gracefully — no time wasted.
+
+**Storage**: Log deep-scan results to `YYYY-MM-DD/WAVE_1/deep_scan_[company].md` per company for reference during SHOOT.
+
 ## Phase 5 — Write CURATED_30.md + FETCH_LOG.md
 - 30 jobs, pipe-divided (C | T | I | S), sorted by fit% desc
-- Each row: #, Pipe, Wave, Company, Role, Salary, Fit%, ATS Feasibility, Apply Via, Sources, Archetype, Status
+- Each row: #, Pipe, Wave, Company, Role(s), Salary Range, Fit%, ATS Feasibility, Apply Via, Sources, Archetype, Status, Role Count Badge (🔥 if 2-3+ fitting roles)
 
 ## Phase 6 — Generate CALLBACK_READY/ DNA Sheets
 - One-pager per company: DNA, 60-sec pitch, 5 Q&A, 3 STAR, keywords, outreach
