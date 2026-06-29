@@ -98,6 +98,8 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 
 ## Phase 4b — Deep Company Scan (Top Targets)
 
+**Auto-scanner available:** `python skills/fetch-engine/scripts/deep_scan.py` — uses crawl4ai (stealth browser + JS rendering) to scrape ALL open roles from 20+ target career pages. Output includes markdown summary, JSON data, and CURATED_30.md injection snippet. Supports `--pipe C|T|I|S` and `--company [name]` filters.
+
 After Phase 4 produces the scored/filtered job list, deep-scan the highest-fit companies:
 
 1. **Select targets**: Take the top ~10 companies by fit score from the filtered list. Also include any company where a job scored ≥75% fit.

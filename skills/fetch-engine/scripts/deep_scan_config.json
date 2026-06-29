@@ -1,0 +1,74 @@
+{
+  "master_corpus_path": "01_MASTER_CORPUS.md",
+  "output_dir": "deep_scan_output",
+  "max_concurrent": 5,
+  "retry_count": 2,
+  "scoring": {
+    "title_keywords": [
+      "senior manager", "manager", "director", "head of", "lead",
+      "chief of staff", "strategy", "operations", "program manager",
+      "transformation", "business operations", "revenue operations",
+      "principal", "consultant", "advisor", "practice lead",
+      "delivery lead", "engagement manager", "project manager"
+    ],
+    "weight_boost": [
+      "vancouver", "remote canada", "remote - canada", "canada"
+    ],
+    "exclude_keywords": [
+      "engineer", "software", "developer", "architect",
+      "data scientist", "data analyst", "machine learning",
+      "quantitative", "fp&a", "financial analyst", "credit",
+      "accountant", "auditor", "tax", "actuary",
+      "nurse", "physician", "clinical", "pharmacist",
+      "intern", "co-op", "student", "graduate intern"
+    ],
+    "fit_filters": {
+      "salary_min": 80000,
+      "allowed_locations": ["Vancouver", "Remote", "Canada", "British Columbia", "BC"],
+      "blocked_locations": ["Toronto", "Calgary", "Montreal", "Ottawa", "Edmonton", "Winnipeg", "Halifax", "US", "United States", "London", "New York", "San Francisco"]
+    }
+  },
+  "pipes": {
+    "C": {
+      "label": "Consulting",
+      "companies": [
+        {"name": "Deloitte", "url": "https://careers.deloitte.ca/search-jobs", "slug": "deloitte"},
+        {"name": "EY", "url": "https://eyglobal.yello.co/jobs", "slug": "ey"},
+        {"name": "KPMG", "url": "https://careers.kpmg.ca/search-jobs", "slug": "kpmg"},
+        {"name": "PwC", "url": "https://www.pwc.com/ca/en/careers.html", "slug": "pwc"},
+        {"name": "Accenture", "url": "https://www.accenture.com/ca-en/careers", "slug": "accenture"},
+        {"name": "McKinsey", "url": "https://www.mckinsey.com/careers/search-jobs", "slug": "mckinsey"},
+        {"name": "BCG", "url": "https://careers.bcg.com/search-jobs", "slug": "bcg"},
+        {"name": "Bain", "url": "https://www.bain.com/careers", "slug": "bain"}
+      ]
+    },
+    "T": {
+      "label": "Tech / BigTech",
+      "companies": [
+        {"name": "Clio", "url": "https://www.clio.com/about/careers/", "slug": "clio"},
+        {"name": "Shopify", "url": "https://www.shopify.com/careers", "slug": "shopify"},
+        {"name": "Amazon", "url": "https://www.amazon.jobs/en-gb/search?base_query=&loc_query=Vancouver%2C+BC%2C+Canada", "slug": "amazon"},
+        {"name": "1Password", "url": "https://1password.com/jobs", "slug": "1password"},
+        {"name": "Indeed", "url": "https://www.indeed.com/careers", "slug": "indeed"}
+      ]
+    },
+    "I": {
+      "label": "Internal Strategy / Corporate",
+      "companies": [
+        {"name": "TELUS", "url": "https://careers.telus.com/search-jobs", "slug": "telus"},
+        {"name": "lululemon", "url": "https://www.lululemon.com/careers", "slug": "lululemon"},
+        {"name": "Aritzia", "url": "https://www.aritzia.com/en/careers.html", "slug": "aritzia"},
+        {"name": "Arc'teryx", "url": "https://www.arcteryx.com/ca/en/careers", "slug": "arcteryx"}
+      ]
+    },
+    "S": {
+      "label": "Startups",
+      "companies": [
+        {"name": "Procurify", "url": "https://procurify.com/careers/", "slug": "procurify"},
+        {"name": "Ada", "url": "https://ada.com/careers/", "slug": "ada"},
+        {"name": "Hiive", "url": "https://hiive.com/careers", "slug": "hiive"},
+        {"name": "EvenUp", "url": "https://www.evenup.com/careers", "slug": "evenup"}
+      ]
+    }
+  }
+}
