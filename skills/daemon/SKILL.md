@@ -43,13 +43,14 @@ LIFTOFF
   │   ├── 2e. Score + rank (fetch-engine)
   │   └── OUTPUT: CURATED list with enriched DNA fingerprints
   │
-  ├── PHASE 2x: DEEP COMPANY SCAN (NEW) ──────────────
-  │   ├── 2x1. Take top ~10 companies from CURATED list by fit score
-  │   ├── 2x2. For each: open career page → scrape ALL open roles
-  │   ├── 2x3. Cross-check all roles against same filters ($120K+, TEER 0/1, no pivot, Vancouver)
+  ├── PHASE 2x: DEEP COMPANY SCAN ──────────────────────
+  │   ├── 2x1. **Auto-run**: Execute `python3 skills/fetch-engine/scripts/deep_scan.py` with env vars `PLAYWRIGHT_BROWSERS_PATH=/home/aryan/.agent-browser/browsers PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1` and `--output-dir YYYY-MM-DD/WAVE_1/`. Runs in background.
+  │   ├── 2x2. Read results from `deep_scan_YYYY-MM-DD.json` + `curated_injection.md`
+  │   ├── 2x3. Cross-check all discovered roles against same filters ($120K+, TEER 0/1, no pivot, Vancouver)
   │   ├── 2x4. Score each new role (fit%) against Master Corpus
   │   ├── 2x5. Flag companies with 2-3+ fitting roles → priority boost (+3-5%)
   │   ├── 2x6. Enrich CURATED list: attach role list + badge per company
+  │   ├── 2x7. If Chrome binary unavailable (phone mode), skip auto-scanner — use existing board-based scan
   │   └── OUTPUT: CURATED list enriched with deep-scanned roles
   │
   ├── PHASE 3: PRESENT ──────────────────────────────

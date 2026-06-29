@@ -98,7 +98,16 @@ Show SYSTEM READY banner. If any check fails → warn user and stop.
 
 ## Phase 4b — Deep Company Scan (Top Targets)
 
-**Auto-scanner available:** `python skills/fetch-engine/scripts/deep_scan.py` — uses crawl4ai (stealth browser + JS rendering) to scrape ALL open roles from 20+ target career pages. Output includes markdown summary, JSON data, and CURATED_30.md injection snippet. Supports `--pipe C|T|I|S` and `--company [name]` filters.
+**AUTO-RUN deep_scan.py as step 1 of Phase 4b** (no manual command needed):
+
+1. **Auto-run scanner**: Execute `python3 skills/fetch-engine/scripts/deep_scan.py` (with `PLAYWRIGHT_BROWSERS_PATH=/home/aryan/.agent-browser/browsers PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1` env vars). This uses crawl4ai (stealth browser + JS rendering) to scrape ALL open roles from 20+ target career pages. Scan runs in background — proceed with other pipeline phases while it completes.
+   - Supports `--pipe C|T|I|S` to filter by pipe
+   - Supports `--output-dir YYYY-MM-DD/WAVE_1/` to write directly to date folder
+   - If Chrome binary is unavailable (phone mode), skip auto-scanner and fall back to board-based scan
+
+2. **Ingest results**: Read `deep_scan_YYYY-MM-DD.json` and `curated_injection.md` from the output directory. Extract:
+   - All fitting roles with fit scores
+   - 🔥 hot company flags (companies with 2-3+ fitting roles → +3-5% priority boost)
 
 After Phase 4 produces the scored/filtered job list, deep-scan the highest-fit companies:
 
