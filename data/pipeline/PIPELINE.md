@@ -11,6 +11,7 @@
 | Providence HC | Dir, Clinical & Ops (LTC) | I | $139K-$200K | 🟡 CONNECT_REQ_SENT | — | T+0 | Norm Peters + Emily McKenzie |
 | Deloitte | Sr Mgr, Strategic & Technology Change, Consumer | C | $126K-$234K | 🔵 SHOT | T+0 | Review SHOOT package → Submit | SAP SuccessFactors |
 | EY-Parthenon | Sr Mgr, Strategy & Execution — Deal Mgmt | C | $144K-$216K | 🔵 SHOT | T+0 | Review SHOOT → Submit | SAP SuccessFactors |
+| Clio | Senior Strategy and Operations Associate | T | $106K-$144K | 🔵 SHOT | T+0 | Review SHOOT package → Submit | Workday, Vancouver/Toronto |
 
 ## Archived / Cancelled
 
@@ -20,8 +21,8 @@
 
 ## Pipeline Summary
 
-- **Total Active:** 6
-- **SHOT (pending review):** 2 (Deloitte, EY-Parthenon)
+- **Total Active:** 7
+- **SHOT (pending review):** 3 (Deloitte, EY-Parthenon, Clio)
 - **Submitted:** 4 (BWZ, KPMG, Indeed, DoorDash)
 - **Networking (connect sent):** 1 (Providence HC)
 - **Callbacks:** 0
@@ -31,4 +32,4 @@
 
 ---
 
-*Last updated: 2026-06-29 by ABHIMANYU 2.0 — EY-Parthenon Sr Mgr Deal Management added (SHOT)*
+*Last updated: 2026-06-30 by ABHIMANYU 2.0 — Clio Senior Strategy & Operations Associate added (SHOT)*
