@@ -593,16 +593,29 @@ Ghosted > 30 days  → auto-marks as ❌, triggers light analysis
 
 ### Display
 
+**Every STATUS / TRACK output MUST be sorted by stage in this fixed order:**
+1. ✅ SUBMITTED (sorted by T+Days descending — most urgent first)
+2. 🟡 CONNECT_REQ_SENT
+3. 🔵 SHOT
+4. 📞 CALLBACK
+5. 💰 OFFER
+6. ❌ REJECTED
+
+**Stage column is FIRST** (leftmost), followed by Company → Role → Pipe → Salary → T+Days → Next Action.
+
 The `TRACK` command shows:
 ```
 ╔══════════════════════════════════════════════════════════════════════════╗
 ║  📊 PIPELINE — 8 active · 3 offers · 5 submitted · 2 in progress     ║
 ╠══════════════════════════════════════════════════════════════════════════╣
-║ 🔵 lululemon     Prog Mgr         T   $150K  SHOT    D3    APPROVE?   ║
-║ ✅ TELUS         Cat Mgr          I   $130K  SUBMIT  D7    Follow up  ║
-║ 📞 Clio          Rev Ops          T   $145K  CALLBK  D12   Prep       ║
-║ 💰 Hiive         Ops Lead         S   $140K  OFFER   D5    Negotiate  ║
-║ ❌ EvenUp        Strategy         T   $155K  REJ     D8    Learn      ║
+║ ✅ SUBMITTED  TELUS         Cat Mgr          I   $130K  D7    Follow up║
+║ ✅ SUBMITTED  DoorDash      Mgr S&O          T   $148K  D0    Connect  ║
+║ 🟡 CONNECT    Providence    Dir Clinical     I   $139K  —     Submit   ║
+║ 🔵 SHOT       lululemon     Prog Mgr         T   $150K  D3    Approve? ║
+║ 🔵 SHOT       Clio          Rev Ops          T   $145K  D0    Review   ║
+║ 📞 CALLBACK   Hiive         Ops Lead         S   $140K  D12   Prep     ║
+║ 💰 OFFER      EvenUp        Strategy         T   $155K  D5    Negotiate║
+║ ❌ REJECTED   WeWork        Ops Mgr          T   $120K  D8    Learn    ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 ```
 

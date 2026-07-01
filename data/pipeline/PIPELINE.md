@@ -2,16 +2,16 @@
 
 ## Active Applications
 
-| Company | Role | Pipe | Salary | Stage | T+Days | Next Action | Notes |
-|---------|------|------|--------|-------|--------|-------------|-------|
-| BWZ | Strategy & Ops Manager | I | $120K-$160K | ✅ SUBMITTED | T+0 | LinkedIn connect | Lever, video pending |
-| KPMG | Dir, Delivery Services | C | $172.5K-$179.5K | ✅ SUBMITTED | T+0 | LinkedIn connect | ICIMS |
-| Indeed | Sr Mgr, Integration & Business | T | $133K-$199K | ✅ SUBMITTED | T+3 | Follow up | Networking leg 2 |
-| DoorDash Canada | Mgr, S&O Dasher & Logistics | T | $148K-$185K | ✅ SUBMITTED | T+0 | LinkedIn connect | Terry Lee |
-| Providence HC | Dir, Clinical & Ops (LTC) | I | $139K-$200K | 🟡 CONNECT_REQ_SENT | — | T+0 | Norm Peters + Emily McKenzie |
-| Deloitte | Sr Mgr, Strategic & Technology Change, Consumer | C | $126K-$234K | 🔵 SHOT | T+0 | Review SHOOT package → Submit | SAP SuccessFactors |
-| EY-Parthenon | Sr Mgr, Strategy & Execution — Deal Mgmt | C | $144K-$216K | 🔵 SHOT | T+0 | Review SHOOT → Submit | SAP SuccessFactors |
-| Clio | Senior Strategy and Operations Associate | T | $106K-$144K | 🔵 SHOT | T+0 | Review SHOOT package → Submit | Workday, Vancouver/Toronto |
+| Stage | Company | Role | Pipe | Salary | T+Days | Next Action | Notes |
+|------|---------|------|------|--------|--------|-------------|-------|
+| ✅ SUBMITTED | Indeed | Sr Mgr, Integration & Business | T | $133K-$199K | T+3 | Follow up | Networking leg 2 |
+| ✅ SUBMITTED | BWZ | Strategy & Ops Manager | I | $120K-$160K | T+0 | LinkedIn connect | Lever, video pending |
+| ✅ SUBMITTED | KPMG | Dir, Delivery Services | C | $172.5K-$179.5K | T+0 | LinkedIn connect | ICIMS |
+| ✅ SUBMITTED | DoorDash Canada | Mgr, S&O Dasher & Logistics | T | $148K-$185K | T+0 | LinkedIn connect | Terry Lee |
+| 🟡 CONNECT_REQ_SENT | Providence HC | Dir, Clinical & Ops (LTC) | I | $139K-$200K | — | Submit application | Norm Peters + Emily McKenzie |
+| 🔵 SHOT | Clio | Senior Strategy and Operations Associate | T | $106K-$144K | T+0 | Review → Submit | Workday, Vancouver/Toronto |
+| 🔵 SHOT | Deloitte | Sr Mgr, Strategic & Technology Change, Consumer | C | $126K-$234K | T+0 | Review → Submit | SAP SuccessFactors |
+| 🔵 SHOT | EY-Parthenon | Sr Mgr, Strategy & Execution — Deal Mgmt | C | $144K-$216K | T+0 | Review → Submit | SAP SuccessFactors |
 
 ## Archived / Cancelled
 
